@@ -93,5 +93,6 @@ const StyledHStack = styled(HStack)`
   #active {
     border: 1px solid #d6d4d4;
     border-bottom: 1px solid white;
+    color: #ff0000;
   }
 `
