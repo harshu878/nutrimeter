@@ -27,70 +27,65 @@ function DraewerNav() {
 
 
   return (
-    <Box marginRight={5}>
+    <Box>
       <Button mL={"auto"} width={6} onClick={onOpen}>
         <IconButton icon={<FaBars></FaBars>}></IconButton>
       </Button>
       <Drawer placement={placement} onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
         <Center w={2}>
-          <DrawerContent display={"Flex"} alignItems={"flex-end"} justifyContent={"center"}>
+          <DrawerContent  display={"Flex"} alignItems={"center"} justifyContent={"center"}>
             <Box ml={4}>
-              {/* <Image 
+              <Image 
              
-              width={{ base: "100px", md: "120px", lg: "156px" }}
-              src="https://uploads-ssl.webflow.com/5c77a918ef19681741be7bca/5fd37c83dfa3ccb0d2d9836f_myhours-logo.svg"
-            ></Image> */}
+              width={{ base: "150px", md: "160px", lg: "190px" }}
+              src="/pic/logo.png"
+            ></Image>
             </Box>
             <DrawerBody>
               <Box p="1">
-                <NavLink to="/usecases">
-                  <Text fontWeight="bold">Use Cases</Text>
+                <NavLink to="/">
+                  <Text _hover={{color:"orange"}} fontWeight="bold">Products</Text>
                 </NavLink>
               </Box>
               <Box p="1">
-                <NavLink to="/pricing">
-                  <Text fontWeight="bold">Pricing</Text>
+                <NavLink to="/">
+                  <Text fontWeight="bold" _hover={{color:"orange"}}>Blog</Text>
                 </NavLink>
               </Box>
 
               <Box p="1">
-                <NavLink to="/support">
-                  <Text fontWeight="bold">Support</Text>
+                <NavLink to="/">
+                  <Text fontWeight="bold" _hover={{color:"orange"}}>Forums</Text>
                 </NavLink>
               </Box>
-              {/* Sign in */}
               <Box p="1">
-                  <Link>
-                    <Text fontWeight="bold" >
-                      Log Out
+                  <NavLink to="/">
+                    <Text fontWeight="bold" _hover={{color:"orange"}} >
+                      About
                     </Text>
-                  </Link>
-                  <NavLink to="/singin">
-                    <Text fontWeight="bold">Sign In</Text>
                   </NavLink>
+                  
               </Box>
-              {/* Sign Up */}
               <Box p="1">
-                  <Flex gap={2} alignItems={"center"}>
+                  <NavLink to="/">
+                    <Text fontWeight="bold" _hover={{color:"orange"}}>
+                      Support
+                    </Text>
+                  </NavLink>
+                  
+              </Box>
+              <Box p="1">
+                  {/* <Flex gap={2} alignItems={"center"}>
                     <IconButton isRound={true} size="md" alignSelf="flex-end" icon={<FaUserCheck></FaUserCheck>}></IconButton>
                     <Text color="red.500" fontWeight="bold" fontSize={fontSize}>
                     </Text>
-                  </Flex>
-                  <NavLink to="/signup">
-                    <Button bg={"blue.400"} colorScheme="teal" color="white">
-                      <Text fontSize={fontSize}>Get My Hours Free</Text>
+                  </Flex> */}
+                  <NavLink to="/">
+                    <Button bg={"orange.400"} colorScheme="orange" color="white">
+                      <Text fontSize={fontSize}>Login</Text>
                     </Button>
                   </NavLink>
-              </Box>
-              <Box>
-                <IconButton
-                  onClick={toggleColorMode}
-                  isRound={true}
-                  size="sm"
-                  alignSelf="flex-end"
-                  icon={colorMode === "light" ? <FaSun /> : <FaMoon />}
-                ></IconButton>
               </Box>
             </DrawerBody>
           </DrawerContent>
