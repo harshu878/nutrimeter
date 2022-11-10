@@ -3,6 +3,27 @@
   color: white !important;
   padding: 25px 60px !important;
 }
-.orangeColor{
+.whiteButton {
+  background-color: white !important;
+  color: #ff763f !important;
+  padding: 25px 60px !important;
+}
+.orangeColor {
   color: #ff763f;
+}
+.orangeBackground {
+  background-color: #ff763f;
+}
+.gradientOrangeBackground {
+  background-image: linear-gradient(80deg, #ff763f 0%, #ffb56b 100%);
+  background-color: transparent;
+}
+.grayBackground {
+  background-color: #f8f8f8;
+}
+.searchInputBox {
+  background-color: white;
+}
+.removeUnderLine {
+  text-decoration: none;
 }
