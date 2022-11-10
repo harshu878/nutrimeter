@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
-const ProductSchema = {
+
+const foodProductsSchema = new mongoose.Schema({
     Category: String,
     Description: String,
     'Nutrient Data Bank': Number,
@@ -47,37 +48,10 @@ const ProductSchema = {
             "Vitamin K": Number
         }
     }
-}
-
-
-
-
-const userProfileSchema = new mongoose.Schema({
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'user',
-        required: true,
-    },
-    products: [
-        {
-            productId: {
-                type: String,
-                // ref: 'foodProduct',
-                required: true,
-            },
-            product: ProductSchema,
-            servings: {
-                type: Number,
-                required: true,
-            },
-            totalEnergy: Number,
-            time: String,
-        }
-    ]
 },
     { timestamps: true }
 )
 
-module.exports = UserProfiles = mongoose.model('userprofile', userProfileSchema);
+module.exports = FoodProducts = mongoose.model('foodProduct', foodProductsSchema);
 
 
