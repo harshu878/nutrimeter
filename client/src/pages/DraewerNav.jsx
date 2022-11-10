@@ -29,7 +29,7 @@ function DraewerNav() {
   return (
     <Box>
       <Button mL={"auto"} width={6} onClick={onOpen}>
-        <IconButton icon={<FaBars></FaBars>}></IconButton>
+        <IconButton _hover={{bg:"orange.400", color:"white"}} icon={<FaBars></FaBars>}></IconButton>
       </Button>
       <Drawer placement={placement} onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
