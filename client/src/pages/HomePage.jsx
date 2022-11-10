@@ -1,7 +1,7 @@
 import React from 'react'
 import {NavLink} from "react-router-dom";
 import NavBar from './NavBar';
-import { Box, Flex, Link, Image,HStack, Icon, Text,Spacer,ButtonGroup,Button,Heading, Highlight} from '@chakra-ui/react';
+import { Box, Flex, Link, Image,HStack, Icon, Text,Spacer,ButtonGroup,Button,Heading,Grid,GridItem, Highlight} from '@chakra-ui/react';
 
 const fontSize = { base: "10px", sm: "12px", md: "15px", lg: "18px" };
 const HomePage = () => {
@@ -117,6 +117,158 @@ const HomePage = () => {
         </Text>
         </Flex>
         {/* section-3 ends here */}
+
+
+        {/* section-4 starts */}
+        <Grid
+        w={"90%"} m="auto" mt="70px"
+        justifyContent={"center"}
+        templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(1, 1fr)", lg: "repeat(3, 1fr)" }}
+        gap={6}
+        textAlign="center"
+        alignItems={"center"}
+      >
+        <GridItem margin={"auto"} w="80%" display={"grid"} gap={5}>
+          <Image src="https://cdn1.cronometer.com/2021/landing/community-icon.svg" w="100px" m="auto"></Image>
+          <Heading  fontSize={25} color="gray.600">
+          Over 5 million users
+          </Heading>
+          <Text color={"text"} fontSize={20}>
+          Join the community to get tips and inspiration from other users on our forums and Facebook group.
+          </Text>
+          
+        </GridItem>
+        <GridItem w="80%" margin={"auto"} display={"grid"} gap={5}>
+          <Image src="https://cdn1.cronometer.com/2021/landing/nutrition-icon.svg" w="100px" m="auto"></Image>
+          <Heading  fontSize={25} color="gray.600">
+          Accurate nutrition data
+          </Heading>
+          <Text color={"text"} fontSize={20}>
+          Be confident that the food you log has the correct nutrition data. We verify every food submission
+           for accuracy.
+          </Text>
+        </GridItem>
+
+        <GridItem w="80%" margin={"auto"} display={"grid"} gap={5}>
+          <Image src="https://cdn1.cronometer.com/2021/landing/security-icon.svg" w="100px" m="auto"></Image>
+          <Heading  fontSize={25} color="gray.600">
+          Data privacy & security
+          </Heading>
+          <Text color={"text"} fontSize={20}>
+          We take the security of our users' accounts seriously - we will never sell your account data to third parties.
+          </Text>
+        </GridItem>
+      </Grid>
+      {/* section 4 ends here */}
+
+      {/* section -5 starts */}
+      <Flex mt="120px">
+        <Text fontSize={{ base: "25px", md: "30px", lg: "40px" }} color="black.600" m={"auto"} fontWeight="bold">
+        Develop healthy habits
+        </Text>
+        </Flex>
+        <Flex w={{base:"60%", md:"70%", lg:"50%"}} m="auto" textAlign={"center"} mt="15px">
+        <Text fontSize={{ base: "18px", md: "20px", lg: "24px" }} color="black.600" m={"auto"}>
+        Count your calories, ensure you're meeting nutrient targets, and see your progress over time.</Text>
+        </Flex>
+        {/* section-5 ends here */}
+
+
+        {/* section-6 starts */}
+        <Grid
+        w={"90%"} m="auto" mt="70px"
+        justifyContent={"center"}
+        templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }}
+        templateRows={{ base: "repeat(6, 1fr)", md: "repeat(3, 1fr)", lg: "repeat(2, 1fr)" }}
+        gap={6}
+        textAlign="center"
+        alignItems={"center"}
+      >
+
+          <GridItem w="80%" margin={"auto"} display={"grid"} gap={5}>
+          <Image src="https://cdn1.cronometer.com/2021/landing/micronutrients-icon.svg" w="100px" m="auto"></Image>
+          <Heading  fontSize={25} color="gray.600">
+          Track up to 82 micronutrients
+          </Heading>
+          <Text color={"text"} fontSize={20}>
+          Log your meals and track all your macro and micronutrients.
+          </Text>
+        </GridItem>
+
+        <GridItem w="80%" margin={"auto"} display={"grid"} gap={5}>
+          <Image src="https://cdn1.cronometer.com/2021/landing/diary-icon.svg" w="100px" m="auto"></Image>
+          <Heading  fontSize={25} color="gray.600">
+          Log meals, exercise and biometrics
+          </Heading>
+          <Text color={"text"} fontSize={20}>
+          Plus, you can create custom foods, recipes, exercises and biometrics!
+          </Text>
+        </GridItem>
+
+        <GridItem w="80%" margin={"auto"} display={"grid"} gap={5}>
+          <Image src="https://cdn1.cronometer.com/2021/landing/reports-icon.svg" w="100px" m="auto"></Image>
+          <Heading  fontSize={25} color="gray.600">
+          Valuable reports and charts
+          </Heading>
+          <Text color={"text"} fontSize={20}>
+          Learn how nutrients and biometrics correlate over time.
+          </Text>
+        </GridItem>
+
+        <GridItem w="80%" margin={"auto"} display={"grid"} gap={5}>
+          <Image src="https://cdn1.cronometer.com/2021/landing/scale-icon.svg" w="100px" m="auto"></Image>
+          <Heading  fontSize={25} color="gray.600">
+          Custom diet settings
+          </Heading>
+          <Text color={"text"} fontSize={20}>
+          Set weight, macro & nutrient targets to meet your goals.
+          </Text>
+        </GridItem>
+
+        <GridItem w="80%" margin={"auto"} display={"grid"} gap={5}>
+          <Image src="https://cdn1.cronometer.com/2021/landing/fasting-icon.svg" w="100px" m="auto"></Image>
+          <Heading  fontSize={25} color="gray.600">
+          Fasting timer
+          </Heading>
+          <Text color={"text"} fontSize={20}>
+          Track your intermittent fasts and see their effect over time.
+          </Text>
+        </GridItem>
+
+        <GridItem w="80%" margin={"auto"} display={"grid"} gap={5}>
+          <Image src="https://cdn1.cronometer.com/2021/landing/food-icon.svg" w="100px" m="auto"></Image>
+          <Heading  fontSize={25} color="gray.600">
+          Diet support
+          </Heading>
+          <Text color={"text"} fontSize={20}>
+          Whether you’re Keto, Vegan, or on one recommended by your doctor.
+          </Text>
+        </GridItem>
+        
+      </Grid>
+      {/* section-6 ends */}
+
+      {/* section-7 starts here */}
+      <Box w={"48%"} textAlign={"center"} m="auto">
+        <Text fontSize={{ base: "22px", md: "24px", lg: "26px" }} mt="110px" mb="40px" fontWeight="bold" color="gray.600">
+        Find out if you're getting the vitamins and minerals you need with our food diary app. </Text>
+        <Button fontSize={"xl"} _hover={{bg:"orange.600",color:"white"}} m="auto" bg={"orange.400"} h={14} w={{ base: "14rem", md: "16rem", lg: "20rem" }} color="white">
+        Sign Up - It's Free!
+      </Button>
+      </Box>
+      {/* section-7 ends */}
+
+      {/* section-8 starts */}
+      <Flex mt="120px">
+        <Text fontSize={{ base: "25px", md: "30px", lg: "40px" }} color="black.600" m={"auto"} fontWeight="bold">
+        Sync with Apps and Devices
+        </Text>
+        </Flex>
+        <Flex w={{base:"60%", md:"70%", lg:"50%"}} m="auto" textAlign={"center"} mt="15px">
+        <Text fontSize={{ base: "18px", md: "20px", lg: "24px" }} color="black.600" m={"auto"}>
+        Sync Cronometer with these activity trackers, Apple Health, Google Fit and Samsung Health.
+        </Text>
+        </Flex>
 
 
     </Box>
