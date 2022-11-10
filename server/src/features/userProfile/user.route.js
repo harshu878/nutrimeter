@@ -26,7 +26,7 @@ const authMiddleWare = async (req, res, next) => {
 const app = express.Router();
 app.use(authMiddleWare)
 
-app.post('/addItem', async (req, res) => {
+app.post('/additem', async (req, res) => {
     let { product, serving } = req.body;
     serving = Number(serving);
     const userId = req.userId;
@@ -34,28 +34,77 @@ app.post('/addItem', async (req, res) => {
     try {
         let userProfile = await UserProfiles.findOne({ user: userId });
         if (userProfile) {
+            let date = `${new Date().toLocaleDateString()}`
+            let isExist = false;
+            userProfile.products.forEach(ele => {
+                if (ele.time === date && ele.productId === product) isExist = true;
+            })
+            let updatedUserProfile;
+            if (isExist) {
+                updatedUserProfile = {
+                    ...userProfile._doc,
+                    products: userProfile.products.map(ele => {
+                        if (ele.time == date && ele.productId === product) {
+                            return {
+                                ...ele._doc,
+                                servings: serving,
+                                totalEnergy: addTotalEnergy(existingProduct, serving),
+                                product: updatedProduct(existingProduct, serving),
+                            }
+                        } else return ele;
+                    })
+                }
+            } else {
+                updatedUserProfile = {
+                    ...userProfile._doc,
+                    products: [
+                        ...userProfile.products,
+                        {
+                            productId: product,
+                            servings: serving,
+                            totalEnergy: addTotalEnergy(existingProduct, serving),
+                            product: updatedProduct(existingProduct, serving),
+                            time: `${new Date().toLocaleDateString()}`
+                        }]
+                }
+            }
+            let updatedResult = await UserProfiles.findByIdAndUpdate(userProfile.id, updatedUserProfile, { new: true })
+            res.send(updatedResult)
 
         } else {
             let data = {
                 user: userId,
-                days: [
+                products: [
                     {
-                        date: `${new Date().toLocaleDateString()}`,
-                        products: [
-                            {
-                                product: updatedProduct(existingProduct, serving),
-                                servings: serving,
-                                totalEnergy: addTotalEnergy(existingProduct, serving)
-                            }
-                        ]
+                        productId: product,
+                        product: updatedProduct(existingProduct, serving),
+                        servings: serving,
+                        totalEnergy: addTotalEnergy(existingProduct, serving),
+                        time: `${new Date().toLocaleDateString()}`
                     }
                 ]
             }
-            // let newUserProfile = await UserProfiles.create(data)
-            res.send(updatedProduct(existingProduct, serving));
+            let newUserProfile = await UserProfiles.create(data)
+            res.send(newUserProfile);
         }
     } catch (error) {
         res.status(401).send(error);
+    }
+})
+
+
+app.delete('/:id', async (req, res) => {
+    const id = req.params.id;
+    const userId = req.userId;
+    let userProfile = await UserProfiles.findOne({ user: userId });
+    try {
+        let updatedUser = {
+            ...userProfile._doc,
+            products: userProfile.products.filter(ele => ele.productId !== id)
+        }
+        res.send(updatedUser);
+    } catch (error) {
+        res.status(401).send(error)
     }
 })
 
