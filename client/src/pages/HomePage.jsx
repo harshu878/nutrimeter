@@ -382,7 +382,7 @@ const HomePage = () => {
           <Image src="https://cdn1.cronometer.com/2021/landing/crono-pro-graphic.svg"></Image>
         </GridItem>
         <GridItem m="auto" w="100%" display={"grid"}>
-        <Image w="260px"  ml="70px" src="/pic/logo.png"></Image>
+        <Image w="260px"  m="auto" src="/pic/logo.png"></Image>
           <Heading  fontSize={23} color="gray.600" mt='20px'>
           Are you a healthcare professional?  </Heading>
           <Text mt="20px" fontSize={{base:"20px", md:"22px", lg:"22px"}}>Check out our software designed for nutritionists, dietitians,
