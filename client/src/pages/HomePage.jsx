@@ -435,14 +435,6 @@ const HomePage = () => {
           </Button>
           </Flex>
 
-          <Flex h="650px" bg="gray" mt="40px">
-
-          </Flex>
-
-
-  
-
-
     </Box>
 
   )
