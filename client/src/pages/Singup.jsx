@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate} from 'react-router-dom'
 import {
   Flex,
   Heading,
@@ -24,7 +25,37 @@ const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
 
 const Signup = () => {
-  
+  const [data, setData] = useState({
+    
+    name: "",
+    email: "",
+    password: "",
+  });
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const handleChange = ({ currentTarget: input }) => {
+    setData({ ...data, [input.name]: input.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const url = "http://localhost:8080/api/users";
+      const { data: res } = await axios.post(url, data);
+      navigate("/login");
+      console.log(res.message);
+    } catch (error) {
+      if (
+        error.response &&
+        error.response.status >= 400 &&
+        error.response.status <= 500
+      ) {
+        setError(error.response.data.message);
+      }
+    }
+  };
+
     const [checkedItems, setCheckedItems] = useState([false, false])
 
   const allChecked = checkedItems.every(Boolean)
@@ -40,6 +71,7 @@ const Signup = () => {
     >
           
         <Heading size='lg' p='10' >Create Your Free Account </Heading>
+        <form onSubmit={handleSubmit}>
       <Stack
       boxShadow= 'rgba(0, 0, 0, 0.16) 0px 1px 4px'
            flexDir="column"
@@ -54,7 +86,7 @@ const Signup = () => {
           {/* <Image width={'100%'} src='https://i.postimg.cc/y8LKTYmp/Color-logo-no-background.png' alt='Dan Abramov' /> */}
        
         <Box minW={{ base: "90%", md: "600px" }}>
-          <form>
+        
             <Stack
               spacing={4}
             
@@ -65,7 +97,10 @@ const Signup = () => {
                     pointerEvents="none"
                     children={<CFaUserAlt color="gray.300" />}
                   />
-                  <Input type="email" placeholder="Email Address" />
+                  <Input  name="email"
+              onChange={handleChange}
+              value={data.email}
+              required type="email" placeholder="Email Address" />
                 </InputGroup>
               </FormControl>
               <FormControl>
@@ -74,7 +109,10 @@ const Signup = () => {
                     pointerEvents="none"
                     children={<CFaUserAlt color="gray.300" />}
                   />
-                  <Input type="email" placeholder="Email Address" />
+                  <Input  name="Name"
+              onChange={handleChange}
+              value={data.name}
+              required type="text" placeholder="Name" />
                 </InputGroup>
               </FormControl>
               <FormControl>
@@ -85,6 +123,10 @@ const Signup = () => {
                     children={<CFaLock color="gray.300" />}
                   />
                   <Input
+                    name="password"
+                    onChange={handleChange}
+                    value={data.password}
+                    required
                     type="password"
                     placeholder="Password"
                   />
@@ -97,7 +139,7 @@ const Signup = () => {
              
            
             </Stack>
-          </form>
+      
         </Box>
       </Stack >
       <Stack   
@@ -143,10 +185,11 @@ const Signup = () => {
 </Stack>
 
 <Flex mb='4' p='4'>  
-    <Button colorScheme='green' size='lg' width={'650px'}>
+    <Button type="submit" colorScheme='green' size='lg' width={'650px'}>
     Create Account
   </Button>
   </Flex>
+  </form>
     </Flex>
   );
 };
