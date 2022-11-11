@@ -12,16 +12,16 @@ import {
   Stack,
   Text,
   useColorMode,
-  useDisclosure,
+  useDisclosure, Popover, PopoverTrigger,PopoverContent,PopoverHeader,PopoverArrow,PopoverCloseButton,PopoverBody,
   Flex,
 } from "@chakra-ui/react";
 import {  FaBars } from "react-icons/fa";
+import { FaAppleAlt } from "react-icons/fa";
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 const fontSize = { base: "10px", sm: "12px", md: "15px", lg: "18px" };
 
 function DraewerNav() {
-  const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [placement, setPlacement] = React.useState("top");
 
@@ -37,18 +37,45 @@ function DraewerNav() {
           <DrawerContent  display={"Flex"} alignItems={"center"} justifyContent={"center"}
           >
             <Box ml={4}>
-              {/* <Image 
+              <Image 
              
               width={{ base: "150px", md: "160px", lg: "190px" }}
               src="/pic/logo.png"
-            ></Image> */}
+            ></Image>
             </Box>
             <DrawerBody>
-              <Box p="1">
+              {/* <Box p="1">
                 <NavLink to="/">
                   <Text _hover={{color:"orange"}} fontWeight="bold">Products</Text>
                 </NavLink>
-              </Box>
+              </Box> */}
+              <Popover isLazy w="200px">
+                <PopoverTrigger>
+                  <Button bg="none" color="black" _hover={{color:"orange.500"}} fontSize={fontSize} fontWeight="bold" ml="-12px">Products </Button>
+  </PopoverTrigger>
+  <PopoverContent>
+    <PopoverHeader fontWeight='semibold'>Cronometer Products</PopoverHeader>
+    <PopoverArrow />
+    <PopoverCloseButton />
+    <NavLink to="/home">
+    <PopoverBody _hover={{color:"orange"}}>
+    <IconButton isRound={true} bg="green.300" color="red.500"  size="lg" mr="20px"  icon={<FaAppleAlt></FaAppleAlt>}>
+    </IconButton>
+      For Individuals.
+    </PopoverBody>
+    </NavLink>
+
+    <NavLink to="/pro">
+    <PopoverBody _hover={{color:"orange"}}>
+    <IconButton isRound={true} bg="red.200" color="green.500"  size="lg" mr="20px"  icon={<FaAppleAlt></FaAppleAlt>}>
+    </IconButton>
+      For Healthcare Professionals.
+    </PopoverBody>
+    </NavLink>
+  </PopoverContent>
+</Popover>
+
+
               <Box p="1">
                 <NavLink to="/blog">
                   <Text fontWeight="bold" _hover={{color:"orange"}}>Blog</Text>
