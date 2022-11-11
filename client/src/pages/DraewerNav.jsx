@@ -15,7 +15,7 @@ import {
   useDisclosure,
   Flex,
 } from "@chakra-ui/react";
-import { FaSun, FaMoon, FaBars, FaUserCheck } from "react-icons/fa";
+import {  FaBars } from "react-icons/fa";
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 const fontSize = { base: "10px", sm: "12px", md: "15px", lg: "18px" };
@@ -27,20 +27,21 @@ function DraewerNav() {
 
 
   return (
-    <Box>
+    <Box marginRight={5}>
       <Button mL={"auto"} width={6} onClick={onOpen}>
         <IconButton _hover={{bg:"orange.400", color:"white"}} icon={<FaBars></FaBars>}></IconButton>
       </Button>
-      <Drawer placement={placement} onClose={onClose} isOpen={isOpen}>
+      <Drawer placement={placement} onClose={onClose} isOpen={isOpen} ml="-100px">
         <DrawerOverlay />
         <Center w={2}>
-          <DrawerContent  display={"Flex"} alignItems={"center"} justifyContent={"center"}>
+          <DrawerContent  display={"Flex"} alignItems={"center"} justifyContent={"center"}
+          >
             <Box ml={4}>
-              <Image 
+              {/* <Image 
              
               width={{ base: "150px", md: "160px", lg: "190px" }}
               src="/pic/logo.png"
-            ></Image>
+            ></Image> */}
             </Box>
             <DrawerBody>
               <Box p="1">
