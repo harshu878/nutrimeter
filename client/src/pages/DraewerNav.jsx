@@ -49,7 +49,7 @@ function DraewerNav() {
                 </NavLink>
               </Box>
               <Box p="1">
-                <NavLink to="/">
+                <NavLink to="/blog">
                   <Text fontWeight="bold" _hover={{color:"orange"}}>Blog</Text>
                 </NavLink>
               </Box>
@@ -60,7 +60,7 @@ function DraewerNav() {
                 </NavLink>
               </Box>
               <Box p="1">
-                  <NavLink to="/">
+                  <NavLink to="/about">
                     <Text fontWeight="bold" _hover={{color:"orange"}} >
                       About
                     </Text>

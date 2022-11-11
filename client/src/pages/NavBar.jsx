@@ -45,7 +45,7 @@ const NavBar = () => {
             </NavLink>
           </Box>
           <Box p="1">
-            <NavLink to="/">
+            <NavLink to="/blog">
               <Text  fontSize={fontSize} _hover={{color:"orange"}}>
                 Blog
               </Text>
@@ -61,7 +61,7 @@ const NavBar = () => {
           </Box>
 
           <Box p="1">
-            <NavLink to="/">
+            <NavLink to="/about">
               <Text  fontSize={fontSize} _hover={{color:"orange"}}>
                 About
               </Text>
