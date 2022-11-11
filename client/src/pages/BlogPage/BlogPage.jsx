@@ -7,46 +7,26 @@ import {
   Input,
   InputGroup,
   InputRightElement,
-  Link,
   Text,
 } from "@chakra-ui/react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import { CgPlayButtonO } from "react-icons/cg";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { HiSearch } from "react-icons/hi";
-import blogPageFirstImage from "./Images/blogPageFirstImage.png";
-
-import blogImgGummyBears from "./Images/Blog-Img-Gummy-Bears.png";
-import blogImgFiber from "./Images/Fiber.png";
-import blogImgAvocado from "./Images/Blog-Image-Avocado.png";
-
-import rocket from "./Images/rocket.png";
-import appleTree from "./Images/apple_tree.jpg";
-
-import eczma from "./Images/eczema.png";
-import acne from "./Images/acne.jpg";
-import knowYourself from "./Images/know_yourself.png";
-
-import cronometerGraphic from "./Images/cronometer-hero-graphic.svg";
 
 import blogStyles from "./BlogPage.module.css";
 import BlogCard from "../../components/BlogCard/BlogCard";
+import NavBar from "../NavBar";
 
 const BlogPage = () => {
   const [isClicked, setClicked] = useState(false);
 
-  const backgroundBox = {
-    padding: "80px 0 140px",
-    backgroundColor: "transparent",
-    backgroundImage: "linear-gradient(80deg,#ff763f 0%,#ffb56b 100%)",
-    color: "white",
-    borderRadius: "100%/0 0 60px 60px",
-    textAlign: "center",
-  };
   return (
     <div style={{ width: "auto" }}>
-      <Box style={backgroundBox}>
+      <NavBar />
+      <Box className={blogStyles.orangeBackgroundBoxCurved}>
         <Heading size="2xl">The Cronometer Blog</Heading>
         <Text>App Updates, Nutrition Tips & Inspiration</Text>
       </Box>
@@ -77,7 +57,8 @@ const BlogPage = () => {
             <>
               <Box position="relative">
                 <Image
-                  src={blogPageFirstImage}
+                  src="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/blogPageFirstImage.png"
+                  objectFit="cover"
                   alt="image"
                   width="100%"
                   height="375px"
@@ -122,7 +103,8 @@ const BlogPage = () => {
           <br />
           <Flex justifyContent="space-between">
             <Image
-              src={blogImgGummyBears}
+              src="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/Blog-Img-Gummy-Bears.png"
+              objectFit="cover"
               w="35%"
               borderRadius="0.5rem"
               height={{ base: "auto", md: "128px", xl: "128px" }}
@@ -138,7 +120,8 @@ const BlogPage = () => {
           <br />
           <Flex justifyContent="space-between">
             <Image
-              src={blogImgFiber}
+              src="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/Fiber.png"
+              objectFit="cover"
               w="35%"
               borderRadius="0.5rem"
               height={{ base: "auto", md: "128px", xl: "128px" }}
@@ -154,7 +137,8 @@ const BlogPage = () => {
           <br />
           <Flex justifyContent="space-between">
             <Image
-              src={blogImgAvocado}
+              src="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/Blog-Image-Avocado.png"
+              objectFit="cover"
               w="35%"
               borderRadius="0.5rem"
               height={{ base: "auto", md: "128px", xl: "128px" }}
@@ -196,30 +180,35 @@ const BlogPage = () => {
           gap={{ base: "3" }}
         >
           <Link
+            to="/blog/category/Nutrition"
             style={{ textDecoration: "none" }}
             _hover={{ color: "#e56836" }}
           >
             Nutrition
           </Link>
           <Link
+            to="/blog/category/Fitness"
             style={{ textDecoration: "none" }}
             _hover={{ color: "#e56836" }}
           >
             Fitness
           </Link>
           <Link
+            to="/blog/category/Features"
             style={{ textDecoration: "none" }}
             _hover={{ color: "#e56836" }}
           >
             Features
           </Link>
           <Link
+            to="/blog/category/Recipes"
             style={{ textDecoration: "none" }}
             _hover={{ color: "#e56836" }}
           >
             Recipes
           </Link>
           <Link
+            to="/blog/category/app-updates"
             style={{ textDecoration: "none" }}
             _hover={{ color: "#e56836" }}
           >
@@ -280,7 +269,7 @@ const BlogPage = () => {
         </Box>
         <Box>
           <Image
-            src={rocket}
+            src="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/rocket.png"
             width={{ base: "80%", md: "367px", xl: "367px" }}
             margin="auto"
           />
@@ -295,7 +284,7 @@ const BlogPage = () => {
         textAlign={{ base: "center", md: "left", xl: "left" }}
       >
         <Box width={{ base: "auto", md: "55%", xl: "55%" }}>
-          <Image src={appleTree} />
+          <Image src="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/apple_tree.jpg" />
         </Box>
         <Box width={{ base: "auto", md: "40%", xl: "40%" }}>
           <Text fontSize={{ base: "auto", md: "xl", xl: "xl" }}>
@@ -399,13 +388,13 @@ const BlogPage = () => {
         wrap="wrap"
       >
         <BlogCard
-          image={eczma}
+          image="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/eczema.png"
           heading="Dietitians Discuss Diet And Eczema"
           date="April 27, 2022"
           description="Registered Dietitians Discuss The Link Between Diet And Eczema Eczema is a common, chronic and complex skin disease that arises"
         />
         <BlogCard
-          image={acne}
+          image="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/acne.jpg"
           heading="How Can Diet & Nutrition Affect Acne"
           date="April 26, 2022"
           description="How Can Diet And Nutrition Affect Acne Acne is a chronic, multifactorial skin condition that is estimated to affect 9.4%"
@@ -458,28 +447,28 @@ const BlogPage = () => {
         wrap="wrap"
       >
         <BlogCard
-          image={eczma}
-          heading="Dietitians Discuss Diet And Eczema"
-          date="April 27, 2022"
-          description="Registered Dietitians Discuss The Link Between Diet And Eczema Eczema is a common, chronic and complex skin disease that arises"
+          image="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/Suunto.png"
+          heading="New Device Integration: Suunto"
+          date="June 14, 2022"
+          description="Sync Suunto Data Into Your Cronometer Account Today, we are thrilled to announce that we have partnered with Suunto to"
         />
         <BlogCard
-          image={acne}
-          heading="How Can Diet & Nutrition Affect Acne"
-          date="April 26, 2022"
-          description="How Can Diet And Nutrition Affect Acne Acne is a chronic, multifactorial skin condition that is estimated to affect 9.4%"
+          image="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/Heart-rate-symbol.png"
+          heading="How To: Track Your Heart Rate Over Time"
+          date="June 6, 2022"
+          description="Recent Improvements To Biometric Tracking Allow You To Track Heart Rate Over Time We have made some big improvements to"
         />
         <BlogCard
-          image={eczma}
-          heading="Dietitians Discuss Diet And Eczema"
-          date="April 27, 2022"
-          description="Registered Dietitians Discuss The Link Between Diet And Eczema Eczema is a common, chronic and complex skin disease that arises"
+          image="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/Apple-watch.jpeg"
+          heading="Now Available: Cronometer On Your Apple Watch"
+          date="June 1, 2022"
+          description="Introducing Cronometer On Apple Watch Since its introduction in 2014, the Apple Watch has gained its fair share of the"
         />
         <BlogCard
-          image={acne}
-          heading="How Can Diet & Nutrition Affect Acne"
-          date="April 26, 2022"
-          description="How Can Diet And Nutrition Affect Acne Acne is a chronic, multifactorial skin condition that is estimated to affect 9.4%"
+          image="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/nutrition_score.jpg"
+          heading="Introducing Men’s Health Nutrition Score"
+          date="May 31, 2022"
+          description="New Nutrition Score Focuses on Men’s Health Available To Male Free Users For The Month Of June It’s no surprise"
         />
       </Flex>
 
@@ -493,7 +482,10 @@ const BlogPage = () => {
           ----<span className={blogStyles.orangeColor}>Community</span>
         </Text>
         <br />
-        <Image src={knowYourself} borderRadius="0.5rem" />
+        <Image
+          src="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/know_yourself.png"
+          borderRadius="0.5rem"
+        />
         <br />
         <Heading size={{ base: "auto", md: "2xl", xl: "2xl" }}>
           Eat smarter. Go farther.
@@ -526,12 +518,13 @@ const BlogPage = () => {
           wrap="wrap"
         >
           <BlogCard
-            image={eczma}
-            heading="Dietitians Discuss Diet And Eczema"
+            image="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/nutrition_Therapist.jpeg"
+            heading="Meet Aaron Day: Nutritional Therapist & Know Yourself Ambassador"
           />
           <BlogCard
-            image={acne}
-            heading="How Can Diet & Nutrition Affect Acne"
+            image="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/nutrition_coach.jpeg"
+            heading="Meet Alex Marshall: Nutrition Coach & Know Yourself Ambassador
+            "
           />
         </Flex>
       </Box>
@@ -565,7 +558,10 @@ const BlogPage = () => {
         rowGap="10"
       >
         <Box width={{ base: "auto", md: "45%", xl: "45%" }}>
-          <Image src={cronometerGraphic} width="100%" />
+          <Image
+            src="https://raw.githubusercontent.com/amandk5/nutrimeterImages/329696b37f995e056527958003965c238d38ce40/Images/cronometer-hero-graphic.svg"
+            width="100%"
+          />
         </Box>
         <Box width={{ base: "auto", md: "50%", xl: "50%" }}>
           <Heading size={{ base: "auto", md: "2xl", xl: "2xl" }}>
