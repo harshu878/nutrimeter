@@ -9,8 +9,14 @@ import {
 import React from 'react'
 import MacroTargets from '../macroTargets/MacroTargets'
 import { StyledBox } from './energySummery.styles'
+import { useSelector } from 'react-redux'
+import { colorOfCircle, getTotalEnergy } from './energySummeryData'
 
 const EnergySummery = () => {
+  const { foodItemsInList, baseValue, loading } = useSelector(
+    (store) => store.diary,
+  )
+
   return (
     <Box
       w="full"
@@ -35,9 +41,12 @@ const EnergySummery = () => {
           <VStack spacing={0} h="115px">
             <CircularProgress
               size="100px"
-              thickness="12px"
-              value={40}
-              color="blue.600"
+              thickness="15px"
+              value={getTotalEnergy(foodItemsInList, baseValue).per}
+              isIndeterminate={loading}
+              color={colorOfCircle(
+                getTotalEnergy(foodItemsInList, baseValue).per,
+              )}
             >
               <CircularProgressLabel
                 style={{
@@ -47,8 +56,10 @@ const EnergySummery = () => {
                   alignItems: 'center',
                 }}
               >
-                <p style={{ fontSize: '15px', fontWeight: 'bold' }}>40%</p>
-                <p style={{ fontSize: '11px', color: 'gray' }}>Fiber</p>
+                <p style={{ fontSize: '15px', fontWeight: 'bold' }}>
+                  {getTotalEnergy(foodItemsInList, baseValue).total.toFixed(0)}
+                </p>
+                <p style={{ fontSize: '11px', color: 'gray' }}>kcal</p>
               </CircularProgressLabel>
             </CircularProgress>
             <Text fontSize="11px" fontWeight="bold">
@@ -58,9 +69,12 @@ const EnergySummery = () => {
           <VStack spacing={0} h="115px">
             <CircularProgress
               size="100px"
-              thickness="12px"
-              value={40}
-              color="red.600"
+              thickness="15px"
+              value={getTotalEnergy(foodItemsInList, baseValue).remPer}
+              isIndeterminate={loading}
+              color={colorOfCircle(
+                getTotalEnergy(foodItemsInList, baseValue).per,
+              )}
             >
               <CircularProgressLabel
                 style={{
@@ -70,8 +84,12 @@ const EnergySummery = () => {
                   alignItems: 'center',
                 }}
               >
-                <p style={{ fontSize: '15px', fontWeight: 'bold' }}>40%</p>
-                <p style={{ fontSize: '11px', color: 'gray' }}>Fiber</p>
+                <p style={{ fontSize: '15px', fontWeight: 'bold' }}>
+                  {getTotalEnergy(foodItemsInList, baseValue).remaining.toFixed(
+                    0,
+                  )}
+                </p>
+                <p style={{ fontSize: '11px', color: 'gray' }}>kcal</p>
               </CircularProgressLabel>
             </CircularProgress>
             <Text fontSize="11px" fontWeight="bold">
@@ -79,7 +97,9 @@ const EnergySummery = () => {
             </Text>
           </VStack>
           <StyledBox>
-            <div className="topBox">1582</div>
+            <div className="topBox">
+              {getTotalEnergy(foodItemsInList, baseValue).remaining.toFixed(0)}
+            </div>
             <div className="bottomBox">Calories remaining</div>
             <Text fontSize="11px" color="black" fontWeight="bold">
               BUDGET

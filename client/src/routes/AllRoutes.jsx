@@ -15,7 +15,6 @@ const AllRoutes = () => {
       <Route path="/blog" element={<BlogPage/>} />
       <Route path="/pro" element={<CronoPro/>} />
       <Route path="/about" element={ <About/> } />
-
       <Route path="/checkCalories" element={<AfterLoginPage />}>
         <Route path="/checkCalories" element={<Diarypage />} />
         <Route path="trends" element={<Trends />} />
