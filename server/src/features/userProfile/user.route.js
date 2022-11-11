@@ -40,7 +40,7 @@ app.post('/additem', async (req, res) => {
     try {
         let userProfile = await UserProfiles.findOne({ user: userId });
         if (userProfile) {
-            let date = `${new Date().toLocaleDateString()}`
+            let date = `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}`
             let isExist = false;
             userProfile.products.forEach(ele => {
                 if (ele.time === date && ele.productId === product) isExist = true;
@@ -70,7 +70,7 @@ app.post('/additem', async (req, res) => {
                             servings: serving,
                             totalEnergy: addTotalEnergy(existingProduct, serving),
                             product: updatedProduct(existingProduct, serving),
-                            time: `${new Date().toLocaleDateString()}`
+                            time: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}`
                         }]
                 }
             }
@@ -86,7 +86,7 @@ app.post('/additem', async (req, res) => {
                         product: updatedProduct(existingProduct, serving),
                         servings: serving,
                         totalEnergy: addTotalEnergy(existingProduct, serving),
-                        time: `${new Date().toLocaleDateString()}`
+                        time: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}`
                     }
                 ]
             }

@@ -371,7 +371,7 @@ const HomePage = () => {
       </Grid>
 
 {/* section-12 green image */}
-<Flex w="full" bg="gray.200" m="auto">
+<Flex w="full" bg="gray.200" m="auto" mt="40px">
       <Grid w="70%" h="auto"
           borderRadius={"10px"} m="auto" mt="70px"
         justifyContent={"center"}

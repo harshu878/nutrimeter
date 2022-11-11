@@ -11,7 +11,7 @@ const changeColor = (val) => {
 const CustomSmallTable = ({ title, data }) => {
   return (
     <Box
-      w="354px"
+      w="361px"
       h="fit-content"
       py="5px"
       boxShadow="rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
@@ -47,9 +47,10 @@ const CustomSmallTable = ({ title, data }) => {
                   <Progress
                     //   bg="#ffffff"
                     colorScheme={changeColor((cal / 2400) * 100)}
-                    height="19.25px"
+                    height="18px"
                     w="87.5px"
                     value={(cal / 2400) * 100}
+                    borderRadius='2px'
                     boxShadow="rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px"
                   />
                 </td>

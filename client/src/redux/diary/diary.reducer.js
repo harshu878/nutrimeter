@@ -1,17 +1,28 @@
-import { ERROR_STATE, GET_FOOD_PRODUCT_LIST, LOADING_STATE, SUCCESS_STATE } from "./diary.types"
+import { ERROR_STATE, GET_ALL_PRODUCTS, GET_FOOD_PRODUCT_LIST, LOADING_STATE, SUCCESS_STATE } from "./diary.types"
 
 const initialState = {
     loading: false,
     error: false,
-    foodItemsInList: []
+    foodItemsInList: [],
+    usersAlItems: [],
+    allFoodItems: [],
+    baseValue: 2400
 }
 
 export const diaryReducer = (state = initialState, { type, payload }) => {
     switch (type) {
         case GET_FOOD_PRODUCT_LIST: {
+            console.log(payload);
             return {
                 ...state,
-                foodItemsInList: payload,
+                foodItemsInList: payload.products.filter(ele => ele.time === `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}`),
+                usersAlItems: payload.products,
+            }
+        }
+        case GET_ALL_PRODUCTS: {
+            return {
+                ...state,
+                allFoodItems: payload
             }
         }
         case LOADING_STATE: {
