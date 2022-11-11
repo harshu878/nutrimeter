@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import { useNavigate} from 'react-router-dom'
 import {
   Flex,
@@ -20,7 +21,11 @@ import {
   Text
 } from "@chakra-ui/react";
 import { FaUserAlt, FaLock } from "react-icons/fa";
-
+import axios from 'axios'
+import { useDispatch, useSelector } from "react-redux";
+import { SignupApi } from "../redux/auth/auth.actions";
+import Footer from "../components/Footer";
+import NavBar from "./NavBar";
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
 
@@ -33,38 +38,44 @@ const Signup = () => {
   });
   const [error, setError] = useState("");
   const navigate = useNavigate();
-
+  const dispatch=useDispatch()
   const handleChange = ({ currentTarget: input }) => {
     setData({ ...data, [input.name]: input.value });
   };
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const url = "http://localhost:8080/user/auth/register";
+  //     const { data: res } = await axios.post(url, data);
+  //     navigate("/login");
+  //     console.log(res.message);
+  //   } catch (error) {
+  //     if (
+  //       error.response &&
+  //       error.response.status >= 400 &&
+  //       error.response.status <= 500
+  //     ) {
+  //       setError(error.response.data.message);
+  //     }
+  //   }
+    
+  // };
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const url = "http://localhost:8080/api/users";
-      const { data: res } = await axios.post(url, data);
-      navigate("/login");
-      console.log(res.message);
-    } catch (error) {
-      if (
-        error.response &&
-        error.response.status >= 400 &&
-        error.response.status <= 500
-      ) {
-        setError(error.response.data.message);
-      }
-    }
+    e.preventDefault()
+    dispatch(SignupApi(data))
   };
-
     const [checkedItems, setCheckedItems] = useState([false, false])
 
   const allChecked = checkedItems.every(Boolean)
   const isIndeterminate = checkedItems.some(Boolean) && !allChecked
   return (
+    <>
+    <NavBar/>
     <Flex
       flexDirection="column"
-      width="100wh"
-      height="100vh"
+      // width="100wh"
+      // height="100vh"
      backgroundColor='#FAFAFA'
       justifyContent="center"
       alignItems="center"
@@ -109,7 +120,7 @@ const Signup = () => {
                     pointerEvents="none"
                     children={<CFaUserAlt color="gray.300" />}
                   />
-                  <Input  name="Name"
+                  <Input  name="name"
               onChange={handleChange}
               value={data.name}
               required type="text" placeholder="Name" />
@@ -191,6 +202,8 @@ const Signup = () => {
   </Flex>
   </form>
     </Flex>
+    <Footer/>
+    </>
   );
 };
 

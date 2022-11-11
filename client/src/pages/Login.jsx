@@ -9,21 +9,53 @@ import {
   InputLeftElement,
   chakra,
   Box,
-  Link,
+ 
   Avatar,
   FormControl,
   FormHelperText,
   InputRightElement,
   Image
 } from "@chakra-ui/react";
-import { FaUserAlt, FaLock } from "react-icons/fa";
 
+import { FaUserAlt, FaLock } from "react-icons/fa";
+import Footer from "../components/Footer";
+import NavBar from './NavBar';
+import { Link, useNavigate } from "react-router-dom";
+import { LoginApi } from "../redux/auth/auth.actions";
+import { useDispatch, useSelector } from "react-redux";
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
 
 const Login = () => {
- 
+  const {isAuthenticated}=useSelector(s=>s.auth.data)
+const [text,setText]=useState({})
+const dispatch=useDispatch()
+const navigate=useNavigate()
+
+const handleChange=(e)=>{
+    const {name,value}=e.target
+    setText({
+      ...text,
+      [name]:value,
+    })
+
+}
+
+useEffect(()=>{
+   if(isAuthenticated){
+      navigate("/")
+   }
+},[isAuthenticated])
+
+
+const handleSubmit=(e)=>{
+  e.preventDefault()
+  dispatch(LoginApi(text))
+}
+
   return (
+    <>
+<NavBar/>
     <Flex
       flexDirection="column"
       width="100wh"
@@ -46,7 +78,7 @@ const Login = () => {
           {/* <Image width={'100%'} src='https://i.postimg.cc/y8LKTYmp/Color-logo-no-background.png' alt='Dan Abramov' /> */}
           <img src="https://i.postimg.cc/7hV5qrzC/Color-logo-no-background.png" width="280" height="auto" alt="Cronometer"></img>
         <Box minW={{ base: "90%", md: "468px" }}>
-          <form>
+          <form  onSubmit={handleSubmit}>
             <Stack
               spacing={4}
             
@@ -57,7 +89,7 @@ const Login = () => {
                     pointerEvents="none"
                     children={<CFaUserAlt color="gray.300" />}
                   />
-                  <Input type="email" placeholder="Email Address" />
+                  <Input onChange={handleChange} type="email" placeholder="Email Address" />
                 </InputGroup>
               </FormControl>
               <FormControl>
@@ -68,6 +100,7 @@ const Login = () => {
                     children={<CFaLock color="gray.300" />}
                   />
                   <Input
+                  onChange={handleChange}
                     type="password"
                     placeholder="Password"
                   />
@@ -89,11 +122,11 @@ const Login = () => {
               <Flex justifyContent= 'space-between'>
       <Box >
       New to us?{' '} 
-        <Link color="tomato" href="#">
+        <Link to="/signup" style={{color:'#ff763f'}} >
        Sign Up Now
         </Link>
         </Box>
-                  <Link color="tomato" >Forgot password?</Link>
+                  <Link to="#" style={{color:'#ff763f'}} >Forgot password?</Link>
                
       </Flex>
             </Stack>
@@ -102,6 +135,8 @@ const Login = () => {
       </Stack>
     
     </Flex>
+    <Footer/>
+    </>
   );
 };
 

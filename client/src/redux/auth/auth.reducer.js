@@ -1,4 +1,4 @@
-import { AUTH_SIGN_IN_ERROR, AUTH_SIGN_IN_LOADING, AUTH_SIGN_IN_SUCCESS, AUTH_SIGN_OUT } from "./auth.types";
+import { AUTH_SIGN_IN_ERROR, AUTH_SIGN_IN_LOADING, AUTH_SIGN_IN_SUCCESS, AUTH_SIGN_OUT,  AUTH_SIGN_UP_LOADING, AUTH_SIGN_UP_SUCCESS, AUTH_SIGN_UP_ERROR  } from "./auth.types";
 
 // Note: Do not update/change the initial state
 export const authInitalState = {
@@ -40,7 +40,30 @@ export const authReducer = (state = authInitalState,{type,payload}) => {
         error:false
       }
     }
-
+  case AUTH_SIGN_UP_LOADING :{
+    return{
+      ...state,
+      loading:true
+    }
+  }
+  case AUTH_SIGN_UP_SUCCESS: {
+    return {
+      ...state,
+      loading:false,
+      data:{
+        token:payload.token,
+        isAuthenticated:false
+      },
+      error:false
+    }
+  }
+  case AUTH_SIGN_UP_ERROR: {
+    return {
+      ...state,
+      loading:false,
+      error:true
+    }
+  }
     case AUTH_SIGN_OUT :{
  
       return {
