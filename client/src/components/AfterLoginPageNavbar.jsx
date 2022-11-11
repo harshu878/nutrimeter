@@ -23,7 +23,7 @@ const AfterLoginPageNavbar = () => {
           fontWeight="500"
           color="rgb(184,56,5)"
         >
-          Dairy
+          Diary
         </Box>
       </Link>
       <Link onClick={() => setIsActive('trends')} to="/checkCalories/trends">
