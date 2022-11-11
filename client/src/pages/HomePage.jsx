@@ -1,6 +1,7 @@
 import React from 'react'
 import {NavLink} from "react-router-dom";
 import NavBar from './NavBar';
+import Footer from '../components/Footer';
 import { Box, Flex, Link, Image,HStack, Icon, Text,Spacer,ButtonGroup,SimpleGrid,
   Button,Heading,Grid,GridItem, Highlight} from '@chakra-ui/react';
 
@@ -434,6 +435,9 @@ const HomePage = () => {
                   <Text fontSize={fontSize} p="25px" >Become an Affiliate</Text>
           </Button>
           </Flex>
+
+          {/* Homepage footer */}
+          <Footer></Footer>
 
     </Box>
 
