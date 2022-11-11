@@ -119,7 +119,7 @@ const handleSubmit=(e)=>{
               >
                 LOGIN
               </Button>
-              <Flex justifyContent= 'space-between'>
+              <Flex direction={{ base: 'column-reverse', md: 'row' }} justifyContent= 'space-between'>
       <Box >
       New to us?{' '} 
         <Link to="/signup" style={{color:'#ff763f'}} >

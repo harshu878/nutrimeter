@@ -1,6 +1,6 @@
 import { AUTH_SIGN_IN_ERROR, AUTH_SIGN_IN_LOADING, AUTH_SIGN_IN_SUCCESS, AUTH_SIGN_OUT,  AUTH_SIGN_UP_LOADING, AUTH_SIGN_UP_SUCCESS, AUTH_SIGN_UP_ERROR  } from "./auth.types";
 
-// Note: Do not update/change the initial state
+
 export const authInitalState = {
   loading: false,
   data: {
