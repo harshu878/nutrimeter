@@ -25,7 +25,7 @@ const NavBar = () => {
         <Link href="/">
           <Image
             width={{ base: "100px", md: "150px", lg: "196px" }} 
-            src="/pic/logo.png"
+            src="https://i.postimg.cc/y8LKTYmp/Color-logo-no-background.png"
           ></Image>
         </Link>
       </Box>
@@ -102,7 +102,7 @@ const NavBar = () => {
           </Box>
           
           <Box p="1">
-              <NavLink to="/">
+              <NavLink to="/login">
                 <Button border="1px solid orange" bg={"white.400"} colorScheme="orange.500" color="orange.300">
                   <Text fontSize={fontSize} _hover={{color:"orange"}}>Login</Text>
                 </Button>
