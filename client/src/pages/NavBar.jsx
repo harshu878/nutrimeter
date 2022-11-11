@@ -32,21 +32,21 @@ const NavBar = () => {
         <HStack gap={3}>
           <Box p="1" >
             <NavLink to="/">
-              <Text  fontSize={fontSize} >
+              <Text  fontSize={fontSize} _hover={{color:"orange"}}>
                 Products
               </Text>
             </NavLink>
           </Box>
           <Box p="1" >
             <NavLink to="/" >
-              <Text  fontSize={fontSize} colorScheme="orange.500">
+              <Text  fontSize={fontSize} colorScheme="orange.500" _hover={{color:"orange"}}>
                 Support
               </Text>
             </NavLink>
           </Box>
           <Box p="1">
             <NavLink to="/">
-              <Text  fontSize={fontSize}>
+              <Text  fontSize={fontSize} _hover={{color:"orange"}}>
                 Blog
               </Text>
             </NavLink>
@@ -54,7 +54,7 @@ const NavBar = () => {
 
           <Box p="1">
             <NavLink to="/">
-              <Text  fontSize={fontSize}>
+              <Text  fontSize={fontSize} _hover={{color:"orange"}}>
                 Forums
               </Text>
             </NavLink>
@@ -62,7 +62,7 @@ const NavBar = () => {
 
           <Box p="1">
             <NavLink to="/">
-              <Text  fontSize={fontSize}>
+              <Text  fontSize={fontSize} _hover={{color:"orange"}}>
                 About
               </Text>
             </NavLink>
@@ -71,18 +71,9 @@ const NavBar = () => {
           <Box p="1">
               <NavLink to="/">
                 <Button border="1px solid orange" bg={"white.400"} colorScheme="orange.500" color="orange.300">
-                  <Text fontSize={fontSize}>Login</Text>
+                  <Text fontSize={fontSize} _hover={{color:"orange"}}>Login</Text>
                 </Button>
               </NavLink>
-          </Box>
-          <Box mr="10px">
-            <IconButton
-              onClick={toggleColorMode}
-              isRound={true}
-              size="md"
-              alignSelf="flex-end"
-              icon={colorMode === "light" ? <FaSun /> : <FaMoon />}
-            ></IconButton>
           </Box>
         </HStack>
       )}
