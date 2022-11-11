@@ -25,7 +25,7 @@ const NavBar = () => {
         <Link href="/">
           <Image
             width={{ base: "100px", md: "150px", lg: "196px" }} 
-            src="https://i.postimg.cc/y8LKTYmp/Color-logo-no-background.png"
+            src="https://i.postimg.cc/7hV5qrzC/Color-logo-no-background.png"
           ></Image>
         </Link>
       </Box>
