@@ -1,8 +1,18 @@
 import { Box, Image, Text } from '@chakra-ui/react'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { TableWrapper } from './cumstomTable.styles'
+import { useSelector, useDispatch } from 'react-redux'
+import { getfoodProducts } from '../../redux/diary/diary.actions'
 
 const CustomTable = () => {
+  const { foodItemsInList, loading, error } = useSelector(
+    (store) => store.diary,
+  )
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getfoodProducts())
+  }, [])
   return (
     <Box
       w="full"
@@ -14,23 +24,32 @@ const CustomTable = () => {
         <thead>
           <tr>
             <th>Description</th>
-            <th>Amount</th>
-            <th>Unit</th>
+            <th>Servings</th>
             <th>Energy (kcal)</th>
           </tr>
         </thead>
         <tbody>
-          {new Array(5).fill(0).map((_, ind) => (
-            <tr key={ind}>
-              <td style={{ display: 'flex', gap: '5px' }}>
-                <Image w="14px" h="15px" src="/Images/appleImage.png" />
-                <Text>Avacardo black sins</Text>
-              </td>
-              <td style={{ textAlign: 'right' }}>1</td>
-              <td>each</td>
-              <td style={{ textAlign: 'right' }}>227.12</td>
-            </tr>
-          ))}
+          {foodItemsInList?.products?.map(
+            ({ totalEnergy, servings, product: { Description } }, ind) => {
+              if (loading) {
+                return <div>Loading....</div>
+              } else if (error) {
+                return <div>Error...</div>
+              }
+              return (
+                <tr key={ind}>
+                  <td style={{ display: 'flex', gap: '5px' }}>
+                    <Image w="14px" h="15px" src="/Images/appleImage.png" />
+                    <Text>{Description}</Text>
+                  </td>
+                  <td style={{ textAlign: 'center' }}>{servings}</td>
+                  <td style={{ textAlign: 'right' }}>
+                    {totalEnergy.toFixed(2)}
+                  </td>
+                </tr>
+              )
+            },
+          )}
         </tbody>
       </TableWrapper>
     </Box>

@@ -26,6 +26,12 @@ const authMiddleWare = async (req, res, next) => {
 const app = express.Router();
 app.use(authMiddleWare)
 
+app.get('/getitems', async (req, res) => {
+    const userId = req.userId;
+    let userProfile = await UserProfiles.findOne({ user: userId });
+    res.send(userProfile);
+})
+
 app.post('/additem', async (req, res) => {
     let { product, serving } = req.body;
     serving = Number(serving);
