@@ -8,7 +8,8 @@ import Trends from '../pages/Trends'
 import About from '../pages/About'
 import Login from '../pages/Login'
 import Signup from '../pages/Signup'
-import BodyMeasurement from '../pages/BodyMeasurement' import CronoPro from '../pages/CronoPro'
+import BodyMeasurement from '../pages/BodyMeasurement' 
+import CronoPro from '../pages/CronoPro'
 
 const AllRoutes = () => {
   return (
