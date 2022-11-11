@@ -1,139 +1,139 @@
 export const data = (foodItemsInList, baseVal = 2400) => {
     let fat = {
-        'Monosaturated Fat': foodItemsInList.products.reduce(
+        'Monosaturated Fat': foodItemsInList.reduce(
             (acc, ele) => acc + ele.product.Data.Fat['Monosaturated Fat'],
             0,
         ),
-        'Polysaturated Fat': foodItemsInList.products.reduce(
+        'Polysaturated Fat': foodItemsInList.reduce(
             (acc, ele) => acc + ele.product.Data.Fat['Polysaturated Fat'],
             0,
         ),
-        'Saturated Fat': foodItemsInList.products.reduce(
+        'Saturated Fat': foodItemsInList.reduce(
             (acc, ele) => acc + ele.product.Data.Fat['Saturated Fat'],
             0,
         ),
-        'Total Lipid': foodItemsInList.products.reduce(
+        'Total Lipid': foodItemsInList.reduce(
             (acc, ele) => acc + ele.product.Data.Fat['Total Lipid'],
             0,
         ),
     }
     let major = {
-        Copper: foodItemsInList.products.reduce(
+        Copper: foodItemsInList.reduce(
             (acc, ele) => acc + ele.product.Data['Major Minerals'].Copper,
             0,
         ),
-        Magnesium: foodItemsInList.products.reduce(
+        Magnesium: foodItemsInList.reduce(
             (acc, ele) => acc + ele.product.Data['Major Minerals'].Magnesium,
             0,
         ),
-        Phosphorus: foodItemsInList.products.reduce(
+        Phosphorus: foodItemsInList.reduce(
             (acc, ele) => acc + ele.product.Data['Major Minerals'].Phosphorus,
             0,
         ),
-        Potassium: foodItemsInList.products.reduce(
+        Potassium: foodItemsInList.reduce(
             (acc, ele) => acc + ele.product.Data['Major Minerals'].Potassium,
             0,
         ),
-        Zinc: foodItemsInList.products.reduce(
+        Zinc: foodItemsInList.reduce(
             (acc, ele) => acc + ele.product.Data['Major Minerals'].Zinc,
             0,
         ),
     }
     let Vitamins = {
-        VitaminA: foodItemsInList.products.reduce(
+        VitaminA: foodItemsInList.reduce(
             (acc, ele) => acc + ele.product.Data.Vitamins['Vitamin A - RAE'],
             0,
         ),
-        VitaminB12: foodItemsInList.products.reduce(
+        VitaminB12: foodItemsInList.reduce(
             (acc, ele) => acc + ele.product.Data.Vitamins['Vitamin B12'],
             0,
         ),
-        VitaminB6: foodItemsInList.products.reduce(
+        VitaminB6: foodItemsInList.reduce(
             (acc, ele) => acc + ele.product.Data.Vitamins['Vitamin B6'],
             0,
         ),
-        VitaminC: foodItemsInList.products.reduce(
+        VitaminC: foodItemsInList.reduce(
             (acc, ele) => acc + ele.product.Data.Vitamins['Vitamin C'],
             0,
         ),
-        VitaminE: foodItemsInList.products.reduce(
+        VitaminE: foodItemsInList.reduce(
             (acc, ele) => acc + ele.product.Data.Vitamins['Vitamin E'],
             0,
         ),
-        VitaminK: foodItemsInList.products.reduce(
+        VitaminK: foodItemsInList.reduce(
             (acc, ele) => acc + ele.product.Data.Vitamins['Vitamin K'],
             0,
         ),
     }
 
     //4
-    let AlphaCarotene = foodItemsInList.products.reduce(
+    let AlphaCarotene = foodItemsInList.reduce(
         (acc, ele) => acc + ele.product.Data['Alpha Carotene'],
         0,
     )
-    let BetaCarotene = foodItemsInList.products.reduce(
+    let BetaCarotene = foodItemsInList.reduce(
         (acc, ele) => acc + ele.product.Data['Beta Carotene'],
         0,
     )
-    let BetaCryptoxanthin = foodItemsInList.products.reduce(
+    let BetaCryptoxanthin = foodItemsInList.reduce(
         (acc, ele) => acc + ele.product.Data['Beta Cryptoxanthin'],
         0,
     )
-    let Choline = foodItemsInList.products.reduce(
+    let Choline = foodItemsInList.reduce(
         (acc, ele) => acc + ele.product.Data.Choline,
         0,
     )
-    let Fiber = foodItemsInList.products.reduce(
+    let Fiber = foodItemsInList.reduce(
         (acc, ele) => acc + ele.product.Data.Fiber,
         0,
     )
-    let LuteinandZeaxanthin = foodItemsInList.products.reduce(
-        (acc, ele) => acc + ele.product.Data.LuteinandZeaxanthin,
+    let LuteinandZeaxanthin = foodItemsInList.reduce(
+        (acc, ele) => acc + ele.product.Data['Lutein and Zeaxanthin'],
         0,
     )
-    let Lycopene = foodItemsInList.products.reduce(
+    let Lycopene = foodItemsInList.reduce(
         (acc, ele) => acc + ele.product.Data.Lycopene,
         0,
     )
-    let Niacin = foodItemsInList.products.reduce(
+    let Niacin = foodItemsInList.reduce(
         (acc, ele) => acc + ele.product.Data.Niacin,
         0,
     )
-    let Retinol = foodItemsInList.products.reduce(
+    let Retinol = foodItemsInList.reduce(
         (acc, ele) => acc + ele.product.Data.Retinol,
         0,
     )
-    let Riboflavin = foodItemsInList.products.reduce(
+    let Riboflavin = foodItemsInList.reduce(
         (acc, ele) => acc + ele.product.Data.Riboflavin,
         0,
     )
-    let Selenium = foodItemsInList.products.reduce(
+    let Selenium = foodItemsInList.reduce(
         (acc, ele) => acc + ele.product.Data.Selenium,
         0,
     )
-    let Thiamin = foodItemsInList.products.reduce(
+    let Thiamin = foodItemsInList.reduce(
         (acc, ele) => acc + ele.product.Data.Thiamin,
         0,
     )
 
     //5
-    let Carbohydrate = foodItemsInList.products.reduce(
+    let Carbohydrate = foodItemsInList.reduce(
         (acc, ele) => acc + ele.product.Data.Carbohydrate,
         0,
     )
-    let Cholesterol = foodItemsInList.products.reduce(
+    let Cholesterol = foodItemsInList.reduce(
         (acc, ele) => acc + ele.product.Data.Cholesterol,
         0,
     )
-    let Protein = foodItemsInList.products.reduce(
+    let Protein = foodItemsInList.reduce(
         (acc, ele) => acc + ele.product.Data.Protein,
         0,
     )
-    let SugarTotal = foodItemsInList.products.reduce(
-        (acc, ele) => acc + ele.product.Data.SugarTotal,
+    let SugarTotal = foodItemsInList.reduce(
+        (acc, ele) => acc + ele.product.Data['Sugar Total'],
         0,
     )
-    let Water = foodItemsInList.products.reduce(
+    let Water = foodItemsInList.reduce(
         (acc, ele) => acc + ele.product.Data.Water,
         0,
     )

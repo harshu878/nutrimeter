@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Box, HStack } from '@chakra-ui/react'
+import { Box, HStack, Image, Spacer } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -15,7 +15,14 @@ const AfterLoginPageNavbar = () => {
       align="end"
       justify="center"
       spacing="25px"
+      position="relative"
     >
+      <Image
+        position="absolute"
+        left="25px"
+        src="/Images/Color logo - no background.png"
+        w="190px"
+      />
       <Link onClick={() => setIsActive('dairy')} to="/checkCalories">
         <Box
           className="links"

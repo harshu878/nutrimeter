@@ -12,7 +12,7 @@ const CustomTable = () => {
 
   useEffect(() => {
     dispatch(getfoodProducts())
-  }, [])
+  }, [dispatch])
   return (
     <Box
       w="full"
@@ -29,12 +29,12 @@ const CustomTable = () => {
           </tr>
         </thead>
         <tbody>
-          {foodItemsInList?.products?.map(
+          {foodItemsInList.map(
             ({ totalEnergy, servings, product: { Description } }, ind) => {
               if (loading) {
-                return <div>Loading....</div>
+                return <div key={ind}>Loading....</div>
               } else if (error) {
-                return <div>Error...</div>
+                return <div key={ind}>Error...</div>
               }
               return (
                 <tr key={ind}>
