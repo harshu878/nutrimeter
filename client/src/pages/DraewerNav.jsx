@@ -31,7 +31,7 @@ function DraewerNav() {
       <Button mL={"auto"} width={6} onClick={onOpen}>
         <IconButton _hover={{bg:"orange.400", color:"white"}} icon={<FaBars></FaBars>}></IconButton>
       </Button>
-      <Drawer placement={placement} onClose={onClose} isOpen={isOpen} ml="-100px">
+      <Drawer placement={placement} onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
         <Center w={2}>
           <DrawerContent  display={"Flex"} alignItems={"center"} justifyContent={"center"}
