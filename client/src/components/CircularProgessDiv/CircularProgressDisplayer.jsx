@@ -9,7 +9,7 @@ const CircularProgressDisplayer = () => {
   const dispatch = useDispatch()
   const { foodItemsInList } = useSelector((store) => store.diary)
   useEffect(() => {
-    dispatch(getfoodProducts())
+    // dispatch(getfoodProducts())
   }, [])
   const items = nutrientsData(foodItemsInList)
   return (

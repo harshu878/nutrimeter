@@ -73,7 +73,7 @@ const AfterLoginPageNavbar = () => {
           Plans
         </Box>
       </Link>
-      <Link onClick={() => setIsActive('help')} to="">
+      <Link onClick={() => setIsActive('help')} to="/checkCalories/help">
         <Box
           className="links"
           id={isActive === 'help' ? 'active' : 'notActive'}
