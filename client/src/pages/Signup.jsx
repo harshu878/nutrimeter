@@ -190,7 +190,7 @@ const Signup = () => {
         </Checkbox>
       
 </Stack>
-{/* {error &&<Stack   
+{error &&<Stack   
        width={'700px'}
       boxShadow= 'rgba(0, 0, 0, 0.16) 0px 1px 4px'
            flexDir="column"
@@ -200,10 +200,10 @@ const Signup = () => {
         //    alignItems="center"
         backgroundColor={'red.100'}>
         
-        <Text> A user for that e-mail address already exists. Please enter a different e-mail address</Text>
-</Stack>} */}
+        <Text>Error! A user for that e-mail address already exists. Please enter a different e-mail address</Text>
+</Stack>}
 <Flex mb='4' p='4'>  
-    <Button type="submit" colorScheme='green' size='lg' width={'650px'}>
+    <Button type="submit"  isLoading={loading} colorScheme='green' size='lg' width={'650px'}>
     Create Account
   </Button>
   </Flex>
