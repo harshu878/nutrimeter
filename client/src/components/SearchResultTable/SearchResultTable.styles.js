@@ -14,6 +14,9 @@ export const TableWrapper = styled.table`
     font-size: 13px;
   }
   tbody {
+    #active{
+      background-color: #d0d0d0;
+    }
     tr {
       font-size: 12px;
       border-bottom: 1px solid #f7f7f7;

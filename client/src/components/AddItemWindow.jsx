@@ -16,15 +16,34 @@ import {
 import React, { useEffect, useState } from 'react'
 import { AiOutlineSearch, AiTwotoneSetting } from 'react-icons/ai'
 import { useDispatch, useSelector } from 'react-redux'
-import { getAllProductToDisplay } from '../redux/diary/diary.actions'
+import {
+  addNewProduct,
+  getAllProductToDisplay,
+} from '../redux/diary/diary.actions'
 import SearchResultTable from './SearchResultTable/SearchResultTable'
 
 const AddItemWindow = ({ toggleVisibility }) => {
   const { allFoodItems } = useSelector((store) => store.diary)
   const dispatch = useDispatch()
   const [query, setQuery] = useState('')
+  const [serving, setServing] = useState(1)
+  const [product, setProduct] = useState('')
+
+  const handleClickProduct = (item) => {
+    setProduct(item)
+  }
+
+  const handleAddItem = () => {
+    if (product === '') {
+      alert('select any product')
+      return
+    }
+    dispatch(addNewProduct({ product, serving }))
+    toggleVisibility()
+  }
+
   useEffect(() => {
-    if(!query) dispatch(getAllProductToDisplay(query))
+    if (!query) dispatch(getAllProductToDisplay(query))
   }, [dispatch])
   return (
     <VStack
@@ -90,7 +109,42 @@ const AddItemWindow = ({ toggleVisibility }) => {
           </TabList>
           <TabPanels>
             <TabPanel>
-              <SearchResultTable allFoodItems={allFoodItems} />
+              <SearchResultTable
+                allFoodItems={allFoodItems}
+                handleClickProduct={handleClickProduct}
+              />
+              <HStack
+                m="auto"
+                w="450px"
+                align="center"
+                justify="center"
+                mt="9px"
+                spacing={7}
+              >
+                <Text h="30px" fontWeight="600" color="orange.500">
+                  Carrots,Raw
+                </Text>
+                <HStack>
+                  <Text fontSize={11}>Enter servings</Text>
+                  <FormControl>
+                    <Input
+                      value={serving}
+                      onChange={({ target: { value } }) => setServing(+value)}
+                      type="number"
+                      w="60px"
+                      h="30px"
+                    />
+                  </FormControl>
+                </HStack>
+                <Button
+                  onClick={handleAddItem}
+                  h="40px"
+                  variant="outline"
+                  borderColor="orange.700"
+                >
+                  Add Item
+                </Button>
+              </HStack>
             </TabPanel>
             <TabPanel>
               <SearchResultTable />

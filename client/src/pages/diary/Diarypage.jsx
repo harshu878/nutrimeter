@@ -18,7 +18,7 @@ const Diarypage = () => {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(getfoodProducts())
-  }, [dispatch])
+  }, [])
   if (foodItemsInList) {
     var { main, micro, vitamins, Major, Fat } = data(foodItemsInList)
   }
