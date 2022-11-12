@@ -1,12 +1,12 @@
 
 import { AUTH_SIGN_IN_ERROR, AUTH_SIGN_IN_LOADING, AUTH_SIGN_IN_SUCCESS, AUTH_SIGN_OUT,  AUTH_SIGN_UP_LOADING, AUTH_SIGN_UP_SUCCESS, AUTH_SIGN_UP_ERROR  } from "./auth.types";
 
-
+const userToken   = localStorage.getItem('userToken') || ''
 export const authInitalState = {
   loading: false,
   data: {
-    token: "",
-    isAuthenticated: false,
+    token: userToken,
+    isAuthenticated: userToken!=='' ? true: false,
   },
   error: false,
   bool:false,
@@ -31,7 +31,7 @@ export const authReducer = (state = authInitalState,{type,payload}) => {
     }
 
     case AUTH_SIGN_IN_SUCCESS :{
-
+       localStorage.setItem('userToken', payload.token)
       return {
         ...state,
         loading:false,
@@ -69,7 +69,7 @@ export const authReducer = (state = authInitalState,{type,payload}) => {
     }
   }
     case AUTH_SIGN_OUT :{
- 
+		localStorage.removeItem('userToken')
       return {
         ...state,
         loading:false,

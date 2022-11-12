@@ -31,6 +31,7 @@ const Login = () => {
   const {isAuthenticated}=useSelector(s=>s.auth.data)
   const {error}=useSelector(s=>s.auth)
   const {loading}=useSelector(s=>s.auth)
+  const {token}=useSelector(s=>s.auth.data)
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -44,6 +45,7 @@ const handleChange=(e)=>{
 }
 
 useEffect(()=>{
+
    if(isAuthenticated){
       navigate("/checkCalories")
    }
@@ -117,7 +119,7 @@ const handleSubmit=(e)=>{
                 </InputGroup>
              
               </FormControl>
-              {error && <Box textAlign={'center'}  backgroundColor={'red.100'}><Text>Wrong credentials! invalid username or password.</Text></Box>}
+              {error && <Box textAlign={'center'}  backgroundColor={'red.100'}><Text as='b'>Wrong credentials! invalid username or password.</Text></Box>}
             
               <Button
                 borderRadius={0}
