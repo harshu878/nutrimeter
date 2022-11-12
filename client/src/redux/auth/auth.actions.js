@@ -4,53 +4,52 @@ import { AUTH_SIGN_IN_ERROR, AUTH_SIGN_IN_LOADING, AUTH_SIGN_IN_SUCCESS, AUTH_SI
 
 
 
-export const LoginApi=(creds)=>async(dispatch)=>{
-    dispatch ({
-        type:AUTH_SIGN_IN_LOADING
+export const LoginApi = (creds) => async (dispatch) => {
+    dispatch({
+        type: AUTH_SIGN_IN_LOADING
     })
     try {
 
-        let res=await axios.post("http://localhost:8080/user/auth/login",creds)
+        let res = await axios.post("http://localhost:8080/user/auth/login", creds)
 
-        
+
         dispatch({
-            type:AUTH_SIGN_IN_SUCCESS,
-            payload:res.data
+            type: AUTH_SIGN_IN_SUCCESS,
+            payload: res.data
         })
-       
+
     } catch (error) {
         dispatch({
-            type:AUTH_SIGN_IN_ERROR
-          
+            type: AUTH_SIGN_IN_ERROR
+
         })
     }
 
 }
 
-export const SignupApi=(creds)=>async(dispatch)=>{
-    dispatch ({
-        type:AUTH_SIGN_UP_LOADING
+export const SignupApi = (creds) => async (dispatch) => {
+    dispatch({
+        type: AUTH_SIGN_UP_LOADING
     })
     try {
-
-        let res=await axios.post("http://localhost:8080/user/auth/register",creds)
-
         
+        let res = await axios.post("http://localhost:8080/user/auth/register", creds)
+
         dispatch({
-            type:AUTH_SIGN_UP_SUCCESS,
-            payload:res.data
+            type: AUTH_SIGN_UP_SUCCESS,
+            payload: res.data
         })
-       
+
     } catch (error) {
         dispatch({
-            type:AUTH_SIGN_UP_ERROR
-          
+            type: AUTH_SIGN_UP_ERROR
+
         })
     }
 
 }
-export const LogOut =()=>(dispatch)=>{
-        dispatch({
-            type:AUTH_SIGN_OUT
-        })
+export const LogOut = () => (dispatch) => {
+    dispatch({
+        type: AUTH_SIGN_OUT
+    })
 }

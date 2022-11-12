@@ -46,3 +46,70 @@ export const chartData = (dataArray, title) => {
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
+
+
+
+
+/*=============================================
+=            Dougnet Chart Data            =
+=============================================*/
+
+export const singleProductData = (product) => {
+    let title = product.Category
+    let protein = product.Data.Protein;
+    let carb = product.Data.Carbohydrate;
+    let fat = product.Data.Fat['Total Lipid']
+    return {
+        labels: [
+            'Protein',
+            'Carbohydrate',
+            'Fat'
+        ],
+        datasets: [{
+            label: title,
+            data: [protein, carb, fat],
+            backgroundColor: [
+                'rgb(255, 99, 132)',
+                'rgb(54, 162, 235)',
+                'rgb(255, 205, 86)'
+            ],
+            hoverOffset: 3,
+        }],
+        options: {
+            plugins: {
+                legend: {
+                    labels: {
+                        font: {
+                            size: 10
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+export const dougnetData = {
+    datasets: [{
+        label: 'My First Dataset',
+        data: [300, 50, 100],
+        backgroundColor: [
+            'rgb(255, 99, 132)',
+            'rgb(54, 162, 235)',
+            'rgb(255, 205, 86)'
+        ],
+        hoverOffset: 4,
+
+    }],
+};
+
+
+
+
+
+
+/*=====  End of Dougnet Chart Data  ======*/
+
+
+
+

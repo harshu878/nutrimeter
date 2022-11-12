@@ -1,4 +1,4 @@
-import { Add_NEW_PRODUCT, ERROR_STATE, GET_ALL_PRODUCTS, GET_FOOD_PRODUCT_LIST, LOADING_STATE, SUCCESS_STATE } from "./diary.types";
+import { ERROR_STATE, GET_ALL_PRODUCTS, GET_FOOD_PRODUCT_LIST, LOADING_STATE, SUCCESS_STATE } from "./diary.types";
 import axios from 'axios'
 
 

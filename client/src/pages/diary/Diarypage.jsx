@@ -1,4 +1,4 @@
-import { Box, HStack, VStack } from '@chakra-ui/react'
+import { Box, HStack, Stack, VStack } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import CustomTable from '../../components/CustomTable/CustomTable'
 import CustomSmallTable from '../../components/CustomSmallTable/CustomSmallTable'
@@ -26,19 +26,39 @@ const Diarypage = () => {
   const toggleVisibility = () => setIsOpen((prev) => (prev = !prev))
 
   return (
-    <HStack w="1100px" h="1200px" margin="auto" mt="20px" align="flex-start">
-      <Box w="430px" h="900px" overflow="hidden">
+    <Stack
+      direction={{ base: 'column', lg: 'row' }}
+      w={{ base: '98%', lg: '1100px' }}
+      h={{ base: 'fit-content', lg: '1200px' }}
+      margin="auto"
+      mt="20px"
+      align="flex-start"
+    >
+      <Box
+        w={{ base: '98%', lg: '430px' }}
+        h={{ base: 'fit-content', lg: '900px' }}
+        overflow="hidden"
+      >
         <VStack w="full">
           <Chart title="Bar Representation" />
           <LineChart title="Line Representation" />
         </VStack>
       </Box>
-      <Box w="730px" h="1880px" display="flex" flexDirection="column" gap="7px">
+      <Box
+        w={{ base: '99%', lg: '730px' }}
+        h={{ base: 'fit-content', lg: '1880px' }}
+        display="flex"
+        flexDirection="column"
+        gap="7px"
+      >
         <AddFoodItem toggleVisibility={toggleVisibility} />
         <CustomTable />
         <CircularProgressDisplayer />
         <EnergySummery />
-        <HStack justify="space-between">
+        <Stack
+          direction={{ base: 'column',md:'row' }}
+          justify="space-between"
+        >
           <VStack>
             <CustomSmallTable title="Lipid" data={Fat} />
             <CustomSmallTable title="Major" data={Major} />
@@ -48,10 +68,10 @@ const Diarypage = () => {
             <CustomSmallTable title="Micro" data={micro} />
             <CustomSmallTable title="Main" data={main} />
           </VStack>
-        </HStack>
+        </Stack>
         {isOpen && <AddItemWindow toggleVisibility={toggleVisibility} />}
       </Box>
-    </HStack>
+    </Stack>
   )
 }
 
