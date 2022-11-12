@@ -1,6 +1,9 @@
 import { Box, Heading, Image, Text } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 const CategoryCard = ({ image, heading, date, description }) => {
+  const navigate = useNavigate();
+
   return (
     <>
       <Box
@@ -10,6 +13,17 @@ const CategoryCard = ({ image, heading, date, description }) => {
         boxShadow="lg"
         margin="auto"
         borderRadius="0.5rem"
+        cursor="pointer"
+        _hover={{ opacity: "0.9" }}
+        onClick={() => {
+          if (heading.includes("Sensitivities")) {
+            navigate("/blog/sugar-free-sensitivities");
+          } else if (heading.includes("Fiber")) {
+            navigate("/blog/fiber");
+          } else if (heading.includes("Digestion")) {
+            navigate("/blog/ways-to-ease-digestion");
+          }
+        }}
       >
         <Image
           src={image}
@@ -21,9 +35,10 @@ const CategoryCard = ({ image, heading, date, description }) => {
           borderRadius="0.5rem"
         />
         <br />
-        <Box padding="5" mb="3" 
-            height={{ base: "auto", md: "200px", xl: "200px" }}
-        
+        <Box
+          padding="5"
+          mb="3"
+          height={{ base: "auto", md: "200px", xl: "200px" }}
         >
           <Heading fontSize={{ base: "auto", md: "2xl", xl: "2xl" }}>
             {heading}
@@ -32,7 +47,9 @@ const CategoryCard = ({ image, heading, date, description }) => {
           <Text mb="3">{description}</Text>
         </Box>
         <hr />
-        <Text paddingX="5" paddingY="2">{date}</Text>
+        <Text paddingX="5" paddingY="2">
+          {date}
+        </Text>
       </Box>
     </>
   );

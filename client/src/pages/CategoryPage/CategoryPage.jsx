@@ -10,12 +10,14 @@ import { featuresData } from "../../data/Category/features";
 import { appUpdatesData } from "../../data/Category/appUpdates";
 import { fitnessData } from "../../data/Category/fitness";
 import { recipesData } from "../../data/Category/recipes";
+import Footer from "../../components/Footer";
 
 const CategoryPage = () => {
   const { type } = useParams();
   const [data, setData] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     switch (type) {
       case "Nutrition":
         setData(nutritionData);
@@ -77,6 +79,7 @@ const CategoryPage = () => {
           />
         ))}
       </Flex>
+      <Footer />
     </div>
   );
 };

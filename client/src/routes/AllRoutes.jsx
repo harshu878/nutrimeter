@@ -11,12 +11,14 @@ import Signup from "../pages/Signup";
 import BodyMeasurement from "../pages/BodyMeasurement";
 import CronoPro from "../pages/CronoPro";
 import CategoryPage from "../pages/CategoryPage/CategoryPage";
+import Blog from "../pages/Blog/Blog";
 
 const AllRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/blog" element={<BlogPage />} />
+      <Route path="/blog/:blogName" element={<Blog />} />
       <Route path="/blog/category/:type" element={<CategoryPage />} />
       <Route path="/pro" element={<CronoPro />} />
       <Route path="/about" element={<About />} />

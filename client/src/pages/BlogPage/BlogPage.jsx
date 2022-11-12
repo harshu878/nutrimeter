@@ -10,7 +10,8 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import SearchBox from "../../components/SearchBox/SearchBox.jsx";
 
 import { CgPlayButtonO } from "react-icons/cg";
 import { BiRightArrowAlt } from "react-icons/bi";
@@ -19,9 +20,11 @@ import { HiSearch } from "react-icons/hi";
 import blogStyles from "./BlogPage.module.css";
 import BlogCard from "../../components/BlogCard/BlogCard";
 import NavBar from "../NavBar";
+import Footer from "../../components/Footer";
 
 const BlogPage = () => {
   const [isClicked, setClicked] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div style={{ width: "auto" }}>
@@ -72,7 +75,12 @@ const BlogPage = () => {
                   transform="translate(-50%,-50%)"
                   cursor="pointer"
                 >
-                  <CgPlayButtonO size="100px" color="white" top="50px" />
+                  <CgPlayButtonO
+                    size="100px"
+                    color="white"
+                    top="50px"
+                    onClick={() => setClicked(!isClicked)}
+                  />
                 </Box>
               </Box>
             </>
@@ -86,7 +94,12 @@ const BlogPage = () => {
             live a healthier, happier life.{" "}
           </Text>
           <br />
-          <Button className={blogStyles.orangeButton} fontSize="xl">
+          <Button
+            cursor="pointer"
+            onClick={() => navigate("/")}
+            className={blogStyles.orangeButton}
+            fontSize="xl"
+          >
             Get Started
           </Button>
         </Box>
@@ -101,7 +114,11 @@ const BlogPage = () => {
             ----<span className={blogStyles.orangeColor}>Recent Posts</span>
           </Text>
           <br />
-          <Flex justifyContent="space-between">
+          <Flex
+            justifyContent="space-between"
+            cursor="pointer"
+            onClick={() => navigate("/blog/sugar-free-sensitivities")}
+          >
             <Image
               src="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/Blog-Img-Gummy-Bears.png"
               objectFit="cover"
@@ -118,7 +135,11 @@ const BlogPage = () => {
           </Flex>
           <br />
           <br />
-          <Flex justifyContent="space-between">
+          <Flex
+            justifyContent="space-between"
+            cursor="pointer"
+            onClick={() => navigate("/blog/fiber")}
+          >
             <Image
               src="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/Fiber.png"
               objectFit="cover"
@@ -135,7 +156,11 @@ const BlogPage = () => {
           </Flex>
           <br />
           <br />
-          <Flex justifyContent="space-between">
+          <Flex
+            justifyContent="space-between"
+            cursor="pointer"
+            onClick={() => navigate("/blog/ways-to-ease-digestion")}
+          >
             <Image
               src="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/Blog-Image-Avocado.png"
               objectFit="cover"
@@ -152,7 +177,12 @@ const BlogPage = () => {
           </Flex>
           <br />
           <br />
-          <Flex justifyContent="end" alignItems="center">
+          <Flex
+            justifyContent="end"
+            alignItems="center"
+            cursor="pointer"
+            onClick={() => navigate("/blog/category/Nutrition")}
+          >
             <Text
               fontSize="md"
               float="right"
@@ -167,76 +197,7 @@ const BlogPage = () => {
       <br />
       <br />
       {/* search section  */}
-      <Box textAlign="center" py="60px" className={blogStyles.grayBackground}>
-        <Heading size="2xl">Browse the Archives</Heading>
-        <br />
-        <br />
-        <Flex
-          justifyContent="space-evenly"
-          className={blogStyles.orangeColor}
-          fontSize="xl"
-          fontWeight="600"
-          wrap="wrap"
-          gap={{ base: "3" }}
-        >
-          <Link
-            to="/blog/category/Nutrition"
-            style={{ textDecoration: "none" }}
-            _hover={{ color: "#e56836" }}
-          >
-            Nutrition
-          </Link>
-          <Link
-            to="/blog/category/Fitness"
-            style={{ textDecoration: "none" }}
-            _hover={{ color: "#e56836" }}
-          >
-            Fitness
-          </Link>
-          <Link
-            to="/blog/category/Features"
-            style={{ textDecoration: "none" }}
-            _hover={{ color: "#e56836" }}
-          >
-            Features
-          </Link>
-          <Link
-            to="/blog/category/Recipes"
-            style={{ textDecoration: "none" }}
-            _hover={{ color: "#e56836" }}
-          >
-            Recipes
-          </Link>
-          <Link
-            to="/blog/category/app-updates"
-            style={{ textDecoration: "none" }}
-            _hover={{ color: "#e56836" }}
-          >
-            App Updates
-          </Link>
-        </Flex>
-        <br />
-        <br />
-        <InputGroup width="88%" margin="auto" borderRadius="0.5rem">
-          <InputRightElement
-            pointerEvents="none"
-            children={<HiSearch color="white" size="20px" />}
-            className={blogStyles.orangeBackground}
-            h="100%"
-            w="60px"
-            borderRightRadius="0.5rem"
-          />
-          <Input
-            type="tel"
-            placeholder="Search Blog Posts"
-            background="white"
-            py="28px"
-            fontSize="lg"
-            focusBorderColor="none"
-          />
-        </InputGroup>
-        <br />
-      </Box>
+      <SearchBox />
       {/* tips and tricks  */}
       <Flex
         padding={{ base: "20px", md: "50px 100px", xl: "50px 100px" }}
@@ -263,6 +224,8 @@ const BlogPage = () => {
           <Button
             className={blogStyles.orangeButton}
             fontSize={{ base: "auto", md: "xl", xl: "xl" }}
+            cursor="pointer"
+            onClick={() => navigate("/")}
           >
             Get the Tips
           </Button>
@@ -305,6 +268,8 @@ const BlogPage = () => {
           <Button
             className={blogStyles.orangeButton}
             fontSize={{ base: "auto", md: "xl", xl: "xl" }}
+            cursor="pointer"
+            onClick={() => navigate("/blog/category/app-updates")}
           >
             Read More
           </Button>
@@ -342,6 +307,8 @@ const BlogPage = () => {
             className={blogStyles.whiteButton}
             fontSize={{ base: "auto", md: "xl", xl: "xl" }}
             fontWeight="bold"
+            cursor="pointer"
+            onClick={() => navigate("/signup")}
           >
             Sign Up - It's Free
           </Button>
@@ -369,6 +336,8 @@ const BlogPage = () => {
               fontSize={{ base: "auto", md: "lg", xl: "lg" }}
               float="right"
               className={blogStyles.orangeColor}
+              cursor="pointer"
+              onClick={() => navigate("/")}
             >
               Explore More
             </Text>
@@ -424,6 +393,8 @@ const BlogPage = () => {
               fontSize={{ base: "auto", md: "lg", xl: "lg" }}
               float="right"
               className={blogStyles.orangeColor}
+              cursor="pointer"
+              onClick={() => navigate("/blog/category/app-updates")}
             >
               Explore More
             </Text>
@@ -501,6 +472,8 @@ const BlogPage = () => {
         <Button
           className={blogStyles.orangeButton}
           fontSize={{ base: "auto", md: "xl", xl: "xl" }}
+          cursor="pointer"
+          onClick={() => navigate("/about")}
         >
           Get To Know Yourself
         </Button>
@@ -532,6 +505,8 @@ const BlogPage = () => {
       <Flex
         justifyContent="flex-end"
         padding={{ base: "20px", md: "30px 70px", xl: "30px 70px" }}
+        cursor="pointer"
+        onClick={() => navigate("/about")}
       >
         <Text
           fontSize={{ base: "auto", md: "lg", xl: "lg" }}
@@ -572,16 +547,19 @@ const BlogPage = () => {
           <Button
             className={blogStyles.orangeButton}
             fontSize={{ base: "auto", md: "xl", xl: "xl" }}
+            cursor="pointer"
+            onClick={() => navigate("/signup")}
           >
             Sign Up - It's Free
           </Button>
           <br />
           <br />
-          <Link fontSize="xl" textDecoration="underline">
-            Learn More
+          <Link textDecoration="underline" to="/">
+            <Text fontSize="xl">Learn More</Text>
           </Link>
         </Box>
       </Flex>
+      <Footer />
     </div>
   );
 };
