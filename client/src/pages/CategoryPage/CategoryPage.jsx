@@ -5,11 +5,11 @@ import NavBar from "../NavBar";
 import blogStyles from "../BlogPage/BlogPage.module.css";
 import CategoryCard from "../../components/CategoryCard/CategoryCard";
 
-import { nutritionData } from "./nutrition";
-import { featuresData } from "./features";
-import { appUpdatesData } from "./appUpdates";
-import { fitnessData } from "./fitness";
-import { recipesData } from "./recipes";
+import { nutritionData } from "../../data/Category/nutrition";
+import { featuresData } from "../../data/Category/features";
+import { appUpdatesData } from "../../data/Category/appUpdates";
+import { fitnessData } from "../../data/Category/fitness";
+import { recipesData } from "../../data/Category/recipes";
 
 const CategoryPage = () => {
   const { type } = useParams();
