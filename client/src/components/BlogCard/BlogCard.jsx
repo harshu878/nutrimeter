@@ -14,6 +14,7 @@ export default function BlogCard({ image, heading, date, description }) {
     >
       <Image
         src={image}
+        objectFit="cover"
         width="100%"
         //   width={{ base: "auto", md: "520px", xl: "520px" }}
         height={{ base: "auto", md: "312px", xl: "312px" }}
