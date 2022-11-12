@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useNavigate} from 'react-router-dom'
 import {
@@ -20,6 +20,7 @@ import {
   Checkbox,
   Text
 } from "@chakra-ui/react";
+
 import { FaUserAlt, FaLock } from "react-icons/fa";
 import axios from 'axios'
 import { useDispatch, useSelector } from "react-redux";
@@ -28,43 +29,36 @@ import Footer from "../components/Footer";
 import NavBar from "./NavBar";
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
-
 const Signup = () => {
-  const [data, setData] = useState({
-    
-    name: "",
-    email: "",
-    password: "",
-  });
-  const [error, setError] = useState("");
-  const navigate = useNavigate();
+  const {error}=useSelector(s=>s.auth)
+  const {loading}=useSelector(s=>s.auth)
+  const {bool}=useSelector(s=>s.auth)
+  
+  const [formData, setFormData] = useState({
+		name: "",
+		email: "",
+		password: "",
+	});
   const dispatch=useDispatch()
-  const handleChange = ({ currentTarget: input }) => {
-    setData({ ...data, [input.name]: input.value });
-  };
+  const navigate=useNavigate()
+  
+	const { name, email, password} = formData;
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     const url = "http://localhost:8080/user/auth/register";
-  //     const { data: res } = await axios.post(url, data);
-  //     navigate("/login");
-  //     console.log(res.message);
-  //   } catch (error) {
-  //     if (
-  //       error.response &&
-  //       error.response.status >= 400 &&
-  //       error.response.status <= 500
-  //     ) {
-  //       setError(error.response.data.message);
-  //     }
-  //   }
-    
-  // };
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    dispatch(SignupApi(data))
-  };
+	const handleChange = (e) => {
+		setFormData({ ...formData, [e.target.name]: e.target.value });
+  }
+  useEffect(()=>{
+    if(bool){
+       navigate("/bodyM")
+    }
+ },[bool])
+  const handleSubmit =  (e) => {
+    //  console.log({ name, email, password })
+		e.preventDefault();
+    dispatch(SignupApi({ name, email, password }))
+  }
+
+   
     const [checkedItems, setCheckedItems] = useState([false, false])
 
   const allChecked = checkedItems.every(Boolean)
@@ -110,7 +104,7 @@ const Signup = () => {
                   />
                   <Input  name="email"
               onChange={handleChange}
-              value={data.email}
+              value={formData.email}
               required type="email" placeholder="Email Address" />
                 </InputGroup>
               </FormControl>
@@ -122,7 +116,7 @@ const Signup = () => {
                   />
                   <Input  name="name"
               onChange={handleChange}
-              value={data.name}
+              value={formData.name}
               required type="text" placeholder="Name" />
                 </InputGroup>
               </FormControl>
@@ -135,8 +129,9 @@ const Signup = () => {
                   />
                   <Input
                     name="password"
+                    minlength="6"
                     onChange={handleChange}
-                    value={data.password}
+                    value={formData.password}
                     required
                     type="password"
                     placeholder="Password"
@@ -165,6 +160,7 @@ const Signup = () => {
            <Heading alignSelf={'center'} size='md' >Terms of Service & Privacy Settings</Heading>  
 
            <Checkbox
+           required
         isChecked={allChecked}
         isIndeterminate={isIndeterminate}
         onChange={(e) => setCheckedItems([e.target.checked, e.target.checked])}
@@ -181,10 +177,10 @@ const Signup = () => {
           isChecked={checkedItems[0]}
           onChange={(e) => setCheckedItems([e.target.checked, checkedItems[1]])}
         >
-           I agree to the cronometer.com Terms of Service
+           I agree to the nutrimeter.com Terms of Service
         </Checkbox>
         <Text  fontSize='s' color={'gray.600'}  as='b' >
-                   In order to give you the best experience using Cronometer, we need certain data permissions. (These are optional and can be updated in your settings any time.)
+                   In order to give you the best experience using Nutrimeter, we need certain data permissions. (These are optional and can be updated in your settings any time.)
                         </Text>
         <Checkbox
              isChecked={checkedItems[1]}
@@ -194,9 +190,20 @@ const Signup = () => {
         </Checkbox>
       
 </Stack>
-
+{error &&<Stack   
+       width={'700px'}
+      boxShadow= 'rgba(0, 0, 0, 0.16) 0px 1px 4px'
+           flexDir="column"
+           m="3"
+           p="3rem"
+        //    justifyContent="center"
+        //    alignItems="center"
+        backgroundColor={'red.100'}>
+        
+        <Text>Error! A user for that e-mail address already exists. Please enter a different e-mail address</Text>
+</Stack>}
 <Flex mb='4' p='4'>  
-    <Button type="submit" colorScheme='green' size='lg' width={'650px'}>
+    <Button type="submit"  isLoading={loading} colorScheme='green' size='lg' width={'650px'}>
     Create Account
   </Button>
   </Flex>

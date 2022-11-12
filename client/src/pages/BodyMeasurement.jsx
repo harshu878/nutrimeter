@@ -9,7 +9,6 @@ import {
   InputLeftElement,
   chakra,
   Box,
- 
   Avatar,
   FormControl,
   FormHelperText,
@@ -19,16 +18,18 @@ import {
   VStack,
   HStack
 } from "@chakra-ui/react";
-import { Radio, RadioGroup } from '@chakra-ui/react'
+
 import { FaUserAlt, FaLock } from "react-icons/fa";
 import Footer from "../components/Footer";
 import NavBar from './NavBar';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
 
 const BodyMeasurement = () => {
     //to fetch the data let bodyMeasurement = JSON.parse(localStorage.getItem('bodyMeasurement')) || []
+
+    const navigate=useNavigate()
     const [data, setData] = useState({
     
        
@@ -46,7 +47,7 @@ const BodyMeasurement = () => {
         e.preventDefault()
        
         localStorage.setItem("bodyMeasurement", JSON.stringify(data));
-       alert('done')
+        navigate("/login")
       };
   return (
     <>
