@@ -35,7 +35,7 @@ const AllRoutes = () => {
       <Route path="/checkCalories" element={<AfterLoginPage />}>
         <Route path="/checkCalories" element={<Diarypage />} />
         <Route path="trends" element={<Trends />} />
-        <Route path="/help" element={<Help />} />
+        <Route path="help" element={<Help />} />
         {/* All Routes of AfterLogin page will come under this route so add them here */}
       </Route>
     </Routes>

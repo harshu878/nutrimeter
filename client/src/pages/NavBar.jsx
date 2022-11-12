@@ -71,7 +71,7 @@ const NavBar = () => {
 
 
           <Box p="1" >
-            <NavLink to="/" >
+            <NavLink to="/support" >
               <Text  fontSize={fontSize} colorScheme="orange.500" _hover={{color:"orange"}}>
                 Support
               </Text>

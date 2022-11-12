@@ -18,7 +18,7 @@ function Support() {
       
       <Box
         mb={50}
-        // backgroundImage={`url('/')`}
+        backgroundImage={`url(https://github.com/harshu878/nutrimeter/blob/main/client/public/Images/fruits.png?raw=true)`}
         bgPosition={"center"}
         h={310}
         // bgSize={"cover"}
