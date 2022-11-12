@@ -35,12 +35,7 @@ export const SignupApi=(creds)=>async(dispatch)=>{
     dispatch ({
         type:AUTH_SIGN_UP_LOADING
     })
-    try {
-        
-        let res=await axios.post("http://localhost:8080/user/auth/register",creds)
-console.log(res)
-
-        
+    try {      
         let res = await axios.post("http://localhost:8080/user/auth/register", creds)
 
         dispatch({
