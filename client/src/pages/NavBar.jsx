@@ -21,7 +21,7 @@ const NavBar = () => {
 
   console.log("theme:", theme);
   return (
-    <Flex boxShadow="md" width="full" h={20} paddingInline={150} marginRight={4} justifyContent={"space-between"} alignItems={"center"} gap="5">
+    <Flex boxShadow="md" width="full" h={20} paddingInline={5} marginRight={4} justifyContent={"space-between"} alignItems={"center"} gap="2">
       <Box>
         <Link href="/">
           <Image
@@ -34,15 +34,7 @@ const NavBar = () => {
         <DraewerNav></DraewerNav>
       ) : (
         <HStack gap={3}>
-          {/* <Box p="1" >
-            <NavLink to="/">
-              <Text  fontSize={fontSize} _hover={{color:"orange"}}>
-                Products
-              </Text>
-            </NavLink>
-          </Box> */}
-
-
+         
           {/* pop over -------------- */}
           <Popover isLazy w="200px">
   <PopoverTrigger>
