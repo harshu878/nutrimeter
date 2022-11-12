@@ -34,7 +34,7 @@ const BodyMeasurement = () => {
     
        
         born: "",
-        gender:'',
+        gender:'Male',
         height:'',
         weight:'',
       });
