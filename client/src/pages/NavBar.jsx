@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { GiAppleSeeds } from "react-icons/gi";
 import { FaAppleAlt } from "react-icons/fa";
-import { Button, Flex, Heading, Spacer, Box, Image, IconButton, useColorMode,
+import { Button, Flex, Heading, Spacer, 
+  Box, Image,  Text, useMediaQuery, HStack, IconButton, useColorMode,
   Popover, PopoverTrigger,PopoverContent,PopoverHeader,PopoverArrow,PopoverCloseButton,PopoverBody,
-   Link, useTheme, Text, useMediaQuery, HStack } from "@chakra-ui/react";
+   Link, useTheme} from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import DraewerNav from "./DraewerNav";
 
+const fontSize = { base: "10px", sm: "12px", md: "15px", lg: "18px" };
 
 const NavBar = () => {
-    const fontSize = { base: "10px", sm: "12px", md: "15px", lg: "18px" };
 
 
   const { colorMode, toggleColorMode } = useColorMode();
