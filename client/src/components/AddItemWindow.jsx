@@ -36,7 +36,6 @@ const AddItemWindow = ({ toggleVisibility }) => {
   const handleClickProduct = (item) => {
     setProduct(item)
   }
-  console.log(product)
   const handleAddItem = () => {
     if (product === '') {
       alert('select any product')
