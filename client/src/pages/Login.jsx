@@ -14,7 +14,8 @@ import {
   FormControl,
   FormHelperText,
   InputRightElement,
-  Image
+  Image,
+  Text
 } from "@chakra-ui/react";
 
 import { FaUserAlt, FaLock } from "react-icons/fa";
@@ -28,29 +29,33 @@ const CFaLock = chakra(FaLock);
 
 const Login = () => {
   const {isAuthenticated}=useSelector(s=>s.auth.data)
-const [text,setText]=useState({})
+  const {error}=useSelector(s=>s.auth)
+  const {loading}=useSelector(s=>s.auth)
+  const {token}=useSelector(s=>s.auth.data)
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+});
 const dispatch=useDispatch()
 const navigate=useNavigate()
-
+const { email, password} = formData;
 const handleChange=(e)=>{
-    const {name,value}=e.target
-    setText({
-      ...text,
-      [name]:value,
-    })
+	setFormData({ ...formData, [e.target.name]: e.target.value });
 
 }
 
 useEffect(()=>{
+
    if(isAuthenticated){
-      navigate("/")
+      navigate("/checkCalories")
    }
 },[isAuthenticated])
 
 
 const handleSubmit=(e)=>{
+    console.log(formData)
   e.preventDefault()
-  dispatch(LoginApi(text))
+  dispatch(LoginApi(formData))
 }
 
   return (
@@ -89,7 +94,7 @@ const handleSubmit=(e)=>{
                     pointerEvents="none"
                     children={<CFaUserAlt color="gray.300" />}
                   />
-                  <Input onChange={handleChange} type="email" placeholder="Email Address" />
+                  <Input required   value={formData.email} name='email' onChange={handleChange} type="email" placeholder="Email Address" />
                 </InputGroup>
               </FormControl>
               <FormControl>
@@ -100,6 +105,10 @@ const handleSubmit=(e)=>{
                     children={<CFaLock color="gray.300" />}
                   />
                   <Input
+                  name='password'
+                  value={formData.password}
+                  required
+                  minlength="6"
                   onChange={handleChange}
                     type="password"
                     placeholder="Password"
@@ -110,11 +119,15 @@ const handleSubmit=(e)=>{
                 </InputGroup>
              
               </FormControl>
+              {error && <Box textAlign={'center'}  backgroundColor={'red.100'}><Text as='b'>Wrong credentials! invalid username or password.</Text></Box>}
+            
               <Button
                 borderRadius={0}
                 type="submit"
                 // variant="solid"
                 // colorScheme="teal"
+                isLoading={loading}
+          
                 width="full"
               >
                 LOGIN
