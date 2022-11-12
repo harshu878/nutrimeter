@@ -17,9 +17,9 @@ const NavBar = () => {
 
   const theme = useTheme();
   const [isMatch] = useMediaQuery("(max-width: 800px)");
-  console.log("isMatch:", isMatch);
+  // console.log("isMatch:", isMatch);
 
-  console.log("theme:", theme);
+  // console.log("theme:", theme);
   return (
     <Flex boxShadow="md" width="full" h={20} paddingInline={5} marginRight={4} justifyContent={"space-between"} alignItems={"center"} gap="2">
       <Box>
