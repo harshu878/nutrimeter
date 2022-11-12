@@ -10,13 +10,13 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import Finisher from "../components/footer";
-import Navbar from "../components/Navbar";
 
-function Prof(){
+
+
+function Mobile(){
     return (
         <Box>
-      <Navbar />
+      
       <Box p={10} borderTop={"1px"} color={"gray.300"}>
         <Flex flexWrap={"wrap"} justifyContent={"space-between"}>
           <Flex m={5}>
@@ -28,7 +28,7 @@ function Prof(){
               Nutrimeter
             </Text>
             <Text color={"gray.500"} fontSize={"14px"} letterSpacing={"1px"}>
-              {" >"} Professional Version
+              {" >"} Mobile App
             </Text>
           </Flex>
           <Box pr={"50px"}>
@@ -55,74 +55,133 @@ function Prof(){
       <Stack pb={10} ml={{base:10,lg:200}} mr={{base:0,lg:200}}>
         <Box textAlign={"left"}>
           <Text fontSize={"30px"} mb={3}>
-          Professional Version
+          Mobile App
           </Text>
           <Text color={"gray.600"} fontFamily={"sans-serif"}>
-            User Manual for Nutrimeter on Pro
+            User Manual for Nutrimeter on Mobile App
           </Text>
         </Box>
         {/* Second  */}
         <Flex flexWrap={"wrap"}>
         <Box mt={5} textAlign={"left"}>
             <Text mt={5} color={"gray.600"} mb={3} fontSize={"18px"} fontWeight={500}>
-            Pro - Getting Started
+            Mobile App - Quick Start Guide
             </Text>
             <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Professional Subscription Overview
+            Mobile App - Quick Start Guide
             </Text>
           </Box>
           <Spacer/>
           <Box mt={5} mr={"56px"} textAlign={"left"}>
             <Text mt={5} color={"gray.600"} mb={3} fontSize={"18px"} fontWeight={500}>
-            Pro Account Settings
+            Diary
             </Text>
             <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Pro-HIPAA
+            Mobile App - Diary Overview
             </Text>
             <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Pro - Account
+            Mobile App - Add a Food
             </Text>
             <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Pro - Branding
+            Mobile App - Barcode Scanner
             </Text>
             <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Pro - Listing
+            Mobile App - Add Exercise
+            </Text>
+            <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
+            Mobile App - Add a Biometric
+            </Text>
+            <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
+            Mobile App - Add a Note
             </Text>
           </Box>
         </Flex>
         <Flex flexWrap={"wrap"}>
         <Box mt={5} textAlign={"left"}>
             <Text mt={5} color={"gray.600"} mb={3} fontSize={"18px"} fontWeight={500}>
-            Clients
+            Trend
             </Text>
             <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Pro Messaging
+            Mobile - Charts
             </Text>
             <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Pro - Clients Tab
+            Mobile - Chart Library
             </Text>
             <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Pro - Client Profile
+            Mobile - Custom Charts
             </Text>
             <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Pro - Client Settings Menu
+            Mobile - Nutrition Report
             </Text>
           </Box>
           <Spacer/>
-          <Box mt={5} mr={140} textAlign={"left"}>
+          <Box mt={5} textAlign={"left"}>
             <Text mt={5} color={"gray.600"} mb={3} fontSize={"18px"} fontWeight={500}>
-            Foods Tab
+            Foods
             </Text>
             <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Foods
+            Mobile - Foods Overview
+            </Text>
+            <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
+            Mobile - Create a Custom Food
+            </Text>
+            <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
+            Mobile - Create a Custom Recipe
+            </Text>
+            <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
+            Mobile - Recipe Importer
+            </Text>
+            <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
+            Mobile - Set a Cooked Recipe Weight
+            </Text>
+            <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
+            Mobile - Ask the Oracle
+            </Text>
+          </Box>
+        </Flex>
+        <Flex flexWrap={"wrap"}>
+        <Box mt={5} textAlign={"left"}>
+            <Text mt={5} color={"gray.600"} mb={3} fontSize={"18px"} fontWeight={500}>
+            Settings
+            </Text>
+            <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
+            Mobile - Settings Overview
+            </Text>
+            <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
+            Mobile - Account
+            </Text>
+            <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
+            Mobile - Two-Factor Authentication
+            </Text>
+            <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
+            Mobile - Profile
+            </Text>
+            <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
+            Mobile - Targets
+            </Text>
+            <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
+            Mobile - Target Scheduler
+            </Text>
+          </Box>
+          <Spacer/>
+          <Box mt={5} textAlign={"left"}>
+            <Text mt={5} color={"gray.600"} mb={3} fontSize={"18px"} fontWeight={500}>
+            Widgets
+            </Text>
+            <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
+            Android Home Screen Widgets
+            </Text>
+            <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
+            iOS Home Screen Widgets
+            </Text>
+            <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
+            Wear OS Watch App
             </Text>
           </Box>
         </Flex>
       </Stack>
-
-      <Finisher/>
     </Box>
     )
 }
 
-export default Prof
+export default Mobile

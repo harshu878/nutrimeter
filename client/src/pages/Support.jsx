@@ -7,20 +7,18 @@ import {
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
-// import Navbar from "../components/Navbar";
-import fruits from "../images/fruits.png";
-import { PhoneIcon, SearchIcon } from "@chakra-ui/icons";
-import Navbar from "../components/Navbar";
+// import fruits from "../";
+import {  SearchIcon } from "@chakra-ui/icons";
+
 import { Link } from "react-router-dom";
-import Finisher from "../components/footer";
 
 function Support() {
   return (
     <Box>
-      <Navbar />
+      
       <Box
         mb={50}
-        backgroundImage={fruits}
+        // backgroundImage={`url('/')`}
         bgPosition={"center"}
         h={310}
         // bgSize={"cover"}
@@ -124,7 +122,6 @@ function Support() {
           </Box>
         </Link>
       </SimpleGrid>
-      <Finisher/>
     </Box>
   );
 }

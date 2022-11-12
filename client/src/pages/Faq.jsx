@@ -9,18 +9,15 @@ import {
     Stack,
     Spacer
   } from "@chakra-ui/react";
-  // import Navbar from "../components/Navbar";
-  import fruits from "../images/fruits.png";
-  import { PhoneIcon, SearchIcon } from "@chakra-ui/icons";
-  import Navbar from "../components/Navbar";
-  import { Link } from "react-router-dom";
-  import Finisher from "../components/footer";
+  import { SearchIcon } from "@chakra-ui/icons";
+  
+
 
 function Faq() {
   return (
     <Box>
       <Box>
-        <Navbar />
+       
         <Box p={10} borderTop={"1px"} color={"gray.300"}>
           <Flex flexWrap={"wrap"} justifyContent={"space-between"}>
             <Flex m={5}>
@@ -232,8 +229,6 @@ function Faq() {
           </Flex>
           
         </Stack>
-
-        <Finisher />
       </Box>
     </Box>
   );

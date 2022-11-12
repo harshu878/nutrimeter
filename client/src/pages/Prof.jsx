@@ -1,7 +1,6 @@
 import { SearchIcon } from "@chakra-ui/icons";
 import {
   Box,
-  Container,
   Flex,
   Input,
   InputGroup,
@@ -10,7 +9,7 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import Finisher from "../components/footer";
+
 
 
 function Prof(){
@@ -119,8 +118,6 @@ function Prof(){
           </Box>
         </Flex>
       </Stack>
-
-      <Finisher/>
     </Box>
     )
 }

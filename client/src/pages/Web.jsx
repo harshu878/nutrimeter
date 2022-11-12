@@ -10,13 +10,12 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import Finisher from "../components/footer";
 
 
-function Mobile(){
-    return (
-        <Box>
-      
+function Web() {
+  return (
+    <Box>
+     
       <Box p={10} borderTop={"1px"} color={"gray.300"}>
         <Flex flexWrap={"wrap"} justifyContent={"space-between"}>
           <Flex m={5}>
@@ -28,7 +27,7 @@ function Mobile(){
               Nutrimeter
             </Text>
             <Text color={"gray.500"} fontSize={"14px"} letterSpacing={"1px"}>
-              {" >"} Mobile App
+              {" >"} Web Version
             </Text>
           </Flex>
           <Box pr={"50px"}>
@@ -55,20 +54,20 @@ function Mobile(){
       <Stack pb={10} ml={{base:10,lg:200}} mr={{base:0,lg:200}}>
         <Box textAlign={"left"}>
           <Text fontSize={"30px"} mb={3}>
-          Mobile App
+            Web Version
           </Text>
           <Text color={"gray.600"} fontFamily={"sans-serif"}>
-            User Manual for Nutrimeter on Mobile App
+            User Manual for Nutrimeter on Web
           </Text>
         </Box>
         {/* Second  */}
         <Flex flexWrap={"wrap"}>
         <Box mt={5} textAlign={"left"}>
             <Text mt={5} color={"gray.600"} mb={3} fontSize={"18px"} fontWeight={500}>
-            Mobile App - Quick Start Guide
+            Web - Quick Start Guide
             </Text>
             <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Mobile App - Quick Start Guide
+            Web - Quick Start Guide
             </Text>
           </Box>
           <Spacer/>
@@ -77,22 +76,25 @@ function Mobile(){
             Diary
             </Text>
             <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Mobile App - Diary Overview
+            Diary Overview
             </Text>
             <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Mobile App - Add a Food
+            Add a Food
             </Text>
             <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Mobile App - Barcode Scanner
+            Add an Exercise
             </Text>
             <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Mobile App - Add Exercise
+            Add a Biometric
             </Text>
             <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Mobile App - Add a Biometric
+            Custom Biometrics
             </Text>
             <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Mobile App - Add a Note
+            Add a Note
+            </Text>
+            <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
+            Add an Exercise
             </Text>
           </Box>
         </Flex>
@@ -102,16 +104,25 @@ function Mobile(){
             Trend
             </Text>
             <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Mobile - Charts
+            Trends Overview
             </Text>
             <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Mobile - Chart Library
+            Charts
             </Text>
             <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Mobile - Custom Charts
+            Charts - Chart Library
             </Text>
             <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Mobile - Nutrition Report
+            Charts - Custom Charts
+            </Text>
+            <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
+            Charts - Glucose Ketone Index (GKI)
+            </Text>
+            <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
+            Charts - Blood Pressure + Heart Rate
+            </Text>
+            <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
+            Add an Exercise
             </Text>
           </Box>
           <Spacer/>
@@ -120,70 +131,32 @@ function Mobile(){
             Foods
             </Text>
             <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Mobile - Foods Overview
+            Foods Overview
             </Text>
             <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Mobile - Create a Custom Food
+            Create a Custom Food
             </Text>
             <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Mobile - Create a Custom Recipe
+            Create Custom Recipe
             </Text>
             <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Mobile - Recipe Importer
+            Set Cooked Recipe Weight
             </Text>
             <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Mobile - Set a Cooked Recipe Weight
+            Search Food
             </Text>
             <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Mobile - Ask the Oracle
-            </Text>
-          </Box>
-        </Flex>
-        <Flex flexWrap={"wrap"}>
-        <Box mt={5} textAlign={"left"}>
-            <Text mt={5} color={"gray.600"} mb={3} fontSize={"18px"} fontWeight={500}>
-            Settings
+            Ask The Oracle
             </Text>
             <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Mobile - Settings Overview
-            </Text>
-            <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Mobile - Account
-            </Text>
-            <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Mobile - Two-Factor Authentication
-            </Text>
-            <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Mobile - Profile
-            </Text>
-            <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Mobile - Targets
-            </Text>
-            <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Mobile - Target Scheduler
-            </Text>
-          </Box>
-          <Spacer/>
-          <Box mt={5} textAlign={"left"}>
-            <Text mt={5} color={"gray.600"} mb={3} fontSize={"18px"} fontWeight={500}>
-            Widgets
-            </Text>
-            <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Android Home Screen Widgets
-            </Text>
-            <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            iOS Home Screen Widgets
-            </Text>
-            <Text mt={5} color={"gray.600"} fontSize={"16px"} fontWeight={400}>
-            Wear OS Watch App
+            Add an Exercise
             </Text>
           </Box>
         </Flex>
       </Stack>
 
-      <Finisher/>
     </Box>
-    )
+  );
 }
 
-export default Mobile
+export default Web;
