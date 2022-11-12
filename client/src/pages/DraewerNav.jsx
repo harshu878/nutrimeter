@@ -44,11 +44,6 @@ function DraewerNav() {
             ></Image>
             </Box>
             <DrawerBody>
-              {/* <Box p="1">
-                <NavLink to="/">
-                  <Text _hover={{color:"orange"}} fontWeight="bold">Products</Text>
-                </NavLink>
-              </Box> */}
               <Popover isLazy w="200px">
                 <PopoverTrigger>
                   <Button bg="none" color="black" _hover={{color:"orange.500"}} fontSize={fontSize} fontWeight="bold" ml="-12px">Products </Button>

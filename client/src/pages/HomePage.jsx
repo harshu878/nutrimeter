@@ -69,7 +69,7 @@ const HomePage = () => {
         </Flex>
         <Box>
           <Image
-            w={{ base: "300px", md: "400px", lg:"550px" }} mt={{base:"20px"}} ml={{base:"-80px", sm:"-50px", md:"-30px"}}
+            w={{ base: "300px", md: "400px", lg:"550px" }} mt={{base:"20px"}} ml={{base:"-50px", sm:"-30px", md:"-30px"}}
             src={"https://cdn1.cronometer.com/2021/landing/cronometer-hero-graphic.svg"}
           ></Image>
         </Box>
