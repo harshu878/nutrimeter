@@ -12,7 +12,7 @@ const CronoPro = () => {
     {/* Navbar with humberger menu */}
         <NavBar/>
 
-      {/* Section 1 of homepage starts */}
+      {/* Section 1 of propage starts */}
      <Flex
         w={"90%"}
         flexDirection={{
@@ -72,11 +72,11 @@ const CronoPro = () => {
         <Box>
           <Image
             w={{ base: "300px", md: "300px", lg:"400px" }} mt={{base:"20px"}} 
-            src={"https://cdn1.cronometer.com/2021/landing/crono-pro-graphic.svg"}
+            src={"https://raw.githubusercontent.com/harshu878/nutrimeter/b24e158e4f21902c1fe890e3fcec626ae022ebaf/client/public/Images/manExplain.svg"}
           ></Image>
         </Box>
       </Flex>
-      {/* section 1 of homepage ends here */}
+      {/* section 1 of propage ends here */}
 
 
       <Grid templateColumns='repeat(1, 1fr)' mt="40px">
@@ -106,7 +106,7 @@ const CronoPro = () => {
         alignItems={"center"}
       >
         <GridItem margin={"auto"} w="80%" display={"grid"} gap={5}>
-          <Image src="https://cdn1.cronometer.com/2021/landing/diary-icon.svg" w="100px" m="auto"></Image>
+          <Image src="https://raw.githubusercontent.com/harshu878/nutrimeter/b24e158e4f21902c1fe890e3fcec626ae022ebaf/client/public/Images/diaryApp.svg" w="100px" m="auto"></Image>
           <Heading  fontSize={25} color="gray.600">
           Client Food Diary App
           </Heading>
@@ -114,7 +114,7 @@ const CronoPro = () => {
           Clients log their meals, exercise and metrics with the Cronometer App.</Text>
         </GridItem>
         <GridItem w="80%" margin={"auto"} display={"grid"} gap={5}>
-          <Image src="https://cdn1.cronometer.com/2021/landing/hipaapro-icon.svg" w="100px" m="auto"></Image>
+          <Image src="https://raw.githubusercontent.com/harshu878/nutrimeter/b24e158e4f21902c1fe890e3fcec626ae022ebaf/client/public/Images/hipaa.svg" w="100px" m="auto"></Image>
           <Heading  fontSize={25} color="gray.600">
           HIPAA Compliant
           </Heading>
@@ -124,7 +124,7 @@ const CronoPro = () => {
         </GridItem>
 
         <GridItem w="80%" margin={"auto"} display={"grid"} gap={5}>
-          <Image src="https://cdn1.cronometer.com/2021/landing/reports-icon.svg" w="100px" m="auto"></Image>
+          <Image src="https://raw.githubusercontent.com/harshu878/nutrimeter/b24e158e4f21902c1fe890e3fcec626ae022ebaf/client/public/Images/clientNReport.svg" w="100px" m="auto"></Image>
           <Heading  fontSize={25} color="gray.600">
           Client Nutrition Reports
           </Heading>
@@ -171,7 +171,7 @@ const CronoPro = () => {
         alignItems={"center"}
       >
         <GridItem w="auto" m="auto" mt="20px"  display={"grid"}>
-          <Image w={{base:"500px", md:"500px", lg:"500px"}} mt="100px"  src="https://cdn1.cronometer.com/2021/landing/cronometer-client-graphic-1.svg"></Image>
+          <Image w={{base:"500px", md:"500px", lg:"500px"}} mt="100px"  src="https://raw.githubusercontent.com/harshu878/nutrimeter/b24e158e4f21902c1fe890e3fcec626ae022ebaf/client/public/Images/graphReport.svg"></Image>
         </GridItem>
         <GridItem m="auto" w="80%" display={"grid"}>
           <Heading  fontSize={23} color="gray.600" mt='20px' textAlign={"start"}>
@@ -219,7 +219,7 @@ const CronoPro = () => {
         </GridItem>
 
         <GridItem w="auto" m="auto" mt="20px"  display={"grid"}>
-          <Image w={{base:"500px", md:"500px", lg:"500px"}} mt="100px"  src="https://cdn1.cronometer.com/2021/landing/cronometer-client-graphic-2.svg"></Image>
+          <Image w={{base:"500px", md:"500px", lg:"500px"}} mt="100px"  src="https://raw.githubusercontent.com/harshu878/nutrimeter/b24e158e4f21902c1fe890e3fcec626ae022ebaf/client/public/Images/percent.svg"></Image>
         </GridItem>
       </Grid>
       </Flex>
@@ -247,7 +247,7 @@ const CronoPro = () => {
         alignItems={"center"}
       >
         <GridItem margin={"auto"} w="80%" display={"grid"} gap={5} >
-            <Image src="https://cdn1.cronometer.com/2021/landing/Stanford_Medicine_V-web-p-1080.png" w="380px" m="auto"></Image>
+            <Image src="https://github.com/harshu878/nutrimeter/blob/main/client/public/Images/standford.png?raw=true" w="380px" m="auto"></Image>
         </GridItem>
 
         <GridItem w="80%" margin={"auto"} display={"grid"} gap={5}>

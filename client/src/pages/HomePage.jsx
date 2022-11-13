@@ -57,20 +57,20 @@ const HomePage = () => {
           </Text>
           
           <Box p="1" ml={"100px"}>
-              <NavLink to="/">
+              <NavLink to="/signup">
                 <Button bg={"orange.500"} colorScheme="orange.500" color="white" h="60px">
                   <Text fontSize={fontSize} p="25px" >Sign Up - It's Free!</Text>
                 </Button>
               </NavLink>
                 <Text fontSize={fontSize} p="20px" ml="-20px">
-                  Already have an account? <Link href="/" _hover={{color:"orange.500", fontWeight:"bold"}}>Login.</Link>
+                  Already have an account? <NavLink to="/login" _hover={{color:"orange.500", fontWeight:"bold"}}>Login.</NavLink>
                 </Text>
           </Box>
         </Flex>
         <Box>
           <Image
             w={{ base: "300px", md: "400px", lg:"550px" }} mt={{base:"20px"}} ml={{base:"-50px", sm:"-30px", md:"-30px"}}
-            src={"/Images/mobile.png"}
+            src="https://raw.githubusercontent.com/harshu878/nutrimeter/b24e158e4f21902c1fe890e3fcec626ae022ebaf/client/public/Images/mobile.svg"
           ></Image>
         </Box>
       </Flex>
@@ -86,11 +86,11 @@ const HomePage = () => {
       
 
       <Flex flexWrap={"wrap"} w={"90%"} gap={{base:10, md:100, lg:130}} justifyContent={"center"} m={"auto"} mt="30px">
-        <Image w={{ base: "100px", md: "140px", lg:"170px" }} mt={{base:"20px"}} src="https://cdn1.cronometer.com/2021/landing/media-mention-2.svg"></Image>
+        <Image w={{ base: "100px", md: "140px", lg:"170px" }} mt={{base:"20px"}} src="https://raw.githubusercontent.com/harshu878/nutrimeter/b24e158e4f21902c1fe890e3fcec626ae022ebaf/client/public/Images/womenshealth.svg"></Image>
 
-        <Image w={{ base: "100px", md: "140px", lg:"170px" }} mt={{base:"20px"}} src="https://cdn1.cronometer.com/2021/landing/media-mention-1.svg"></Image>
+        <Image w={{ base: "100px", md: "140px", lg:"170px" }} mt={{base:"20px"}} src="https://raw.githubusercontent.com/harshu878/nutrimeter/b24e158e4f21902c1fe890e3fcec626ae022ebaf/client/public/Images/lifehacker.svg"></Image>
 
-        <Image w={{ base: "100px", md: "140px", lg:"170px" }} mt={{base:"20px"}} src="https://cdn1.cronometer.com/2021/landing/media-mention-3.svg"></Image>
+        <Image w={{ base: "100px", md: "140px", lg:"170px" }} mt={{base:"20px"}} src="https://raw.githubusercontent.com/harshu878/nutrimeter/b24e158e4f21902c1fe890e3fcec626ae022ebaf/client/public/Images/mensjournal.svg"></Image>
       </Flex>
 
       <Flex mt="40px">
@@ -100,9 +100,9 @@ const HomePage = () => {
         </Flex>
 
         <Flex flexWrap={"wrap"} w={"90%"} gap={{base:3, md:3, lg:30}} justifyContent={"center"} m={"auto"} mt="10px">
-        <Image w={{ base: "100px", md: "140px", lg:"170px" }} mt={{base:"20px"}} src="https://cdn1.cronometer.com/2021/landing/ios-icon.svg"></Image>
+        <Image w={{ base: "100px", md: "140px", lg:"170px" }} mt={{base:"20px"}} src="https://raw.githubusercontent.com/harshu878/nutrimeter/b24e158e4f21902c1fe890e3fcec626ae022ebaf/client/public/Images/appstore.svg"></Image>
 
-        <Image w={{ base: "100px", md: "140px", lg:"170px" }} mt={{base:"20px"}} src="https://cdn1.cronometer.com/2021/landing/android-icon.svg"></Image>
+        <Image w={{ base: "100px", md: "140px", lg:"170px" }} mt={{base:"20px"}} src="https://raw.githubusercontent.com/harshu878/nutrimeter/b24e158e4f21902c1fe890e3fcec626ae022ebaf/client/public/Images/googlePlay.svg"></Image>
       </Flex>
       {/* Setction - 2 ends here*/}
 
@@ -131,7 +131,7 @@ const HomePage = () => {
         alignItems={"center"}
       >
         <GridItem margin={"auto"} w="80%" display={"grid"} gap={5}>
-          <Image src="https://cdn1.cronometer.com/2021/landing/community-icon.svg" w="100px" m="auto"></Image>
+          <Image src="https://raw.githubusercontent.com/harshu878/nutrimeter/b24e158e4f21902c1fe890e3fcec626ae022ebaf/client/public/Images/5million.svg" w="100px" m="auto"></Image>
           <Heading  fontSize={25} color="gray.600">
           Over 5 million users
           </Heading>
@@ -141,7 +141,7 @@ const HomePage = () => {
           
         </GridItem>
         <GridItem w="80%" margin={"auto"} display={"grid"} gap={5}>
-          <Image src="https://cdn1.cronometer.com/2021/landing/nutrition-icon.svg" w="100px" m="auto"></Image>
+          <Image src="https://raw.githubusercontent.com/harshu878/nutrimeter/b24e158e4f21902c1fe890e3fcec626ae022ebaf/client/public/Images/nutData.svg" w="100px" m="auto"></Image>
           <Heading  fontSize={25} color="gray.600">
           Accurate nutrition data
           </Heading>
@@ -152,7 +152,7 @@ const HomePage = () => {
         </GridItem>
 
         <GridItem w="80%" margin={"auto"} display={"grid"} gap={5}>
-          <Image src="https://cdn1.cronometer.com/2021/landing/security-icon.svg" w="100px" m="auto"></Image>
+          <Image src="https://raw.githubusercontent.com/harshu878/nutrimeter/b24e158e4f21902c1fe890e3fcec626ae022ebaf/client/public/Images/privacy.svg" w="100px" m="auto"></Image>
           <Heading  fontSize={25} color="gray.600">
           Data privacy & security
           </Heading>
@@ -188,7 +188,7 @@ const HomePage = () => {
       >
 
           <GridItem w="80%" margin={"auto"} display={"grid"} gap={5}>
-          <Image src="https://cdn1.cronometer.com/2021/landing/micronutrients-icon.svg" w="100px" m="auto"></Image>
+          <Image src="https://raw.githubusercontent.com/harshu878/nutrimeter/b24e158e4f21902c1fe890e3fcec626ae022ebaf/client/public/Images/logMeals.svg" w="100px" m="auto"></Image>
           <Heading  fontSize={25} color="gray.600">
           Track up to 82 micronutrients
           </Heading>
@@ -198,7 +198,7 @@ const HomePage = () => {
         </GridItem>
 
         <GridItem w="80%" margin={"auto"} display={"grid"} gap={5}>
-          <Image src="https://cdn1.cronometer.com/2021/landing/diary-icon.svg" w="100px" m="auto"></Image>
+          <Image src="https://raw.githubusercontent.com/harshu878/nutrimeter/b24e158e4f21902c1fe890e3fcec626ae022ebaf/client/public/Images/logMeals.svg" w="100px" m="auto"></Image>
           <Heading  fontSize={25} color="gray.600">
           Log meals, exercise and biometrics
           </Heading>
@@ -208,7 +208,7 @@ const HomePage = () => {
         </GridItem>
 
         <GridItem w="80%" margin={"auto"} display={"grid"} gap={5}>
-          <Image src="https://cdn1.cronometer.com/2021/landing/reports-icon.svg" w="100px" m="auto"></Image>
+          <Image src="https://raw.githubusercontent.com/harshu878/nutrimeter/b24e158e4f21902c1fe890e3fcec626ae022ebaf/client/public/Images/report.svg" w="100px" m="auto"></Image>
           <Heading  fontSize={25} color="gray.600">
           Valuable reports and charts
           </Heading>
@@ -218,7 +218,7 @@ const HomePage = () => {
         </GridItem>
 
         <GridItem w="80%" margin={"auto"} display={"grid"} gap={5}>
-          <Image src="https://cdn1.cronometer.com/2021/landing/scale-icon.svg" w="100px" m="auto"></Image>
+          <Image src="https://raw.githubusercontent.com/harshu878/nutrimeter/b24e158e4f21902c1fe890e3fcec626ae022ebaf/client/public/Images/customDiet.svg" w="100px" m="auto"></Image>
           <Heading  fontSize={25} color="gray.600">
           Custom diet settings
           </Heading>
@@ -228,7 +228,7 @@ const HomePage = () => {
         </GridItem>
 
         <GridItem w="80%" margin={"auto"} display={"grid"} gap={5}>
-          <Image src="https://cdn1.cronometer.com/2021/landing/fasting-icon.svg" w="100px" m="auto"></Image>
+          <Image src="https://raw.githubusercontent.com/harshu878/nutrimeter/b24e158e4f21902c1fe890e3fcec626ae022ebaf/client/public/Images/fasting.svg" w="100px" m="auto"></Image>
           <Heading  fontSize={25} color="gray.600">
           Fasting timer
           </Heading>
@@ -238,7 +238,7 @@ const HomePage = () => {
         </GridItem>
 
         <GridItem w="80%" margin={"auto"} display={"grid"} gap={5}>
-          <Image src="https://cdn1.cronometer.com/2021/landing/food-icon.svg" w="100px" m="auto"></Image>
+          <Image src="https://raw.githubusercontent.com/harshu878/nutrimeter/b24e158e4f21902c1fe890e3fcec626ae022ebaf/client/public/Images/dietFruits.svg" w="100px" m="auto"></Image>
           <Heading  fontSize={25} color="gray.600">
           Diet support
           </Heading>
@@ -255,7 +255,9 @@ const HomePage = () => {
         <Text fontSize={{ base: "22px", md: "24px", lg: "26px" }} mt="110px" mb="40px" fontWeight="bold" color="gray.600">
         Find out if you're getting the vitamins and minerals you need with our food diary app. </Text>
         <Button fontSize={"xl"} _hover={{bg:"orange.600",color:"white"}} m="auto" bg={"orange.400"} h={14} w={{ base: "14rem", md: "16rem", lg: "20rem" }} color="white">
+          <NavLink to='/signup'>
         Sign Up - It's Free!
+        </NavLink>
       </Button>
       </Box>
       {/* section-7 ends */}
@@ -272,7 +274,7 @@ const HomePage = () => {
         </Text>
         </Flex>
         <Flex>
-        <Image m="auto" mt="30px" src="https://cdn1.cronometer.com/2021/landing/devices-p-1080.png"></Image>
+        <Image m="auto" mt="30px" src="https://github.com/harshu878/nutrimeter/blob/main/client/public/Images/devices.png?raw=true"></Image>
         </Flex>
         {/* section-8 ends */}
 
@@ -328,7 +330,7 @@ const HomePage = () => {
         </GridItem>
 
         <GridItem w="80%" margin={"auto"} display={"grid"} gap={5} mt={{base:"0px",md:"-500px",lg:"-150px"}}>
-          <Image src="https://cdn1.cronometer.com/2021/landing/ios-icon.svg" w="180px" m="auto"></Image>
+          <Image src="https://raw.githubusercontent.com/harshu878/nutrimeter/b24e158e4f21902c1fe890e3fcec626ae022ebaf/client/public/Images/appstore.svg" w="180px" m="auto"></Image>
         </GridItem>
       </Grid>
       {/* section-10 ends */}
@@ -366,7 +368,7 @@ const HomePage = () => {
           <Heading  fontSize={27} color="orange.500" textAlign="justify" mt={{base:"0px",md:"-210px",lg:"0px"}}>
             <Image w="60px" mb="-22px" ml="-33px" src="https://cdn1.cronometer.com/2021/landing/quote-icon.svg"></Image>
             Cronometer will track EVERYTHING! ... It's easy to use and links with my FitBit.          </Heading>
-            <Image src="https://cdn1.cronometer.com/2021/landing/ios-icon.svg" w="180px" m="auto"></Image>
+            <Image src="https://raw.githubusercontent.com/harshu878/nutrimeter/b24e158e4f21902c1fe890e3fcec626ae022ebaf/client/public/Images/googlePlay.svg" w="180px" m="auto"></Image>
         </GridItem>
       </Grid>
 
@@ -380,10 +382,10 @@ const HomePage = () => {
         alignItems={"center"}
       >
         <GridItem w="80%" m="auto" mt="20px"  display={"grid"}>
-          <Image src="https://cdn1.cronometer.com/2021/landing/crono-pro-graphic.svg"></Image>
+          <Image src="https://raw.githubusercontent.com/harshu878/nutrimeter/b24e158e4f21902c1fe890e3fcec626ae022ebaf/client/public/Images/manExplain.svg"></Image>
         </GridItem>
         <GridItem m="auto" w="100%" display={"grid"}>
-        <Image w="260px"  m="auto" src="/pic/logo.png"></Image>
+        <Image w="260px"  m="auto" src="https://github.com/harshu878/nutrimeter/blob/main/client/public/Images/Color%20logo%20-%20no%20background.png?raw=true"></Image>
           <Heading  fontSize={23} color="gray.600" mt='20px'>
           Are you a healthcare professional?  </Heading>
           <Text mt="20px" fontSize={{base:"20px", md:"22px", lg:"22px"}}>Check out our software designed for nutritionists, dietitians,
@@ -408,7 +410,7 @@ const HomePage = () => {
         </Flex>
 
         <Flex w="70%" m="auto" mt="40px">
-          <Image src="https://cdn1.cronometer.com/2021/landing/cronometer-staff-2-p-1080.jpeg"></Image>
+          <Image src="https://github.com/harshu878/nutrimeter/blob/main/client/public/Images/members.jpeg?raw=true"></Image>
         </Flex>
         <Text m="auto" mt="30px" w="70%" fontSize={{base:"15px", md:"18px", lg:"20px"}} textAlign="center">
           Our headquarters are based in the idyllic mountain town of Revelstoke, BC, Canada.
