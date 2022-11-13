@@ -40,7 +40,7 @@ export const authReducer = (state = authInitalState,{type,payload}) => {
           isAuthenticated:true
         },
         error:false,
-        
+        bool: false
       }
     }
   case AUTH_SIGN_UP_LOADING :{
