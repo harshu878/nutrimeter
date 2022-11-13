@@ -38,7 +38,8 @@ app.post('/additem', async (req, res) => {
     console.log(product);
     serving = Number(serving);
     const userId = req.userId;
-    let existingProduct = await Products.findById({ _id: product })
+    //
+    let existingProduct = await Products.findById(product)
     try {
         let userProfile = await UserProfiles.findOne({ user: userId });
         if (userProfile) {
