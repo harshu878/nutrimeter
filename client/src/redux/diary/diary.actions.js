@@ -53,7 +53,7 @@ export const getAllCategories = () => async (dispatch) => {
 export const addNewProduct = (body, token) => async (dispatch) => {
     dispatch(diaryItemsLoading())
     try {
-        let res = await axios.post('http://localhost:8080/userprofile/additem', body, {
+        let res = await axios.post('https://nutrimeter-server.onrender.com/userprofile/additem', body, {
             headers: {
                 token: localStorage.getItem('userToken')
             }
