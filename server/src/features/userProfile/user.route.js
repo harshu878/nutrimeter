@@ -35,6 +35,7 @@ app.get('/getitems', async (req, res) => {
 
 app.post('/additem', async (req, res) => {
     let { product, serving } = req.body;
+    console.log(product);
     serving = Number(serving);
     const userId = req.userId;
     //
