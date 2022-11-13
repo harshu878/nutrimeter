@@ -84,7 +84,7 @@ export const LogOut =()=> async(dispatch)=>{
 // 	}
 
 // 	try {
-// 		const res = await axios.get("http://localhost:8080/user/auth/register");
+// 		const res = await axios.get("https://nutrimeter-server.onrender.com/user/auth/register");
 
 // 		dispatch({
 // 			type: USER_LOADED,
