@@ -1,5 +1,5 @@
 import { Box, Image, Text } from '@chakra-ui/react'
-import React, { useEffect } from 'react'
+import React from 'react'
 import { TableWrapper } from './cumstomTable.styles'
 import { useSelector, useDispatch } from 'react-redux'
 import { deleteItem } from '../../redux/diary/diary.actions'
@@ -9,12 +9,15 @@ const CustomTable = () => {
   const { foodItemsInList, loading, error } = useSelector(
     (store) => store.diary,
   )
+  const {
+    data: { token },
+  } = useSelector((store) => store.auth)
   const dispatch = useDispatch()
 
   return (
     <Box
       w="full"
-      h={{ base: 'fit-content', lg: '300px' }}
+      h={{ base: '260px', lg: '300px' }}
       boxShadow="rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px"
     >
@@ -44,7 +47,7 @@ const CustomTable = () => {
                       size={19}
                       cursor="pointer"
                       onClick={() => {
-                        dispatch(deleteItem(_id))
+                        dispatch(deleteItem(_id, token))
                       }}
                     />
                   </td>

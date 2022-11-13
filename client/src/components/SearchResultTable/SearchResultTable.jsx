@@ -5,7 +5,6 @@ import { TableWrapper } from './SearchResultTable.styles'
 import { GiHealthPotion } from 'react-icons/gi'
 
 const SearchResultTable = ({ allFoodItems, handleClickProduct }) => {
-  const { loading, error } = useSelector((store) => store.diary)
   const [selected, setSelected] = useState('')
 
   return (
@@ -26,41 +25,37 @@ const SearchResultTable = ({ allFoodItems, handleClickProduct }) => {
           </tr>
         </thead>
         <tbody>
-          {allFoodItems?.map((ele, ind) => {
-            const { Description, _id } = ele
-            if (loading) {
-              return <div key={ind}>Loading....</div>
-            } else if (error) {
-              return <div key={ind}>Error...</div>
-            }
-            return (
-              <tr
-                id={selected === _id ? 'active' : 'unactive'}
-                key={_id}
-                onClick={() => {
-                  handleClickProduct(ele)
-                  setSelected(_id)
-                }}
-              >
-                <td style={{ textAlign: 'left' }}>
-                  <Text>{Description}</Text>
-                </td>
-                <td
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'end',
-                    gap: '10px',
-                    paddingRight: '30px',
+          {allFoodItems &&
+            allFoodItems.map((ele) => {
+              const { Description, _id } = ele
+              return (
+                <tr
+                  id={selected === _id ? 'active' : 'unactive'}
+                  key={_id}
+                  onClick={() => {
+                    handleClickProduct(ele)
+                    setSelected(_id)
                   }}
                 >
-                  <GiHealthPotion color="red" />
-                  <Text fontSize="10px" fontWeight={600}>
-                    NCCDB
-                  </Text>
-                </td>
-              </tr>
-            )
-          })}
+                  <td style={{ textAlign: 'left' }}>
+                    <Text>{Description}</Text>
+                  </td>
+                  <td
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'end',
+                      gap: '10px',
+                      paddingRight: '30px',
+                    }}
+                  >
+                    <GiHealthPotion color="red" />
+                    <Text fontSize="10px" fontWeight={600}>
+                      NCCDB
+                    </Text>
+                  </td>
+                </tr>
+              )
+            })}
         </tbody>
       </TableWrapper>
     </Box>

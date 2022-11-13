@@ -30,7 +30,7 @@ export const chartData = (dataArray, title) => {
         datasets: [
             {
                 label: title,
-                data: dataArray.map(ele => ele[1]),
+                data: dataArray?.map(ele => ele[1]),
                 backgroundColor: new Array(31).fill(0).map(ele => ele = `rgb(${getRandomInt(255)},${getRandomInt(255)},${getRandomInt(255)})`),
                 borderColor: new Array(31).fill(0).map(ele => ele = `rgb(${getRandomInt(255)},${getRandomInt(255)},${getRandomInt(255)})`),
                 borderWidth: 1,

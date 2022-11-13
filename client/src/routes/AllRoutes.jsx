@@ -41,34 +41,26 @@ const AllRoutes = () => {
       <Route path="/mob_version" element={<Mobile />} />
       <Route path="/professional_version" element={<Prof />} />
       <Route path="/faq" element={<Faq />} />
+
       <Route
-        path="/checkCalories"
+        path="/checkCalories/"
         element={
           <AuthRoute>
-            <AfterLoginPage />
+            <Diarypage />
           </AuthRoute>
         }
-      >
-        <Route
-          path="/checkCalories"
-          element={
-            <AuthRoute>
-              <Diarypage />
-            </AuthRoute>
-          }
-        />
-        <Route path="trends" element={<Trends />} />
-        <Route
-          path="help"
-          element={
-            <AuthRoute>
-              <Help />
-            </AuthRoute>
-          }
-        />
-        <Route path="plan" element={<Plan />} />
-        {/* All Routes of AfterLogin page will come under this route so add them here */}
-      </Route>
+      />
+      <Route path="/checkCalories/trends" element={<Trends />} />
+      <Route
+        path="/checkCalories/help"
+        element={
+          <AuthRoute>
+            <Help />
+          </AuthRoute>
+        }
+      />
+      <Route path="/checkCalories/plan" element={<Plan />} />
+      {/* All Routes of AfterLogin page will come under this route so add them here */}
     </Routes>
   )
 }

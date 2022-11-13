@@ -11,14 +11,16 @@ import Chart from '../../components/chart/Chart'
 import LineChart from '../../components/chart/LineChart'
 import AddFoodItem from '../../components/AddFoodItemNav'
 import AddItemWindow from '../../components/AddItemWindow'
+import AfterLoginPageNavbar from '../../components/AfterLoginPageNavbar'
 
 const Diarypage = () => {
   const [isOpen, setIsOpen] = useState(false)
   const { foodItemsInList } = useSelector((store) => store.diary)
+  const { data:{token} } = useSelector((store) => store.auth)
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(getfoodProducts())
-  }, [])
+    dispatch(getfoodProducts(token))
+  }, [token])
   if (foodItemsInList) {
     var { main, micro, vitamins, Major, Fat } = data(foodItemsInList)
   }
@@ -26,52 +28,58 @@ const Diarypage = () => {
   const toggleVisibility = () => setIsOpen((prev) => (prev = !prev))
 
   return (
-    <Stack
-      direction={{ base: 'column', lg: 'row' }}
-      w={{ base: '98%', lg: '1100px' }}
-      h={{ base: 'fit-content', lg: '1200px' }}
-      margin="auto"
-      mt="20px"
-      align="flex-start"
-    >
-      <Box
-        w={{ base: '98%', lg: '430px' }}
-        h={{ base: 'fit-content', lg: '900px' }}
-        overflow="hidden"
+    <VStack>
+      <AfterLoginPageNavbar currentLink="dairy" />
+      <Stack
+        direction={{ base: 'column', lg: 'row' }}
+        w={{ base: '98%', lg: '1100px' }}
+        h={{ base: 'fit-content', lg: '1200px' }}
+        margin="auto"
+        mt="20px"
+        align="flex-start"
       >
-        <VStack w="full">
-          <Chart title="Bar Representation" />
-          <LineChart title="Line Representation" />
-        </VStack>
-      </Box>
-      <Box
-        w={{ base: '99%', lg: '730px' }}
-        h={{ base: 'fit-content', lg: '1880px' }}
-        display="flex"
-        flexDirection="column"
-        gap="7px"
-      >
-        <AddFoodItem toggleVisibility={toggleVisibility} />
-        <CustomTable />
-        <CircularProgressDisplayer />
-        <EnergySummery />
-        <Stack
-          direction={{ base: 'column',md:'row' }}
-          justify="space-between"
+        <Box
+          w={{ base: '98%', md: '', lg: '430px' }}
+          h={{ base: 'fit-content', lg: '900px' }}
+          overflow="hidden"
         >
-          <VStack>
-            <CustomSmallTable title="Lipid" data={Fat} />
-            <CustomSmallTable title="Major" data={Major} />
-            <CustomSmallTable title="Vitamins" data={vitamins} />
-          </VStack>
-          <VStack>
-            <CustomSmallTable title="Micro" data={micro} />
-            <CustomSmallTable title="Main" data={main} />
-          </VStack>
-        </Stack>
-        {isOpen && <AddItemWindow toggleVisibility={toggleVisibility} />}
-      </Box>
-    </Stack>
+          <Stack
+            w="full"
+            direction={{ base: 'column', md: 'row', lg: 'column' }}
+          >
+            <Chart title="Bar Representation" />
+            <LineChart title="Line Representation" />
+          </Stack>
+        </Box>
+        <Box
+          w={{ base: '99%', lg: '730px' }}
+          h={{ base: 'fit-content', lg: '1880px' }}
+          display="flex"
+          flexDirection="column"
+          gap="7px"
+        >
+          <AddFoodItem toggleVisibility={toggleVisibility} />
+          <CustomTable />
+          <CircularProgressDisplayer />
+          <EnergySummery />
+          <Stack
+            direction={{ base: 'column', md: 'row' }}
+            justify="space-between"
+          >
+            <VStack>
+              <CustomSmallTable title="Lipid" data={Fat} />
+              <CustomSmallTable title="Major" data={Major} />
+              <CustomSmallTable title="Vitamins" data={vitamins} />
+            </VStack>
+            <VStack>
+              <CustomSmallTable title="Micro" data={micro} />
+              <CustomSmallTable title="Main" data={main} />
+            </VStack>
+          </Stack>
+          {isOpen && <AddItemWindow toggleVisibility={toggleVisibility} />}
+        </Box>
+      </Stack>
+    </VStack>
   )
 }
 

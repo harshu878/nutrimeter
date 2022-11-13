@@ -5,8 +5,8 @@ import { authReducer } from "./auth/auth.reducer";
 const createComposer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
-    diary: diaryReducer,
     auth:authReducer,
+    diary: diaryReducer,
 })
 
 export const store = createStore(rootReducer, createComposer(applyMiddleware(thunk)))

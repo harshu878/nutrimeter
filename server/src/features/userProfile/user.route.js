@@ -29,7 +29,8 @@ app.use(authMiddleWare)
 app.get('/getitems', async (req, res) => {
     const userId = req.userId;
     let userProfile = await UserProfiles.findOne({ user: userId });
-    res.send(userProfile);
+    if (userProfile) return res.send(userProfile);
+    res.send([])
 })
 
 app.post('/additem', async (req, res) => {
