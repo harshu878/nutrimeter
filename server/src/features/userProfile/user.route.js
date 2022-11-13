@@ -102,13 +102,10 @@ app.post('/additem', async (req, res) => {
 app.delete('/:id', async (req, res) => {
     const id = req.params.id;
     const userId = req.userId;
-    let userProfile = await UserProfiles.findOne({ user: userId });
+    // let userProfile = await UserProfiles.findOne({ user: userId });
     try {
-        let updatedUser = {
-            ...userProfile._doc,
-            products: userProfile.products.filter(ele => ele.productId !== id)
-        }
-        res.send(updatedUser);
+        let updatedUserProfile2 = await UserProfiles.updateMany({ user: userId }, { $pull: { products: { _id: id } } }, { new: true })
+        res.send(updatedUserProfile2);
     } catch (error) {
         res.status(401).send(error)
     }

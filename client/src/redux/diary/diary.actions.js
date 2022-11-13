@@ -44,6 +44,7 @@ export const addNewProduct = (body) => async (dispatch) => {
                 token: 'anmol@gmail.com_#_636b637ceffb818fa221edff_#_123456'
             }
         });
+        dispatch(getfoodProducts())
     } catch (error) {
         dispatch(diaryItemsError())
     } finally {
@@ -54,10 +55,16 @@ export const addNewProduct = (body) => async (dispatch) => {
 export const deleteItem = (id) => async (dispatch) => {
     dispatch(diaryItemsLoading())
     try {
-        let res = await axios.delete('http://localhost:8080/userprofile/' + id);
+        let res = await axios.delete('http://localhost:8080/userprofile/' + id, {
+            headers: {
+                token: 'anmol@gmail.com_#_636b637ceffb818fa221edff_#_123456'
+            }
+        })
+        dispatch(getfoodProducts())
     } catch (error) {
         dispatch(diaryItemsError())
     } finally {
         dispatch(diaryItemsSuccess())
     }
 }
+

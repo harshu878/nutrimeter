@@ -1,10 +1,12 @@
 import {
+  Box,
   Button,
   CloseButton,
   FormControl,
   HStack,
   Input,
   Spacer,
+  Stack,
   Tab,
   TabList,
   TabPanel,
@@ -14,27 +16,47 @@ import {
   VStack,
 } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
+import { Doughnut } from 'react-chartjs-2'
 import { AiOutlineSearch, AiTwotoneSetting } from 'react-icons/ai'
 import { useDispatch, useSelector } from 'react-redux'
-import { getAllProductToDisplay } from '../redux/diary/diary.actions'
+import {
+  addNewProduct,
+  getAllProductToDisplay,
+} from '../redux/diary/diary.actions'
+import DoughnutChart from './chart/DoughnutChart'
 import SearchResultTable from './SearchResultTable/SearchResultTable'
 
 const AddItemWindow = ({ toggleVisibility }) => {
   const { allFoodItems } = useSelector((store) => store.diary)
   const dispatch = useDispatch()
   const [query, setQuery] = useState('')
+  const [serving, setServing] = useState(1)
+  const [product, setProduct] = useState('')
+
+  const handleClickProduct = (item) => {
+    setProduct(item)
+  }
+  const handleAddItem = () => {
+    if (product === '') {
+      alert('select any product')
+      return
+    }
+    dispatch(addNewProduct({ product, serving }))
+    toggleVisibility()
+  }
+
   useEffect(() => {
-    if(!query) dispatch(getAllProductToDisplay(query))
+    if (!query) dispatch(getAllProductToDisplay(query))
   }, [dispatch])
   return (
     <VStack
-      w="835px"
+      w={{ base: '99%', lg: '835px' }}
       boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px"
       borderRadius={5}
       position="absolute"
       bg="white"
       top="3%"
-      left="18%"
+      left={{ base: '0', lg: '18%' }}
     >
       <HStack
         w="full"
@@ -46,7 +68,12 @@ const AddItemWindow = ({ toggleVisibility }) => {
         <Spacer />
         <CloseButton onClick={toggleVisibility} />
       </HStack>
-      <HStack w="full" px="20px" justifyContent="space-between" py="5px">
+      <HStack
+        w="full"
+        px={{ base: '10px', lg: '20px' }}
+        justifyContent="space-between"
+        py="5px"
+      >
         <HStack
           w="600px"
           pl="8px"
@@ -77,7 +104,7 @@ const AddItemWindow = ({ toggleVisibility }) => {
         </Button>
         <AiTwotoneSetting color="grey" fontSize={19} />
       </HStack>
-      <HStack w="full" px="20px">
+      <HStack w="full" px={{ base: '10px', lg: '20px' }}>
         <Tabs variant="enclosed" w="full">
           <TabList
             boxShadow="rgba(138, 138, 138, 0.24) 0px -3px 4px"
@@ -90,7 +117,51 @@ const AddItemWindow = ({ toggleVisibility }) => {
           </TabList>
           <TabPanels>
             <TabPanel>
-              <SearchResultTable allFoodItems={allFoodItems} />
+              <SearchResultTable
+                allFoodItems={allFoodItems}
+                handleClickProduct={handleClickProduct}
+              />
+              <Stack
+                m="auto"
+                w="full"
+                align="center"
+                justify="center"
+                mt="9px"
+                spacing={7}
+                direction={{ base: 'column', lg: 'row' }}
+              >
+                {/* <Text
+                  textAlign="center"
+                  w="full"
+                  h="30px"
+                  fontWeight="600"
+                  color="orange.500"
+                >
+                  {'Add Product'}
+                </Text> */}
+                <Box>{product && <DoughnutChart product={product} />}</Box>
+                <HStack w="full" justifyContent="center" align="center">
+                  <Text w="60px" fontSize={11}>
+                    Enter servings
+                  </Text>
+                  <FormControl w="60px" h="30px">
+                    <Input
+                      value={serving}
+                      onChange={({ target: { value } }) => setServing(+value)}
+                      type="number"
+                    />
+                  </FormControl>
+                </HStack>
+                <Button
+                  onClick={handleAddItem}
+                  h="40px"
+                  variant="outline"
+                  borderColor="orange.700"
+                  w="160px"
+                >
+                  Add Item
+                </Button>
+              </Stack>
             </TabPanel>
             <TabPanel>
               <SearchResultTable />

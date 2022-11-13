@@ -1,26 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
 import { GiAppleSeeds } from "react-icons/gi";
 import { FaAppleAlt } from "react-icons/fa";
-import { Button, Flex, Heading, Spacer, Box, Image, IconButton, useColorMode,
+import { Button, Flex, Heading, Spacer, 
+  Box, Image,  Text, useMediaQuery, HStack, IconButton, useColorMode,
   Popover, PopoverTrigger,PopoverContent,PopoverHeader,PopoverArrow,PopoverCloseButton,PopoverBody,
-   Link, useTheme, Text, useMediaQuery, HStack } from "@chakra-ui/react";
+   Link, useTheme} from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import DraewerNav from "./DraewerNav";
 
+const fontSize = { base: "10px", sm: "12px", md: "15px", lg: "18px" };
 
 const NavBar = () => {
-    const fontSize = { base: "10px", sm: "12px", md: "15px", lg: "18px" };
 
 
   const { colorMode, toggleColorMode } = useColorMode();
 
   const theme = useTheme();
   const [isMatch] = useMediaQuery("(max-width: 800px)");
-  console.log("isMatch:", isMatch);
+  // console.log("isMatch:", isMatch);
 
-  console.log("theme:", theme);
+  // console.log("theme:", theme);
   return (
-    <Flex boxShadow="md" width="full" h={20} paddingInline={150} marginRight={4} justifyContent={"space-between"} alignItems={"center"} gap="5">
+    <Flex boxShadow="md" width="full" h={20} paddingInline={5} marginRight={4} justifyContent={"space-between"} alignItems={"center"} gap="2">
       <Box>
         <Link href="/">
           <Image
@@ -33,15 +34,7 @@ const NavBar = () => {
         <DraewerNav></DraewerNav>
       ) : (
         <HStack gap={3}>
-          {/* <Box p="1" >
-            <NavLink to="/">
-              <Text  fontSize={fontSize} _hover={{color:"orange"}}>
-                Products
-              </Text>
-            </NavLink>
-          </Box> */}
-
-
+         
           {/* pop over -------------- */}
           <Popover isLazy w="200px">
   <PopoverTrigger>
@@ -71,7 +64,7 @@ const NavBar = () => {
 
 
           <Box p="1" >
-            <NavLink to="/" >
+            <NavLink to="/support" >
               <Text  fontSize={fontSize} colorScheme="orange.500" _hover={{color:"orange"}}>
                 Support
               </Text>

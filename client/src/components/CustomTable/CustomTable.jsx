@@ -2,7 +2,8 @@ import { Box, Image, Text } from '@chakra-ui/react'
 import React, { useEffect } from 'react'
 import { TableWrapper } from './cumstomTable.styles'
 import { useSelector, useDispatch } from 'react-redux'
-import { getfoodProducts } from '../../redux/diary/diary.actions'
+import { deleteItem } from '../../redux/diary/diary.actions'
+import { RiDeleteBack2Fill } from 'react-icons/ri'
 
 const CustomTable = () => {
   const { foodItemsInList, loading, error } = useSelector(
@@ -10,13 +11,10 @@ const CustomTable = () => {
   )
   const dispatch = useDispatch()
 
-  useEffect(() => {
-    dispatch(getfoodProducts())
-  }, [dispatch])
   return (
     <Box
       w="full"
-      h="300px"
+      h={{ base: 'fit-content', lg: '300px' }}
       boxShadow="rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px"
     >
@@ -30,7 +28,7 @@ const CustomTable = () => {
         </thead>
         <tbody>
           {foodItemsInList.map(
-            ({ totalEnergy, servings, product: { Description } }, ind) => {
+            ({ totalEnergy, _id, servings, product: { Description } }, ind) => {
               if (loading) {
                 return <div key={ind}>Loading....</div>
               } else if (error) {
@@ -40,7 +38,15 @@ const CustomTable = () => {
                 <tr key={ind}>
                   <td style={{ display: 'flex', gap: '5px' }}>
                     <Image w="14px" h="15px" src="/Images/appleImage.png" />
-                    <Text>{Description}</Text>
+                    <Text mr="10px">{Description}</Text>
+                    <RiDeleteBack2Fill
+                      color="#b55c5c"
+                      size={19}
+                      cursor="pointer"
+                      onClick={() => {
+                        dispatch(deleteItem(_id))
+                      }}
+                    />
                   </td>
                   <td style={{ textAlign: 'center' }}>{servings}</td>
                   <td style={{ textAlign: 'right' }}>

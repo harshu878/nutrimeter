@@ -1,17 +1,17 @@
 import { Box, Text } from '@chakra-ui/react'
-import React, { useEffect } from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { TableWrapper } from './SearchResultTable.styles'
 import { GiHealthPotion } from 'react-icons/gi'
 
-const SearchResultTable = ({ allFoodItems }) => {
+const SearchResultTable = ({ allFoodItems, handleClickProduct }) => {
   const { loading, error } = useSelector((store) => store.diary)
+  const [selected, setSelected] = useState('')
 
-  useEffect(() => {}, [])
   return (
     <Box
       w="full"
-      h="300px"
+      h="270px"
       boxShadow="rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px"
       overflow="auto"
@@ -26,14 +26,22 @@ const SearchResultTable = ({ allFoodItems }) => {
           </tr>
         </thead>
         <tbody>
-          {allFoodItems?.map(({ Description }, ind) => {
+          {allFoodItems?.map((ele, ind) => {
+            const { Description, _id } = ele
             if (loading) {
               return <div key={ind}>Loading....</div>
             } else if (error) {
               return <div key={ind}>Error...</div>
             }
             return (
-              <tr key={ind}>
+              <tr
+                id={selected === _id ? 'active' : 'unactive'}
+                key={_id}
+                onClick={() => {
+                  handleClickProduct(ele)
+                  setSelected(_id)
+                }}
+              >
                 <td style={{ textAlign: 'left' }}>
                   <Text>{Description}</Text>
                 </td>

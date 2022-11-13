@@ -1,8 +1,8 @@
 import {
-  Box,
   CircularProgress,
   CircularProgressLabel,
   HStack,
+  Stack,
   Text,
   VStack,
 } from '@chakra-ui/react'
@@ -18,13 +18,14 @@ const EnergySummery = () => {
   )
 
   return (
-    <Box
+    <Stack
       w="full"
-      h="175px"
+      h={{ base: 'fit-content', lg: '175px' }}
       boxShadow="rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px"
-      display="grid"
+      display={{ base: 'flex', lg: 'grid' }}
       gridTemplateColumns="1.1fr 1fr"
+      direction={{ base: 'column', lg: 'row' }}
     >
       <VStack
         h="full"
@@ -110,7 +111,7 @@ const EnergySummery = () => {
       <HStack h="full" px="8px" justifyContent="center" alignItems="center">
         <MacroTargets />
       </HStack>
-    </Box>
+    </Stack>
   )
 }
 
