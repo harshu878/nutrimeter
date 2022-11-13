@@ -10,7 +10,6 @@ const LogoutButton = () => {
 
   const handleClick = () => {
     dispatch(LogOut());
-
   };
 
   return (

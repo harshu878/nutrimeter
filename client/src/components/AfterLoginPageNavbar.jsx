@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import AfterLoginSideNav from './AfterLoginSideNav'
 import { GiHamburgerMenu } from 'react-icons/gi'
+import { LogOut } from '../redux/auth/auth.actions'
+import LogoutButton from './LogoutButton'
 
 const AfterLoginPageNavbar = () => {
   const [isActive, setIsActive] = useState('dairy')
@@ -107,6 +109,9 @@ const AfterLoginPageNavbar = () => {
         id="burgerIcon"
         fontSize={21}
       />
+      <Box position="absolute" right={9}>
+        <LogoutButton />
+      </Box>
       {visible && <AfterLoginSideNav handleVisible={handleVisible} />}
     </StyledHStack>
   )
