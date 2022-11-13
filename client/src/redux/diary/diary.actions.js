@@ -9,7 +9,7 @@ export const diaryItemsError = () => ({ type: ERROR_STATE })
 export const getfoodProducts = () => async (dispatch) => {
     dispatch(diaryItemsLoading());
     try {
-        let res = await axios.get('http://localhost:8080/userprofile/getitems', {
+        let res = await axios.get('https://nutrimeter-server.onrender.com/userprofile/getitems', {
             headers: {
                 token: 'anmol@gmail.com_#_636b637ceffb818fa221edff_#_123456'
             }
@@ -26,7 +26,7 @@ export const getfoodProducts = () => async (dispatch) => {
 export const getAllProductToDisplay = (query) => async (dispatch) => {
     dispatch(diaryItemsLoading())
     try {
-        let res = await axios.get(`http://localhost:8080/foodProducts?q=${query}`);
+        let res = await axios.get(`https://nutrimeter-server.onrender.com/foodProducts?q=${query}`);
         dispatch({ type: GET_ALL_PRODUCTS, payload: res.data })
     } catch (error) {
         dispatch(diaryItemsError())
@@ -39,7 +39,7 @@ export const getAllProductToDisplay = (query) => async (dispatch) => {
 export const addNewProduct = (body) => async (dispatch) => {
     dispatch(diaryItemsLoading())
     try {
-        let res = await axios.post('http://localhost:8080/userprofile/additem', body, {
+        let res = await axios.post('https://nutrimeter-server.onrender.com/userprofile/additem', body, {
             headers: {
                 token: 'anmol@gmail.com_#_636b637ceffb818fa221edff_#_123456'
             }
@@ -55,7 +55,7 @@ export const addNewProduct = (body) => async (dispatch) => {
 export const deleteItem = (id) => async (dispatch) => {
     dispatch(diaryItemsLoading())
     try {
-        let res = await axios.delete('http://localhost:8080/userprofile/' + id, {
+        let res = await axios.delete('https://nutrimeter-server.onrender.com/userprofile/' + id, {
             headers: {
                 token: 'anmol@gmail.com_#_636b637ceffb818fa221edff_#_123456'
             }
