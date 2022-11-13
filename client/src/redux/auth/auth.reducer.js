@@ -50,7 +50,6 @@ export const authReducer = (state = authInitalState, { type, payload }) => {
       }
     }
     case AUTH_SIGN_UP_SUCCESS: {
-      console.log(payload)
       return {
         ...state,
         loading: false,

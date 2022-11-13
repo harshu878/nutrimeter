@@ -35,10 +35,9 @@ app.get('/getitems', async (req, res) => {
 
 app.post('/additem', async (req, res) => {
     let { product, serving } = req.body;
-    console.log(product);
     serving = Number(serving);
     const userId = req.userId;
-    let existingProduct = await Products.findById({ _id: product })
+    let existingProduct = await Products.findById(product)
     try {
         let userProfile = await UserProfiles.findOne({ user: userId });
         if (userProfile) {
