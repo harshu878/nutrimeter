@@ -16,6 +16,7 @@ import Faq from "../pages/Faq";
 import Web from "../pages/Web";
 import Mobile from "../pages/Mobile";
 import Help from "../pages/Help";
+import Plan from "../pages/plan";
 
 const AllRoutes = () => {
   return (
@@ -36,6 +37,7 @@ const AllRoutes = () => {
         <Route path="/checkCalories" element={<Diarypage />} />
         <Route path="trends" element={<Trends />} />
         <Route path="help" element={<Help />} />
+        <Route path="plan" element={<Plan />} />
         {/* All Routes of AfterLogin page will come under this route so add them here */}
       </Route>
     </Routes>
