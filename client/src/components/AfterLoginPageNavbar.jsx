@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import AfterLoginSideNav from './AfterLoginSideNav'
 import { GiHamburgerMenu } from 'react-icons/gi'
-import { LogOut } from '../redux/auth/auth.actions'
 import LogoutButton from './LogoutButton'
 
 const AfterLoginPageNavbar = () => {
@@ -56,7 +55,7 @@ const AfterLoginPageNavbar = () => {
           fontWeight="500"
           color="rgb(184,56,5)"
         >
-          Trands
+          Trends
         </Box>
       </Link>
       <Link className="navLink" onClick={() => setIsActive('foods')} to="#">
@@ -79,7 +78,7 @@ const AfterLoginPageNavbar = () => {
           Settings
         </Box>
       </Link>
-      <Link className="navLink" onClick={() => setIsActive('plans')} to="">
+      <Link className="navLink" onClick={() => setIsActive('plans')} to="/checkCalories/plan">
         <Box
           className="links"
           id={isActive === 'plans' ? 'active' : 'notActive'}
@@ -109,7 +108,11 @@ const AfterLoginPageNavbar = () => {
         id="burgerIcon"
         fontSize={21}
       />
-      <Box position="absolute" right={9}>
+      <Box
+        display={{ base: 'none', lg: 'block' }}
+        position="absolute"
+        right={9}
+      >
         <LogoutButton />
       </Box>
       {visible && <AfterLoginSideNav handleVisible={handleVisible} />}

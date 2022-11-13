@@ -16,7 +16,6 @@ import {
   VStack,
 } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
-import { Doughnut } from 'react-chartjs-2'
 import { AiOutlineSearch, AiTwotoneSetting } from 'react-icons/ai'
 import { useDispatch, useSelector } from 'react-redux'
 import {
@@ -32,7 +31,6 @@ const AddItemWindow = ({ toggleVisibility }) => {
   const [query, setQuery] = useState('')
   const [serving, setServing] = useState(1)
   const [product, setProduct] = useState('')
-
   const handleClickProduct = (item) => {
     setProduct(item)
   }

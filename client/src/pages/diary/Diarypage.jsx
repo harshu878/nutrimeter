@@ -11,14 +11,16 @@ import Chart from '../../components/chart/Chart'
 import LineChart from '../../components/chart/LineChart'
 import AddFoodItem from '../../components/AddFoodItemNav'
 import AddItemWindow from '../../components/AddItemWindow'
+import { useLocation } from 'react-router-dom'
 
 const Diarypage = () => {
   const [isOpen, setIsOpen] = useState(false)
   const { foodItemsInList } = useSelector((store) => store.diary)
+  const loaction = useLocation()
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(getfoodProducts())
-  }, [])
+  }, [loaction.pathname === '/'])
   if (foodItemsInList) {
     var { main, micro, vitamins, Major, Fat } = data(foodItemsInList)
   }
@@ -35,14 +37,14 @@ const Diarypage = () => {
       align="flex-start"
     >
       <Box
-        w={{ base: '98%', lg: '430px' }}
+        w={{ base: '98%', md: '', lg: '430px' }}
         h={{ base: 'fit-content', lg: '900px' }}
         overflow="hidden"
       >
-        <VStack w="full">
+        <Stack w="full" direction={{ base: 'column', md: 'row', lg: 'column' }}>
           <Chart title="Bar Representation" />
           <LineChart title="Line Representation" />
-        </VStack>
+        </Stack>
       </Box>
       <Box
         w={{ base: '99%', lg: '730px' }}
@@ -56,7 +58,7 @@ const Diarypage = () => {
         <CircularProgressDisplayer />
         <EnergySummery />
         <Stack
-          direction={{ base: 'column',md:'row' }}
+          direction={{ base: 'column', md: 'row' }}
           justify="space-between"
         >
           <VStack>

@@ -11,7 +11,7 @@ export const LoginApi = (creds) => async (dispatch) => {
     })
     try {
 
-        let res = await axios.post("http://localhost:8080/user/auth/login", creds)
+        let res = await axios.post("https://nutrimeter-server.onrender.com/user/auth/login", creds)
 
 
         dispatch({
@@ -36,7 +36,7 @@ export const SignupApi=(creds)=>async(dispatch)=>{
         type:AUTH_SIGN_UP_LOADING
     })
     try {      
-        let res = await axios.post("http://localhost:8080/user/auth/register", creds)
+        let res = await axios.post("https://nutrimeter-server.onrender.com/user/auth/register", creds)
 
         dispatch({
             type: AUTH_SIGN_UP_SUCCESS,

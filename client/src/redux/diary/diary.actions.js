@@ -1,17 +1,19 @@
-import { ERROR_STATE, GET_ALL_PRODUCTS, GET_FOOD_PRODUCT_LIST, LOADING_STATE, SUCCESS_STATE } from "./diary.types";
+import { ERROR_STATE, GET_ALL_CATEGORIES, GET_ALL_PRODUCTS, GET_FOOD_PRODUCT_LIST, LOADING_STATE, SUCCESS_STATE } from "./diary.types";
 import axios from 'axios'
 
+const token = localStorage.getItem('userToken')
 
 export const diaryItemsLoading = () => ({ type: LOADING_STATE })
 export const diaryItemsSuccess = () => ({ type: SUCCESS_STATE })
 export const diaryItemsError = () => ({ type: ERROR_STATE })
 
+
 export const getfoodProducts = () => async (dispatch) => {
     dispatch(diaryItemsLoading());
     try {
-        let res = await axios.get('http://localhost:8080/userprofile/getitems', {
+        let res = await axios.get('https://nutrimeter-server.onrender.com/userprofile/getitems', {
             headers: {
-                token: 'anmol@gmail.com_#_636b637ceffb818fa221edff_#_123456'
+                token
             }
         })
         dispatch({ type: GET_FOOD_PRODUCT_LIST, payload: res.data })
@@ -26,8 +28,20 @@ export const getfoodProducts = () => async (dispatch) => {
 export const getAllProductToDisplay = (query) => async (dispatch) => {
     dispatch(diaryItemsLoading())
     try {
-        let res = await axios.get(`http://localhost:8080/foodProducts?q=${query}`);
+        let res = await axios.get(`https://nutrimeter-server.onrender.com/foodProducts?q=${query}`);
         dispatch({ type: GET_ALL_PRODUCTS, payload: res.data })
+    } catch (error) {
+        dispatch(diaryItemsError())
+    } finally {
+        dispatch(diaryItemsSuccess())
+    }
+}
+
+export const getAllCategories = () => async (dispatch) => {
+    dispatch(diaryItemsLoading());
+    try {
+        let res = await axios('https://nutrimeter-server.onrender.com/foodProducts/allcategories');
+        dispatch({ type: GET_ALL_CATEGORIES, payload: res.data });
     } catch (error) {
         dispatch(diaryItemsError())
     } finally {
@@ -39,9 +53,9 @@ export const getAllProductToDisplay = (query) => async (dispatch) => {
 export const addNewProduct = (body) => async (dispatch) => {
     dispatch(diaryItemsLoading())
     try {
-        let res = await axios.post('http://localhost:8080/userprofile/additem', body, {
+        let res = await axios.post('https://nutrimeter-server.onrender.com/userprofile/additem', body, {
             headers: {
-                token: 'anmol@gmail.com_#_636b637ceffb818fa221edff_#_123456'
+                token
             }
         });
         dispatch(getfoodProducts())
@@ -55,9 +69,9 @@ export const addNewProduct = (body) => async (dispatch) => {
 export const deleteItem = (id) => async (dispatch) => {
     dispatch(diaryItemsLoading())
     try {
-        let res = await axios.delete('http://localhost:8080/userprofile/' + id, {
+        let res = await axios.delete('https://nutrimeter-server.onrender.com/userprofile/' + id, {
             headers: {
-                token: 'anmol@gmail.com_#_636b637ceffb818fa221edff_#_123456'
+                token
             }
         })
         dispatch(getfoodProducts())
