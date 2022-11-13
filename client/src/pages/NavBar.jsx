@@ -23,12 +23,12 @@ const NavBar = () => {
   return (
     <Flex boxShadow="md" width="full" h={20} paddingInline={5} marginRight={4} justifyContent={"space-between"} alignItems={"center"} gap="2">
       <Box>
-        <Link href="/">
+        <NavLink to="/">
           <Image
             width={{ base: "100px", md: "150px", lg: "196px" }} 
             src="https://i.postimg.cc/7hV5qrzC/Color-logo-no-background.png"
           ></Image>
-        </Link>
+        </NavLink>
       </Box>
       {isMatch ? (
         <DraewerNav></DraewerNav>

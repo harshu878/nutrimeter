@@ -40,19 +40,21 @@ function DraewerNav() {
               <Image 
              
               width={{ base: "150px", md: "160px", lg: "190px" }}
-              src="/pic/logo.png"
+              src="https://i.postimg.cc/7hV5qrzC/Color-logo-no-background.png"
             ></Image>
             </Box>
             <DrawerBody>
               <Popover isLazy w="200px">
                 <PopoverTrigger>
-                  <Button bg="none" color="black" _hover={{color:"orange.500"}} fontSize={fontSize} fontWeight="bold" ml="-12px">Products </Button>
+                  <Button bg="none" color="black" _hover={{color:"orange.500"}} fontSize="16px" fontWeight="bold" ml="-12px">Products </Button>
+                  {/* <Button bg="none" color="black" _hover={{color:"orange.500"}} fontSize={fontSize} fontWeight="none" ml="-12px">Products </Button> */}
+
   </PopoverTrigger>
   <PopoverContent>
     <PopoverHeader fontWeight='semibold'>Cronometer Products</PopoverHeader>
     <PopoverArrow />
     <PopoverCloseButton />
-    <NavLink to="/home">
+    <NavLink to="/">
     <PopoverBody _hover={{color:"orange"}}>
     <IconButton isRound={true} bg="green.300" color="red.500"  size="lg" mr="20px"  icon={<FaAppleAlt></FaAppleAlt>}>
     </IconButton>
@@ -91,7 +93,7 @@ function DraewerNav() {
                   
               </Box>
               <Box p="1">
-                  <NavLink to="/">
+                  <NavLink to="/support">
                     <Text fontWeight="bold" _hover={{color:"orange"}}>
                       Support
                     </Text>
@@ -99,12 +101,7 @@ function DraewerNav() {
                   
               </Box>
               <Box p="1">
-                  {/* <Flex gap={2} alignItems={"center"}>
-                    <IconButton isRound={true} size="md" alignSelf="flex-end" icon={<FaUserCheck></FaUserCheck>}></IconButton>
-                    <Text color="red.500" fontWeight="bold" fontSize={fontSize}>
-                    </Text>
-                  </Flex> */}
-                  <NavLink to="/">
+                  <NavLink to="/login">
                     <Button bg={"orange.400"} colorScheme="orange" color="white">
                       <Text fontSize={fontSize}>Login</Text>
                     </Button>

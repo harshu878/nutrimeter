@@ -28,10 +28,10 @@ const Footer = () => {
             <Grid  w={{base:"200px", md:"300px", lg:"400px"}}
              h="100px"  m="auto" templateColumns='repeat(2, 1fr)' >
                 <GridItem w={{base:"90px", md:"150px", lg:"180px"}} m="auto">
-                    <Image  src="https://cdn1.cronometer.com/2021/landing/ios-icon.svg"></Image>
+                    <Image  src="https://raw.githubusercontent.com/harshu878/nutrimeter/b24e158e4f21902c1fe890e3fcec626ae022ebaf/client/public/Images/appstore.svg"></Image>
                 </GridItem >
                 <GridItem w={{base:"90px", md:"150px", lg:"180px"}} m="auto">
-                <Image  src="https://cdn1.cronometer.com/2021/landing/android-icon.svg"></Image>
+                <Image  src="https://raw.githubusercontent.com/harshu878/nutrimeter/b24e158e4f21902c1fe890e3fcec626ae022ebaf/client/public/Images/googlePlay.svg"></Image>
                 </GridItem>
             </Grid>
             {/* google img section neds */}
@@ -50,7 +50,7 @@ const Footer = () => {
         alignItems={{ base: "center", md: "flex-start" }}
       >
         <VStack alignItems={{ base: "center", md: "flex-start" }}>
-          <Image w={{base:"200px", md:"200px", lg:"220px"}} src="https://cdn1.cronometer.com/2021/landing/crono-logo-white.svg"></Image>
+          <Image w={{base:"200px", md:"200px", lg:"220px"}} src="https://github.com/harshu878/nutrimeter/blob/main/client/public/Images/Color%20logo%20-%20no%20background.png?raw=true"></Image>
         </VStack>
 
         {/* col 2 */}
