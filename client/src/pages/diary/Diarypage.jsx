@@ -1,4 +1,4 @@
-import { Box, HStack, Stack, VStack } from '@chakra-ui/react'
+import { Box, Stack, VStack } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import CustomTable from '../../components/CustomTable/CustomTable'
 import CustomSmallTable from '../../components/CustomSmallTable/CustomSmallTable'

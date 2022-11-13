@@ -57,7 +57,7 @@ const AllRoutes = () => {
             </AuthRoute>
           }
         />
-        {/* <Route path="trends" element={<Trends />} /> */}
+        <Route path="trends" element={<Trends />} />
         <Route
           path="help"
           element={
