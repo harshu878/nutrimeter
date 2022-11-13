@@ -27,6 +27,9 @@ import SearchResultTable from './SearchResultTable/SearchResultTable'
 
 const AddItemWindow = ({ toggleVisibility }) => {
   const { allFoodItems } = useSelector((store) => store.diary)
+  const {
+    data: { token },
+  } = useSelector((store) => store.auth)
   const dispatch = useDispatch()
   const [query, setQuery] = useState('')
   const [serving, setServing] = useState(1)
@@ -39,7 +42,7 @@ const AddItemWindow = ({ toggleVisibility }) => {
       alert('select any product')
       return
     }
-    dispatch(addNewProduct({ product, serving }))
+    dispatch(addNewProduct({ product: product._id, serving }, token))
     toggleVisibility()
   }
 

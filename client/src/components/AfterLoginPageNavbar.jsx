@@ -6,8 +6,8 @@ import AfterLoginSideNav from './AfterLoginSideNav'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import LogoutButton from './LogoutButton'
 
-const AfterLoginPageNavbar = () => {
-  const [isActive, setIsActive] = useState('dairy')
+const AfterLoginPageNavbar = ({ currentLink }) => {
+  const [isActive, setIsActive] = useState(currentLink)
   const [visible, setVisible] = useState(false)
   const handleVisible = () => {
     setVisible((prev) => (prev = !prev))
@@ -78,7 +78,11 @@ const AfterLoginPageNavbar = () => {
           Settings
         </Box>
       </Link>
-      <Link className="navLink" onClick={() => setIsActive('plans')} to="/checkCalories/plan">
+      <Link
+        className="navLink"
+        onClick={() => setIsActive('plans')}
+        to="/checkCalories/plan"
+      >
         <Box
           className="links"
           id={isActive === 'plans' ? 'active' : 'notActive'}

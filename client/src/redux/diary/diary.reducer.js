@@ -1,4 +1,4 @@
-import { ERROR_STATE, GET_ALL_PRODUCTS, GET_FOOD_PRODUCT_LIST, LOADING_STATE, SUCCESS_STATE, UPDATER } from "./diary.types"
+import { ERROR_STATE, GET_ALL_PRODUCTS, GET_FOOD_PRODUCT_LIST, LOADING_STATE, SUCCESS_STATE } from "./diary.types"
 
 const initialState = {
     loading: false,
@@ -14,7 +14,7 @@ export const diaryReducer = (state = initialState, { type, payload }) => {
         case GET_FOOD_PRODUCT_LIST: {
             return {
                 ...state,
-                foodItemsInList: payload.products.filter(ele => ele.time === `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}`),
+                foodItemsInList: payload.length > 0 || payload.products?.length > 0 ? payload.products.filter(ele => ele.time === `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}`) : [],
                 usersAlItems: payload.products,
             }
         }
@@ -24,7 +24,7 @@ export const diaryReducer = (state = initialState, { type, payload }) => {
                 allFoodItems: payload
             }
         }
-        
+
         case LOADING_STATE: {
             return {
                 ...state,
@@ -48,3 +48,5 @@ export const diaryReducer = (state = initialState, { type, payload }) => {
             return state;
     }
 }
+
+

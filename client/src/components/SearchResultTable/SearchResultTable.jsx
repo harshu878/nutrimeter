@@ -5,7 +5,6 @@ import { TableWrapper } from './SearchResultTable.styles'
 import { GiHealthPotion } from 'react-icons/gi'
 
 const SearchResultTable = ({ allFoodItems, handleClickProduct }) => {
-  const { loading, error } = useSelector((store) => store.diary)
   const [selected, setSelected] = useState('')
 
   return (
@@ -27,13 +26,8 @@ const SearchResultTable = ({ allFoodItems, handleClickProduct }) => {
         </thead>
         <tbody>
           {allFoodItems &&
-            allFoodItems.map((ele, ind) => {
+            allFoodItems.map((ele) => {
               const { Description, _id } = ele
-              // if (loading) {
-              //   return <div key={ind}>Loading....</div>
-              // } else if (error) {
-              //   return <div key={ind}>Error...</div>
-              // }
               return (
                 <tr
                   id={selected === _id ? 'active' : 'unactive'}

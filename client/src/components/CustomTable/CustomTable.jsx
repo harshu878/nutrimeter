@@ -9,6 +9,9 @@ const CustomTable = () => {
   const { foodItemsInList, loading, error } = useSelector(
     (store) => store.diary,
   )
+  const {
+    data: { token },
+  } = useSelector((store) => store.auth)
   const dispatch = useDispatch()
 
   return (
@@ -44,7 +47,7 @@ const CustomTable = () => {
                       size={19}
                       cursor="pointer"
                       onClick={() => {
-                        dispatch(deleteItem(_id))
+                        dispatch(deleteItem(_id, token))
                       }}
                     />
                   </td>

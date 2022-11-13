@@ -10,6 +10,11 @@ const productsRoute = require('./features/foodProducts/products.route')
 
 const app = express();
 
+
+app.get('/', async (req, res) => {
+    res.send('Enter any route')
+})
+
 app.use(cors())
 app.use(express.json())
 app.use('/userprofile', userRoute)

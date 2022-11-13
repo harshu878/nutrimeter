@@ -13,6 +13,7 @@ import {
     Text,
   } from "@chakra-ui/react";
   import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
+import AfterLoginPageNavbar from "../components/AfterLoginPageNavbar";
 import Footer from "../components/Footer";
   
   
@@ -40,6 +41,7 @@ function Plan() {
   
     return (
       <Box overflowX={"hidden"}>
+        <AfterLoginPageNavbar currentLink='plans'/>
         <Box m={5} ml={10}>
           <Text
             fontSize={25}
