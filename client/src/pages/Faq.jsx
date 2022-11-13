@@ -10,6 +10,8 @@ import {
     Spacer
   } from "@chakra-ui/react";
   import { SearchIcon } from "@chakra-ui/icons";
+import Footer from "../components/Footer";
+import NavBar from "./NavBar";
   
 
 
@@ -17,7 +19,7 @@ function Faq() {
   return (
     <Box>
       <Box>
-       
+       <NavBar/>
         <Box p={10} borderTop={"1px"} color={"gray.300"}>
           <Flex flexWrap={"wrap"} justifyContent={"space-between"}>
             <Flex m={5}>
@@ -230,6 +232,7 @@ function Faq() {
           
         </Stack>
       </Box>
+      <Footer />
     </Box>
   );
 }

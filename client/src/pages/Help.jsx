@@ -1,5 +1,6 @@
 import { Box, Button, Flex, Image, SimpleGrid, Text } from "@chakra-ui/react";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
+import Footer from "../components/Footer";
 
 function Help() {
   const liLinks = [
@@ -287,6 +288,7 @@ function Help() {
           </Text>
         ))}
       </Flex>
+      <Footer/>
     </Box>
   );
 }
