@@ -7,46 +7,29 @@ import {
   Input,
   InputGroup,
   InputRightElement,
-  Link,
   Text,
 } from "@chakra-ui/react";
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import SearchBox from "../../components/SearchBox/SearchBox.jsx";
 
 import { CgPlayButtonO } from "react-icons/cg";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { HiSearch } from "react-icons/hi";
-import blogPageFirstImage from "./Images/blogPageFirstImage.png";
-
-import blogImgGummyBears from "./Images/Blog-Img-Gummy-Bears.png";
-import blogImgFiber from "./Images/Fiber.png";
-import blogImgAvocado from "./Images/Blog-Image-Avocado.png";
-
-import rocket from "./Images/rocket.png";
-import appleTree from "./Images/apple_tree.jpg";
-
-import eczma from "./Images/eczema.png";
-import acne from "./Images/acne.jpg";
-import knowYourself from "./Images/know_yourself.png";
-
-import cronometerGraphic from "./Images/cronometer-hero-graphic.svg";
 
 import blogStyles from "./BlogPage.module.css";
 import BlogCard from "../../components/BlogCard/BlogCard";
+import NavBar from "../NavBar";
+import Footer from "../../components/Footer";
 
 const BlogPage = () => {
   const [isClicked, setClicked] = useState(false);
+  const navigate = useNavigate();
 
-  const backgroundBox = {
-    padding: "80px 0 140px",
-    backgroundColor: "transparent",
-    backgroundImage: "linear-gradient(80deg,#ff763f 0%,#ffb56b 100%)",
-    color: "white",
-    borderRadius: "100%/0 0 60px 60px",
-    textAlign: "center",
-  };
   return (
     <div style={{ width: "auto" }}>
-      <Box style={backgroundBox}>
+      <NavBar />
+      <Box className={blogStyles.orangeBackgroundBoxCurved}>
         <Heading size="2xl">The Cronometer Blog</Heading>
         <Text>App Updates, Nutrition Tips & Inspiration</Text>
       </Box>
@@ -77,7 +60,8 @@ const BlogPage = () => {
             <>
               <Box position="relative">
                 <Image
-                  src={blogPageFirstImage}
+                  src="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/blogPageFirstImage.png"
+                  objectFit="cover"
                   alt="image"
                   width="100%"
                   height="375px"
@@ -91,7 +75,12 @@ const BlogPage = () => {
                   transform="translate(-50%,-50%)"
                   cursor="pointer"
                 >
-                  <CgPlayButtonO size="100px" color="white" top="50px" />
+                  <CgPlayButtonO
+                    size="100px"
+                    color="white"
+                    top="50px"
+                    onClick={() => setClicked(!isClicked)}
+                  />
                 </Box>
               </Box>
             </>
@@ -105,7 +94,12 @@ const BlogPage = () => {
             live a healthier, happier life.{" "}
           </Text>
           <br />
-          <Button className={blogStyles.orangeButton} fontSize="xl">
+          <Button
+            cursor="pointer"
+            onClick={() => navigate("/")}
+            className={blogStyles.orangeButton}
+            fontSize="xl"
+          >
             Get Started
           </Button>
         </Box>
@@ -120,9 +114,14 @@ const BlogPage = () => {
             ----<span className={blogStyles.orangeColor}>Recent Posts</span>
           </Text>
           <br />
-          <Flex justifyContent="space-between">
+          <Flex
+            justifyContent="space-between"
+            cursor="pointer"
+            onClick={() => navigate("/blog/sugar-free-sensitivities")}
+          >
             <Image
-              src={blogImgGummyBears}
+              src="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/Blog-Img-Gummy-Bears.png"
+              objectFit="cover"
               w="35%"
               borderRadius="0.5rem"
               height={{ base: "auto", md: "128px", xl: "128px" }}
@@ -136,9 +135,14 @@ const BlogPage = () => {
           </Flex>
           <br />
           <br />
-          <Flex justifyContent="space-between">
+          <Flex
+            justifyContent="space-between"
+            cursor="pointer"
+            onClick={() => navigate("/blog/fiber")}
+          >
             <Image
-              src={blogImgFiber}
+              src="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/Fiber.png"
+              objectFit="cover"
               w="35%"
               borderRadius="0.5rem"
               height={{ base: "auto", md: "128px", xl: "128px" }}
@@ -152,9 +156,14 @@ const BlogPage = () => {
           </Flex>
           <br />
           <br />
-          <Flex justifyContent="space-between">
+          <Flex
+            justifyContent="space-between"
+            cursor="pointer"
+            onClick={() => navigate("/blog/ways-to-ease-digestion")}
+          >
             <Image
-              src={blogImgAvocado}
+              src="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/Blog-Image-Avocado.png"
+              objectFit="cover"
               w="35%"
               borderRadius="0.5rem"
               height={{ base: "auto", md: "128px", xl: "128px" }}
@@ -168,7 +177,12 @@ const BlogPage = () => {
           </Flex>
           <br />
           <br />
-          <Flex justifyContent="end" alignItems="center">
+          <Flex
+            justifyContent="end"
+            alignItems="center"
+            cursor="pointer"
+            onClick={() => navigate("/blog/category/Nutrition")}
+          >
             <Text
               fontSize="md"
               float="right"
@@ -183,71 +197,7 @@ const BlogPage = () => {
       <br />
       <br />
       {/* search section  */}
-      <Box textAlign="center" py="60px" className={blogStyles.grayBackground}>
-        <Heading size="2xl">Browse the Archives</Heading>
-        <br />
-        <br />
-        <Flex
-          justifyContent="space-evenly"
-          className={blogStyles.orangeColor}
-          fontSize="xl"
-          fontWeight="600"
-          wrap="wrap"
-          gap={{ base: "3" }}
-        >
-          <Link
-            style={{ textDecoration: "none" }}
-            _hover={{ color: "#e56836" }}
-          >
-            Nutrition
-          </Link>
-          <Link
-            style={{ textDecoration: "none" }}
-            _hover={{ color: "#e56836" }}
-          >
-            Fitness
-          </Link>
-          <Link
-            style={{ textDecoration: "none" }}
-            _hover={{ color: "#e56836" }}
-          >
-            Features
-          </Link>
-          <Link
-            style={{ textDecoration: "none" }}
-            _hover={{ color: "#e56836" }}
-          >
-            Recipes
-          </Link>
-          <Link
-            style={{ textDecoration: "none" }}
-            _hover={{ color: "#e56836" }}
-          >
-            App Updates
-          </Link>
-        </Flex>
-        <br />
-        <br />
-        <InputGroup width="88%" margin="auto" borderRadius="0.5rem">
-          <InputRightElement
-            pointerEvents="none"
-            children={<HiSearch color="white" size="20px" />}
-            className={blogStyles.orangeBackground}
-            h="100%"
-            w="60px"
-            borderRightRadius="0.5rem"
-          />
-          <Input
-            type="tel"
-            placeholder="Search Blog Posts"
-            background="white"
-            py="28px"
-            fontSize="lg"
-            focusBorderColor="none"
-          />
-        </InputGroup>
-        <br />
-      </Box>
+      <SearchBox />
       {/* tips and tricks  */}
       <Flex
         padding={{ base: "20px", md: "50px 100px", xl: "50px 100px" }}
@@ -274,13 +224,15 @@ const BlogPage = () => {
           <Button
             className={blogStyles.orangeButton}
             fontSize={{ base: "auto", md: "xl", xl: "xl" }}
+            cursor="pointer"
+            onClick={() => navigate("/")}
           >
             Get the Tips
           </Button>
         </Box>
         <Box>
           <Image
-            src={rocket}
+            src="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/rocket.png"
             width={{ base: "80%", md: "367px", xl: "367px" }}
             margin="auto"
           />
@@ -295,7 +247,7 @@ const BlogPage = () => {
         textAlign={{ base: "center", md: "left", xl: "left" }}
       >
         <Box width={{ base: "auto", md: "55%", xl: "55%" }}>
-          <Image src={appleTree} />
+          <Image src="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/apple_tree.jpg" />
         </Box>
         <Box width={{ base: "auto", md: "40%", xl: "40%" }}>
           <Text fontSize={{ base: "auto", md: "xl", xl: "xl" }}>
@@ -316,6 +268,8 @@ const BlogPage = () => {
           <Button
             className={blogStyles.orangeButton}
             fontSize={{ base: "auto", md: "xl", xl: "xl" }}
+            cursor="pointer"
+            onClick={() => navigate("/blog/category/app-updates")}
           >
             Read More
           </Button>
@@ -353,6 +307,8 @@ const BlogPage = () => {
             className={blogStyles.whiteButton}
             fontSize={{ base: "auto", md: "xl", xl: "xl" }}
             fontWeight="bold"
+            cursor="pointer"
+            onClick={() => navigate("/signup")}
           >
             Sign Up - It's Free
           </Button>
@@ -380,6 +336,8 @@ const BlogPage = () => {
               fontSize={{ base: "auto", md: "lg", xl: "lg" }}
               float="right"
               className={blogStyles.orangeColor}
+              cursor="pointer"
+              onClick={() => navigate("/")}
             >
               Explore More
             </Text>
@@ -399,13 +357,13 @@ const BlogPage = () => {
         wrap="wrap"
       >
         <BlogCard
-          image={eczma}
+          image="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/eczema.png"
           heading="Dietitians Discuss Diet And Eczema"
           date="April 27, 2022"
           description="Registered Dietitians Discuss The Link Between Diet And Eczema Eczema is a common, chronic and complex skin disease that arises"
         />
         <BlogCard
-          image={acne}
+          image="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/acne.jpg"
           heading="How Can Diet & Nutrition Affect Acne"
           date="April 26, 2022"
           description="How Can Diet And Nutrition Affect Acne Acne is a chronic, multifactorial skin condition that is estimated to affect 9.4%"
@@ -435,6 +393,8 @@ const BlogPage = () => {
               fontSize={{ base: "auto", md: "lg", xl: "lg" }}
               float="right"
               className={blogStyles.orangeColor}
+              cursor="pointer"
+              onClick={() => navigate("/blog/category/app-updates")}
             >
               Explore More
             </Text>
@@ -458,28 +418,28 @@ const BlogPage = () => {
         wrap="wrap"
       >
         <BlogCard
-          image={eczma}
-          heading="Dietitians Discuss Diet And Eczema"
-          date="April 27, 2022"
-          description="Registered Dietitians Discuss The Link Between Diet And Eczema Eczema is a common, chronic and complex skin disease that arises"
+          image="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/Suunto.png"
+          heading="New Device Integration: Suunto"
+          date="June 14, 2022"
+          description="Sync Suunto Data Into Your Cronometer Account Today, we are thrilled to announce that we have partnered with Suunto to"
         />
         <BlogCard
-          image={acne}
-          heading="How Can Diet & Nutrition Affect Acne"
-          date="April 26, 2022"
-          description="How Can Diet And Nutrition Affect Acne Acne is a chronic, multifactorial skin condition that is estimated to affect 9.4%"
+          image="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/Heart-rate-symbol.png"
+          heading="How To: Track Your Heart Rate Over Time"
+          date="June 6, 2022"
+          description="Recent Improvements To Biometric Tracking Allow You To Track Heart Rate Over Time We have made some big improvements to"
         />
         <BlogCard
-          image={eczma}
-          heading="Dietitians Discuss Diet And Eczema"
-          date="April 27, 2022"
-          description="Registered Dietitians Discuss The Link Between Diet And Eczema Eczema is a common, chronic and complex skin disease that arises"
+          image="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/Apple-watch.jpeg"
+          heading="Now Available: Cronometer On Your Apple Watch"
+          date="June 1, 2022"
+          description="Introducing Cronometer On Apple Watch Since its introduction in 2014, the Apple Watch has gained its fair share of the"
         />
         <BlogCard
-          image={acne}
-          heading="How Can Diet & Nutrition Affect Acne"
-          date="April 26, 2022"
-          description="How Can Diet And Nutrition Affect Acne Acne is a chronic, multifactorial skin condition that is estimated to affect 9.4%"
+          image="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/nutrition_score.jpg"
+          heading="Introducing Men’s Health Nutrition Score"
+          date="May 31, 2022"
+          description="New Nutrition Score Focuses on Men’s Health Available To Male Free Users For The Month Of June It’s no surprise"
         />
       </Flex>
 
@@ -493,7 +453,10 @@ const BlogPage = () => {
           ----<span className={blogStyles.orangeColor}>Community</span>
         </Text>
         <br />
-        <Image src={knowYourself} borderRadius="0.5rem" />
+        <Image
+          src="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/know_yourself.png"
+          borderRadius="0.5rem"
+        />
         <br />
         <Heading size={{ base: "auto", md: "2xl", xl: "2xl" }}>
           Eat smarter. Go farther.
@@ -509,6 +472,8 @@ const BlogPage = () => {
         <Button
           className={blogStyles.orangeButton}
           fontSize={{ base: "auto", md: "xl", xl: "xl" }}
+          cursor="pointer"
+          onClick={() => navigate("/about")}
         >
           Get To Know Yourself
         </Button>
@@ -526,12 +491,13 @@ const BlogPage = () => {
           wrap="wrap"
         >
           <BlogCard
-            image={eczma}
-            heading="Dietitians Discuss Diet And Eczema"
+            image="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/nutrition_Therapist.jpeg"
+            heading="Meet Aaron Day: Nutritional Therapist & Know Yourself Ambassador"
           />
           <BlogCard
-            image={acne}
-            heading="How Can Diet & Nutrition Affect Acne"
+            image="https://raw.githubusercontent.com/amandk5/nutrimeterImages/main/Images/nutrition_coach.jpeg"
+            heading="Meet Alex Marshall: Nutrition Coach & Know Yourself Ambassador
+            "
           />
         </Flex>
       </Box>
@@ -539,6 +505,8 @@ const BlogPage = () => {
       <Flex
         justifyContent="flex-end"
         padding={{ base: "20px", md: "30px 70px", xl: "30px 70px" }}
+        cursor="pointer"
+        onClick={() => navigate("/about")}
       >
         <Text
           fontSize={{ base: "auto", md: "lg", xl: "lg" }}
@@ -565,7 +533,10 @@ const BlogPage = () => {
         rowGap="10"
       >
         <Box width={{ base: "auto", md: "45%", xl: "45%" }}>
-          <Image src={cronometerGraphic} width="100%" />
+          <Image
+            src="https://raw.githubusercontent.com/amandk5/nutrimeterImages/329696b37f995e056527958003965c238d38ce40/Images/cronometer-hero-graphic.svg"
+            width="100%"
+          />
         </Box>
         <Box width={{ base: "auto", md: "50%", xl: "50%" }}>
           <Heading size={{ base: "auto", md: "2xl", xl: "2xl" }}>
@@ -576,16 +547,19 @@ const BlogPage = () => {
           <Button
             className={blogStyles.orangeButton}
             fontSize={{ base: "auto", md: "xl", xl: "xl" }}
+            cursor="pointer"
+            onClick={() => navigate("/signup")}
           >
             Sign Up - It's Free
           </Button>
           <br />
           <br />
-          <Link fontSize="xl" textDecoration="underline">
-            Learn More
+          <Link textDecoration="underline" to="/">
+            <Text fontSize="xl">Learn More</Text>
           </Link>
         </Box>
       </Flex>
+      <Footer />
     </div>
   );
 };

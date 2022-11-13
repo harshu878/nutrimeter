@@ -11,11 +11,13 @@ import {
 import {  SearchIcon } from "@chakra-ui/icons";
 
 import { Link } from "react-router-dom";
+import NavBar from "./NavBar";
+import Footer from "../components/Footer";
 
 function Support() {
   return (
     <Box>
-      
+      <NavBar />
       <Box
         mb={50}
         backgroundImage={`url(https://github.com/harshu878/nutrimeter/blob/main/client/public/Images/fruits.png?raw=true)`}
@@ -122,6 +124,7 @@ function Support() {
           </Box>
         </Link>
       </SimpleGrid>
+      <Footer/>
     </Box>
   );
 }
