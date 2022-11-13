@@ -130,16 +130,16 @@ const AddItemWindow = ({ toggleVisibility }) => {
                 spacing={7}
                 direction={{ base: 'column', lg: 'row' }}
               >
-                {/* <Text
+                <Box>{product && <DoughnutChart product={product} />}</Box>
+                <Text
                   textAlign="center"
                   w="full"
                   h="30px"
                   fontWeight="600"
                   color="orange.500"
                 >
-                  {'Add Product'}
-                </Text> */}
-                <Box>{product && <DoughnutChart product={product} />}</Box>
+                  {product.Category || 'Add Product'}
+                </Text>
                 <HStack w="full" justifyContent="center" align="center">
                   <Text w="60px" fontSize={11}>
                     Enter servings

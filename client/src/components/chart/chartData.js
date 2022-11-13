@@ -104,10 +104,6 @@ export const dougnetData = {
 };
 
 
-
-
-
-
 /*=====  End of Dougnet Chart Data  ======*/
 
 

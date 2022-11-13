@@ -1,27 +1,25 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
-import AfterLoginPage from "../pages/afterLoginPage/AfterLoginPage";
-import BlogPage from "../pages/BlogPage/BlogPage";
-import Diarypage from "../pages/diary/Diarypage";
-import HomePage from "../pages/HomePage";
-import Trends from "../pages/Trends";
-import About from "../pages/About";
-import Login from "../pages/Login";
-import Signup from "../pages/Signup";
-import BodyMeasurement from "../pages/BodyMeasurement";
-import CronoPro from "../pages/CronoPro";
-
-import CategoryPage from "../pages/CategoryPage/CategoryPage";
-import Blog from "../pages/Blog/Blog";
-
-import Support from "../pages/Support";
-import Prof from "../pages/Prof";
-import Faq from "../pages/Faq";
-import Web from "../pages/Web";
-import Mobile from "../pages/Mobile";
-import Help from "../pages/Help";
-import Plan from "../pages/plan";
-
+import React from 'react'
+import { Route, Routes } from 'react-router-dom'
+import AfterLoginPage from '../pages/afterLoginPage/AfterLoginPage'
+import BlogPage from '../pages/BlogPage/BlogPage'
+import Diarypage from '../pages/diary/Diarypage'
+import HomePage from '../pages/HomePage'
+import Trends from '../pages/Trends'
+import About from '../pages/About'
+import Login from '../pages/Login'
+import Signup from '../pages/Signup'
+import BodyMeasurement from '../pages/BodyMeasurement'
+import CronoPro from '../pages/CronoPro'
+import CategoryPage from '../pages/CategoryPage/CategoryPage'
+import Blog from '../pages/Blog/Blog'
+import Support from '../pages/Support'
+import Prof from '../pages/Prof'
+import Faq from '../pages/Faq'
+import Web from '../pages/Web'
+import Mobile from '../pages/Mobile'
+import Help from '../pages/Help'
+import Plan from '../pages/plan'
+import AuthRoute from './AuthRoute'
 
 const AllRoutes = () => {
   return (
@@ -31,7 +29,6 @@ const AllRoutes = () => {
 
       <Route path="/blog/:blogName" element={<Blog />} />
       <Route path="/blog/category/:type" element={<CategoryPage />} />
-
 
       <Route path="/pro" element={<CronoPro />} />
       <Route path="/about" element={<About />} />
@@ -44,16 +41,36 @@ const AllRoutes = () => {
       <Route path="/mob_version" element={<Mobile />} />
       <Route path="/professional_version" element={<Prof />} />
       <Route path="/faq" element={<Faq />} />
-
-      <Route path="/checkCalories" element={<AfterLoginPage />}>
-        <Route path="/checkCalories" element={<Diarypage />} />
-        <Route path="trends" element={<Trends />} />
-        <Route path="help" element={<Help />} />
+      <Route
+        path="/checkCalories"
+        element={
+          <AuthRoute>
+            <AfterLoginPage />
+          </AuthRoute>
+        }
+      >
+        <Route
+          path="/checkCalories"
+          element={
+            <AuthRoute>
+              <Diarypage />
+            </AuthRoute>
+          }
+        />
+        {/* <Route path="trends" element={<Trends />} /> */}
+        <Route
+          path="help"
+          element={
+            <AuthRoute>
+              <Help />
+            </AuthRoute>
+          }
+        />
         <Route path="plan" element={<Plan />} />
         {/* All Routes of AfterLogin page will come under this route so add them here */}
       </Route>
     </Routes>
-  );
-};
+  )
+}
 
-export default AllRoutes;
+export default AllRoutes
