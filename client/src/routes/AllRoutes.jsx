@@ -10,12 +10,15 @@ import Login from '../pages/Login'
 import Signup from '../pages/Signup'
 import BodyMeasurement from '../pages/BodyMeasurement'
 import CronoPro from '../pages/CronoPro'
+import CategoryPage from '../pages/CategoryPage/CategoryPage'
+import Blog from '../pages/Blog/Blog'
 import Support from '../pages/Support'
 import Prof from '../pages/Prof'
 import Faq from '../pages/Faq'
 import Web from '../pages/Web'
 import Mobile from '../pages/Mobile'
 import Help from '../pages/Help'
+import Plan from '../pages/plan'
 import AuthRoute from './AuthRoute'
 
 const AllRoutes = () => {
@@ -23,11 +26,16 @@ const AllRoutes = () => {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/blog" element={<BlogPage />} />
+
+      <Route path="/blog/:blogName" element={<Blog />} />
+      <Route path="/blog/category/:type" element={<CategoryPage />} />
+
       <Route path="/pro" element={<CronoPro />} />
       <Route path="/about" element={<About />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/bodyM" element={<BodyMeasurement />} />
+
       <Route path="/support" element={<Support />} />
       <Route path="/web_version" element={<Web />} />
       <Route path="/mob_version" element={<Mobile />} />
@@ -58,6 +66,7 @@ const AllRoutes = () => {
             </AuthRoute>
           }
         />
+        <Route path="plan" element={<Plan />} />
         {/* All Routes of AfterLogin page will come under this route so add them here */}
       </Route>
     </Routes>

@@ -9,13 +9,15 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import Footer from "../components/Footer";
+import NavBar from "./NavBar";
 
 
 
 function Prof(){
     return (
         <Box>
-      
+      <NavBar />
       <Box p={10} borderTop={"1px"} color={"gray.300"}>
         <Flex flexWrap={"wrap"} justifyContent={"space-between"}>
           <Flex m={5}>
@@ -118,6 +120,7 @@ function Prof(){
           </Box>
         </Flex>
       </Stack>
+      <Footer/>
     </Box>
     )
 }
