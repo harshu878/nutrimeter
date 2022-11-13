@@ -54,7 +54,7 @@ const BodyMeasurement = () => {
 <NavBar/>
     <Flex
       flexDirection="column"
- 
+      minH={'100vh'}
   
       alignItems="center"
     >
@@ -64,6 +64,8 @@ const BodyMeasurement = () => {
         justifyContent="center"
         alignItems="center"
         p="2rem"
+        mt={'8rem'}
+        mb='8rem'
         backgroundColor="whiteAlpha.900"
         boxShadow="md"
       >

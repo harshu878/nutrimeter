@@ -119,7 +119,7 @@ const handleSubmit=(e)=>{
                 </InputGroup>
              
               </FormControl>
-              {error && <Box textAlign={'center'}  backgroundColor={'red.100'}><Text as='b'>Wrong credentials! invalid username or password.</Text></Box>}
+              {error && <Box textAlign={'center'}  backgroundColor={'red.100'} > <Text as='b'>Wrong credentials! invalid username or password.</Text></Box>}
             
               <Button
                 borderRadius={0}
