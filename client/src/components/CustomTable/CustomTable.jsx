@@ -2,7 +2,7 @@ import { Box, Image, Text } from '@chakra-ui/react'
 import React, { useEffect } from 'react'
 import { TableWrapper } from './cumstomTable.styles'
 import { useSelector, useDispatch } from 'react-redux'
-import { deleteItem, getfoodProducts } from '../../redux/diary/diary.actions'
+import { deleteItem } from '../../redux/diary/diary.actions'
 import { RiDeleteBack2Fill } from 'react-icons/ri'
 
 const CustomTable = () => {
@@ -11,13 +11,10 @@ const CustomTable = () => {
   )
   const dispatch = useDispatch()
 
-  useEffect(() => {
-    // dispatch(getfoodProducts())
-  }, [])
   return (
     <Box
       w="full"
-      h="300px"
+      h={{ base: 'fit-content', lg: '300px' }}
       boxShadow="rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px"
     >

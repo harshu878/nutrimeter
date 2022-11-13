@@ -22,7 +22,7 @@ app.post("/login", async (req, res) => {
                     }
                 })
             } else {
-                res.status(401).send('Auth failure, incorrect pass')
+                res.status(401).send('Auth failure, incorrect password')
             }
         } else {
             res.status(401).send(`User with ${email} not found`);
@@ -36,14 +36,15 @@ app.post("/register", async (req, res) => {
     let { email, password, name, age } = req.body;
     password = String(password)
     try {
-        let existingUser = await Users.findOne({ email });
+        let existingUser = await Users.findOne({ email, password });
         if (existingUser) {
             res.status(401).send('cannot create an user with existing email')
+        } else {
+            let user = await Users.create({
+                email, password, name, age
+            })
+            res.send({ token: `${user.email}_#_${user.password}` });
         }
-        let user = await Users.create({
-            email, password, name, age
-        })
-        res.send({ token: `${user.email}_#_${user.password}` });
     } catch (err) {
         res.status(401).send(err.message)
     }

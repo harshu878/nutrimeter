@@ -40,6 +40,7 @@ const Signup = () => {
 		password: "",
 	});
   const dispatch=useDispatch()
+
   const navigate=useNavigate()
   
 	const { name, email, password} = formData;

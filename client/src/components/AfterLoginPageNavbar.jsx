@@ -1,10 +1,16 @@
 import React, { useState } from 'react'
-import { Box, HStack, Image, Spacer } from '@chakra-ui/react'
+import { Box, HStack, Image } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import AfterLoginSideNav from './AfterLoginSideNav'
+import { GiHamburgerMenu } from 'react-icons/gi'
 
 const AfterLoginPageNavbar = () => {
   const [isActive, setIsActive] = useState('dairy')
+  const [visible, setVisible] = useState(false)
+  const handleVisible = () => {
+    setVisible((prev) => (prev = !prev))
+  }
 
   return (
     <StyledHStack
@@ -12,8 +18,8 @@ const AfterLoginPageNavbar = () => {
       h="70px"
       borderBottom="1px solid #d6d4d4"
       px="30px"
-      align="end"
-      justify="center"
+      align={{ base: 'center', lg: 'end' }}
+      justify={{ base: 'end', lg: 'center' }}
       spacing="25px"
       position="relative"
     >
@@ -23,7 +29,11 @@ const AfterLoginPageNavbar = () => {
         src="/Images/Color logo - no background.png"
         w="190px"
       />
-      <Link onClick={() => setIsActive('dairy')} to="/checkCalories">
+      <Link
+        className="navLink"
+        onClick={() => setIsActive('dairy')}
+        to="/checkCalories"
+      >
         <Box
           className="links"
           id={isActive === 'dairy' ? 'active' : 'notActive'}
@@ -33,7 +43,11 @@ const AfterLoginPageNavbar = () => {
           Diary
         </Box>
       </Link>
-      <Link onClick={() => setIsActive('trends')} to="/checkCalories/trends">
+      <Link
+        className="navLink"
+        onClick={() => setIsActive('trends')}
+        to="/checkCalories/trends"
+      >
         <Box
           className="links"
           id={isActive === 'trends' ? 'active' : 'notActive'}
@@ -43,7 +57,7 @@ const AfterLoginPageNavbar = () => {
           Trands
         </Box>
       </Link>
-      <Link onClick={() => setIsActive('foods')} to="#">
+      <Link className="navLink" onClick={() => setIsActive('foods')} to="#">
         <Box
           className="links"
           id={isActive === 'foods' ? 'active' : 'notActive'}
@@ -53,7 +67,7 @@ const AfterLoginPageNavbar = () => {
           Foods
         </Box>
       </Link>
-      <Link onClick={() => setIsActive('settings')} to="">
+      <Link className="navLink" onClick={() => setIsActive('settings')} to="">
         <Box
           className="links"
           id={isActive === 'settings' ? 'active' : 'notActive'}
@@ -63,7 +77,7 @@ const AfterLoginPageNavbar = () => {
           Settings
         </Box>
       </Link>
-      <Link onClick={() => setIsActive('plans')} to="">
+      <Link className="navLink" onClick={() => setIsActive('plans')} to="">
         <Box
           className="links"
           id={isActive === 'plans' ? 'active' : 'notActive'}
@@ -73,7 +87,11 @@ const AfterLoginPageNavbar = () => {
           Plans
         </Box>
       </Link>
-      <Link onClick={() => setIsActive('help')} to="/checkCalories/help">
+      <Link
+        className="navLink"
+        onClick={() => setIsActive('help')}
+        to="/checkCalories/help"
+      >
         <Box
           className="links"
           id={isActive === 'help' ? 'active' : 'notActive'}
@@ -83,6 +101,13 @@ const AfterLoginPageNavbar = () => {
           Help
         </Box>
       </Link>
+      <GiHamburgerMenu
+        cursor="pointer"
+        onClick={() => handleVisible()}
+        id="burgerIcon"
+        fontSize={21}
+      />
+      {visible && <AfterLoginSideNav handleVisible={handleVisible} />}
     </StyledHStack>
   )
 }
@@ -90,6 +115,16 @@ const AfterLoginPageNavbar = () => {
 export default AfterLoginPageNavbar
 
 const StyledHStack = styled(HStack)`
+  .navLink {
+    @media screen and (max-width: 992px) {
+      display: none;
+    }
+  }
+  #burgerIcon {
+    @media screen and (min-width: 992px) {
+      display: none;
+    }
+  }
   .links {
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
