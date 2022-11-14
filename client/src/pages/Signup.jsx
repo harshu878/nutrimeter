@@ -71,6 +71,8 @@ const Signup = () => {
       flexDirection="column"
       // width="100wh"
       // height="100vh"
+    
+     
      backgroundColor='#FAFAFA'
       justifyContent="center"
       alignItems="center"
@@ -79,6 +81,7 @@ const Signup = () => {
         <Heading size='lg' p='10' >Create Your Free Account </Heading>
         <form onSubmit={handleSubmit}>
       <Stack
+       width={'65vw'}
       boxShadow= 'rgba(0, 0, 0, 0.16) 0px 1px 4px'
            flexDir="column"
            m="3"
@@ -86,7 +89,7 @@ const Signup = () => {
            justifyContent="center"
            alignItems="center"
            backgroundColor='#FEFFFF'
-           width={'700px'}
+           
       >
   
           {/* <Image width={'100%'} src='https://i.postimg.cc/y8LKTYmp/Color-logo-no-background.png' alt='Dan Abramov' /> */}
@@ -150,7 +153,7 @@ const Signup = () => {
         </Box>
       </Stack >
       <Stack   
-       width={'700px'}
+       width={'65vw'}
       boxShadow= 'rgba(0, 0, 0, 0.16) 0px 1px 4px'
            flexDir="column"
            m="3"
@@ -192,7 +195,7 @@ const Signup = () => {
       
 </Stack>
 {error &&<Stack   
-       width={'700px'}
+      
       boxShadow= 'rgba(0, 0, 0, 0.16) 0px 1px 4px'
            flexDir="column"
            m="3"
@@ -203,8 +206,8 @@ const Signup = () => {
         
         <Text as='b'>Error! A user for that e-mail address already exists. Please enter a different e-mail address.</Text>
 </Stack>}
-<Flex mb='4' p='4'>  
-    <Button type="submit"  isLoading={loading} colorScheme='green' size='lg' width={'650px'}>
+<Flex alignItems={'center'} justifyContent="center" mb='4' p='4' >  
+    <Button type="submit"  isLoading={loading} colorScheme='green' width={'60vw'} size='lg'  >
     Create Account
   </Button>
   </Flex>
