@@ -81,7 +81,7 @@ const Signup = () => {
         <Heading size='lg' p='10' >Create Your Free Account </Heading>
         <form onSubmit={handleSubmit}>
       <Stack
-       width={'65vw'}
+       width={'70vw'}
       boxShadow= 'rgba(0, 0, 0, 0.16) 0px 1px 4px'
            flexDir="column"
            m="3"
@@ -92,13 +92,13 @@ const Signup = () => {
            
       >
   
-          {/* <Image width={'100%'} src='https://i.postimg.cc/y8LKTYmp/Color-logo-no-background.png' alt='Dan Abramov' /> */}
+          {/* <Image width={'100%'} src='https://i.postimg.cc/by8LKTYmp/Color-logo-no-background.png' alt='Dan Abramov' /> */}
        
         <Box minW={{ base: "90%", md: "600px" }}>
         
             <Stack
               spacing={4}
-            
+              width={'60vw'}
             >
               <FormControl>
                 <InputGroup>
@@ -153,7 +153,7 @@ const Signup = () => {
         </Box>
       </Stack >
       <Stack   
-       width={'65vw'}
+      width={'70vw'}
       boxShadow= 'rgba(0, 0, 0, 0.16) 0px 1px 4px'
            flexDir="column"
            m="3"
