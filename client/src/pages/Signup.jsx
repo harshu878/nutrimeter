@@ -203,7 +203,7 @@ const Signup = () => {
         
         <Text as='b'>Error! A user for that e-mail address already exists. Please enter a different e-mail address.</Text>
 </Stack>}
-<Flex mb='4' p='4'>  
+<Flex alignItems={'center'} justifyContent="center" mb='4' p='4'>  
     <Button type="submit"  isLoading={loading} colorScheme='green' size='lg' width={'650px'}>
     Create Account
   </Button>
