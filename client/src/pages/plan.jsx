@@ -74,20 +74,21 @@ function Plan() {
                 width={"50px"}
               />
             </Center>
-            <Text pb={5} color={"gray.600"} fontSize={"23px"} fontWeight={700}>
+            <Text pb={5} textAlign={"center"} color={"gray.600"} fontSize={"23px"} fontWeight={700}>
               BASIC
             </Text>
             <Text
               pb={5}
               pl={5}
               pr={5}
+              textAlign={"center"}
               color={"gray.600"}
               fontSize={"16px"}
               fontWeight={400}
             >
               The basic tool you need to track your nutrition for free!
             </Text>
-            <Text color={"gray.600"} fontSize={"23px"} fontWeight={700}>
+            <Text color={"gray.600"} textAlign={"center"} fontSize={"23px"} fontWeight={700}>
               $0
             </Text>
             <Text
@@ -95,20 +96,23 @@ function Plan() {
               color={"gray.600"}
               fontSize={"13px"}
               fontWeight={500}
+              textAlign={"center"}
             >
               USD/Month
             </Text>
+            <Center>
             <Button
               color={"white"}
               border={"1px"}
               size={"sm"}
-              pl={"25%"}
-              pr={"25%"}
+              width={"90%"}
               backgroundColor={"rgb(211,230,248)"}
               background={"none"}
+              textAlign={"center"}
             >
               <Text color={"black"}>Current Plan</Text>
             </Button>
+            </Center>
           </Box>
   
           {/* 2nd */}
@@ -126,20 +130,21 @@ function Plan() {
                 width={"50px"}
               />
             </Center>
-            <Text pb={5} color={"gray.600"} fontSize={"23px"} fontWeight={700}>
+            <Text pb={5} textAlign={"center"} color={"gray.600"} fontSize={"23px"} fontWeight={700}>
               GOLD
             </Text>
             <Text
               pb={5}
               pl={5}
               pr={5}
+              textAlign={"center"}
               color={"gray.600"}
               fontSize={"16px"}
               fontWeight={400}
             >
               For those that want to get serious about their health.
             </Text>
-            <Text color={"gray.600"} fontSize={"23px"} fontWeight={700}>
+            <Text color={"gray.600"} textAlign={"center"} fontSize={"23px"} fontWeight={700}>
               $49.99
             </Text>
             <Text
@@ -147,9 +152,11 @@ function Plan() {
               color={"gray.600"}
               fontSize={"13px"}
               fontWeight={500}
+              textAlign={"center"}
             >
               USD/Year
             </Text>
+            <Center>
             <Button
               color={"white"}
               border={"1px"}
@@ -161,6 +168,7 @@ function Plan() {
             >
               Subscribe Now
             </Button>
+            </Center>
           </Box>
   
           {/* 3rd */}
@@ -180,11 +188,12 @@ function Plan() {
                 width={"50px"}
               />
             </Center>
-            <Text pb={5} color={"gray.600"} fontSize={"23px"} fontWeight={700}>
+            <Text pb={5} textAlign={"center"} color={"gray.600"} fontSize={"23px"} fontWeight={700}>
               PRO
             </Text>
             <Text
               pb={5}
+              textAlign={"center"}
               pl={5}
               pr={5}
               color={"gray.600"}
@@ -193,22 +202,25 @@ function Plan() {
             >
               For health coaches and trainers.
             </Text>
-            <Text color={"gray.600"} fontSize={"23px"} fontWeight={700}>
+            <Text color={"gray.600"} textAlign={"center"} fontSize={"23px"} fontWeight={700}>
               $29.95
             </Text>
-            <Text pb={2} color={"gray.600"} fontSize={"13px"} fontWeight={500}>
+            <Text pb={2} color={"gray.600"} fontSize={"13px"} textAlign={"center"} fontWeight={500}>
               USD/Month
             </Text>
             <Text
               h={"55px"}
+              textAlign={"center"}
               color={"gray.600"}
               fontSize={"11px"}
               fontWeight={400}
             >
               UP TO 10 CLIENTS Add more for $2.25/client per month
             </Text>
+            <Center>
             <Button
               color={"white"}
+              textAlign={"center"}
               border={"1px"}
               size={"sm"}
               pl={"25%"}
@@ -218,6 +230,7 @@ function Plan() {
             >
               Subscribe Now
             </Button>
+            </Center>
           </Box>
   
           {/* 4rt  */}
@@ -238,20 +251,21 @@ function Plan() {
                 width={"50px"}
               />
             </Center>
-            <Text pb={5} color={"gray.600"} fontSize={"23px"} fontWeight={700}>
+            <Text pb={5} textAlign={"center"} color={"gray.600"} fontSize={"23px"} fontWeight={700}>
               ENTERPRISE
             </Text>
             <Text
               pb={5}
               pl={5}
               pr={5}
+              textAlign={"center"}
               color={"gray.600"}
               fontSize={"16px"}
               fontWeight={400}
             >
               For hospitals, schools and research teams.
             </Text>
-            <Text color={"gray.600"} fontSize={"23px"} fontWeight={700}>
+            <Text color={"gray.600"} textAlign={"center"} fontSize={"23px"} fontWeight={700}>
               Contact Us
             </Text>
             <Text
@@ -259,12 +273,15 @@ function Plan() {
               color={"gray.600"}
               fontSize={"11px"}
               fontWeight={400}
+              textAlign={"center"}
             >
               Custom solutions for enterprise businesses
             </Text>
+            <Center>
             <Button
               color={"green.400"}
               border={"1px"}
+              textAlign={"center"}
               size={"sm"}
               pl={"25%"}
               pr={"25%"}
@@ -273,6 +290,7 @@ function Plan() {
             >
               Contact Us
             </Button>
+            </Center>
           </Box>
         </SimpleGrid>
         <SimpleGrid
@@ -293,7 +311,7 @@ function Plan() {
               The Basic tools you need
             </Text>
             <Text mb={3} width={"260px"} textAlign={"left"}>
-              <li style={{ fontSize: "14px", color: "gray" }}>
+              <li style={{ fontSize: "14px",textAlign:"center", color: "gray" }}>
                 Log foods, exercise & biometrics
               </li>
             </Text>

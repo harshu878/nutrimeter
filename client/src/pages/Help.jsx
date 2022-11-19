@@ -27,7 +27,7 @@ function Help() {
   return (
     <Box>
       <AfterLoginPageNavbar currentLink="helps" />
-      <Box mb={5}>
+      <Box m={10} ml={20}>
         <Text fontSize={30} fontWeight={600} color={'gray.600'}>
           Find your answers here
         </Text>
@@ -52,7 +52,7 @@ function Help() {
           borderColor={'gray.500'}
         >
           <Text color={'gray.600'} fontWeight={700} ml={3} textAlign={'left'}>
-            Cronometer University
+          Video Tutorials
           </Text>
           <Flex>
             <Box>
@@ -74,6 +74,7 @@ function Help() {
             color={'white'}
             mt={10}
             mb={3}
+            ml={10}
             width={250}
             backgroundColor={'green.400'}
           >
@@ -90,7 +91,7 @@ function Help() {
           borderColor={'gray.500'}
         >
           <Text color={'gray.600'} fontWeight={700} ml={3} textAlign={'left'}>
-            Cronometer University
+          Find a Professional
           </Text>
           <Flex>
             <Box>
@@ -103,14 +104,15 @@ function Help() {
             </Box>
             <Box>
               <Text m={3} textAlign={'left'} fontSize={'12px'}>
-                Our video tutorial series will teach you everything you need to
-                know about our application, one feature at a time.
+              Find a coach, nutritionist or trainer to help achieve your health and fitness goals.
               </Text>
             </Box>
           </Flex>
           <Button
             color={'white'}
             mt={10}
+            ml={10}
+
             mb={3}
             width={250}
             backgroundColor={'green.400'}
@@ -128,7 +130,7 @@ function Help() {
           borderColor={'gray.500'}
         >
           <Text color={'gray.600'} fontWeight={700} ml={3} textAlign={'left'}>
-            Cronometer University
+          Contact Support
           </Text>
           <Flex>
             <Box>
@@ -141,8 +143,7 @@ function Help() {
             </Box>
             <Box>
               <Text m={3} textAlign={'left'} fontSize={'12px'}>
-                Our video tutorial series will teach you everything you need to
-                know about our application, one feature at a time.
+              Can't find an answer to your question? Contact our support team for help.
               </Text>
             </Box>
           </Flex>
@@ -150,6 +151,8 @@ function Help() {
             color={'white'}
             mt={10}
             mb={3}
+            ml={10}
+
             width={250}
             backgroundColor={'green.400'}
           >
@@ -166,7 +169,7 @@ function Help() {
           borderColor={'gray.500'}
         >
           <Text color={'gray.600'} fontWeight={700} ml={3} textAlign={'left'}>
-            Cronometer University
+          User Manual
           </Text>
           <Flex>
             <Box>
@@ -177,8 +180,7 @@ function Help() {
             </Box>
             <Box>
               <Text m={3} textAlign={'left'} fontSize={'12px'}>
-                Our video tutorial series will teach you everything you need to
-                know about our application, one feature at a time.
+              Complete app info with screenshots and step-by-step explanations of every feature.
               </Text>
             </Box>
           </Flex>
@@ -186,6 +188,8 @@ function Help() {
             color={'white'}
             mt={10}
             mb={3}
+            ml={10}
+
             width={250}
             backgroundColor={'green.400'}
           >
@@ -202,7 +206,7 @@ function Help() {
           borderColor={'gray.500'}
         >
           <Text color={'gray.600'} fontWeight={700} ml={3} textAlign={'left'}>
-            Cronometer University
+          Cronometer Blog
           </Text>
           <Flex>
             <Box>
@@ -213,8 +217,7 @@ function Help() {
             </Box>
             <Box>
               <Text m={3} textAlign={'left'} fontSize={'12px'}>
-                Our video tutorial series will teach you everything you need to
-                know about our application, one feature at a time.
+              Check out our blog to stay up to date on all the latest news and updates.
               </Text>
             </Box>
           </Flex>
@@ -222,6 +225,8 @@ function Help() {
             color={'white'}
             mt={10}
             mb={3}
+            ml={10}
+
             width={250}
             backgroundColor={'green.400'}
           >
@@ -238,7 +243,7 @@ function Help() {
           borderColor={'gray.500'}
         >
           <Text color={'gray.600'} fontWeight={700} ml={3} textAlign={'left'}>
-            Cronometer University
+          Community Forums
           </Text>
           <Flex>
             <Box>
@@ -251,8 +256,7 @@ function Help() {
             </Box>
             <Box>
               <Text m={3} textAlign={'left'} fontSize={'12px'}>
-                Our video tutorial series will teach you everything you need to
-                know about our application, one feature at a time.
+              Want to see how others are using Cronometer? Join the conversation on our forums.
               </Text>
             </Box>
           </Flex>
@@ -260,6 +264,8 @@ function Help() {
             color={'white'}
             mt={10}
             mb={3}
+            ml={10}
+
             width={250}
             backgroundColor={'green.400'}
           >
