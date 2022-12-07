@@ -1,10 +1,9 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import AfterLoginPage from '../pages/afterLoginPage/AfterLoginPage'
 import BlogPage from '../pages/BlogPage/BlogPage'
 import Diarypage from '../pages/diary/Diarypage'
 import HomePage from '../pages/HomePage'
-import Trends from '../pages/Trends'
+// import Trends from '../pages/Trends'
 import About from '../pages/About'
 import Login from '../pages/Login'
 import Signup from '../pages/Signup'
@@ -50,7 +49,7 @@ const AllRoutes = () => {
           </AuthRoute>
         }
       />
-      <Route path="/checkCalories/trends" element={<Trends />} />
+      {/* <Route path="/checkCalories/trends" element={<Trends />} /> */}
       <Route
         path="/checkCalories/help"
         element={

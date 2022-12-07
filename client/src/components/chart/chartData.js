@@ -26,7 +26,7 @@ export const dateWiseData = (allItems) => {
 
 export const chartData = (dataArray, title) => {
     const data = {
-        labels: daysInMonth(1),
+        labels: daysInMonth(new Date().getMonth() + 1),
         datasets: [
             {
                 label: title,
@@ -75,33 +75,10 @@ export const singleProductData = (product) => {
             ],
             hoverOffset: 3,
         }],
-        options: {
-            plugins: {
-                legend: {
-                    labels: {
-                        font: {
-                            size: 10
-                        }
-                    }
-                }
-            }
-        }
+       
     }
 }
 
-export const dougnetData = {
-    datasets: [{
-        label: 'My First Dataset',
-        data: [300, 50, 100],
-        backgroundColor: [
-            'rgb(255, 99, 132)',
-            'rgb(54, 162, 235)',
-            'rgb(255, 205, 86)'
-        ],
-        hoverOffset: 4,
-
-    }],
-};
 
 
 /*=====  End of Dougnet Chart Data  ======*/
