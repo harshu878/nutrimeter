@@ -1,6 +1,5 @@
 import { Box, Text } from '@chakra-ui/react'
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
 import { TableWrapper } from './SearchResultTable.styles'
 import { GiHealthPotion } from 'react-icons/gi'
 

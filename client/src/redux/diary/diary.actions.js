@@ -10,7 +10,7 @@ const userToken = localStorage.getItem('userToken')
 export const getfoodProducts = (token) => async (dispatch) => {
     dispatch(diaryItemsLoading());
     try {
-        let res = await axios.get('https://nutrimeter-server.onrender.com/userprofile/getitems', {
+        let res = await axios.get('http://localhost:8080/userprofile/getitems', {
             headers: {
                 token
             }
@@ -28,7 +28,7 @@ export const getfoodProducts = (token) => async (dispatch) => {
 export const getAllProductToDisplay = (query) => async (dispatch) => {
     dispatch(diaryItemsLoading())
     try {
-        let res = await axios.get(`https://nutrimeter-server.onrender.com/foodProducts?q=${query}`);
+        let res = await axios.get(`http://localhost:8080/foodProducts?q=${query}`);
         dispatch({ type: GET_ALL_PRODUCTS, payload: res.data })
     } catch (error) {
         dispatch(diaryItemsError())
@@ -40,7 +40,7 @@ export const getAllProductToDisplay = (query) => async (dispatch) => {
 export const getAllCategories = () => async (dispatch) => {
     dispatch(diaryItemsLoading());
     try {
-        let res = await axios('https://nutrimeter-server.onrender.com/foodProducts/allcategories');
+        let res = await axios('http://localhost:8080/foodProducts/allcategories');
         dispatch({ type: GET_ALL_CATEGORIES, payload: res.data });
     } catch (error) {
         dispatch(diaryItemsError())
@@ -53,7 +53,7 @@ export const getAllCategories = () => async (dispatch) => {
 export const addNewProduct = (body, token) => async (dispatch) => {
     dispatch(diaryItemsLoading())
     try {
-        let res = await axios.post('https://nutrimeter-server.onrender.com/userprofile/additem', body, {
+        let res = await axios.post('http://localhost:8080/userprofile/additem', body, {
             headers: {
                 token: localStorage.getItem('userToken')
             }
@@ -69,7 +69,7 @@ export const addNewProduct = (body, token) => async (dispatch) => {
 export const deleteItem = (id, token) => async (dispatch) => {
     dispatch(diaryItemsLoading())
     try {
-        await axios.delete('https://nutrimeter-server.onrender.com/userprofile/' + id, {
+        await axios.delete('http://localhost:8080/userprofile/' + id, {
             headers: {
                 token: userToken
             }

@@ -47,7 +47,7 @@ const AfterLoginPageNavbar = ({ currentLink }) => {
       <Link
         className="navLink"
         onClick={() => setIsActive('trends')}
-        to="/checkCalories/trends"
+        to=""
       >
         <Box
           className="links"

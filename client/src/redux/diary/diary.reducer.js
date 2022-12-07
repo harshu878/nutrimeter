@@ -6,7 +6,7 @@ const initialState = {
     foodItemsInList: [],
     usersAlItems: [],
     allFoodItems: [],
-    baseValue: 2400,
+    baseValue: 2200,
 }
 
 export const diaryReducer = (state = initialState, { type, payload }) => {
