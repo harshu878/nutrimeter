@@ -86,8 +86,9 @@ Graphical analysis of total daily calories added in bucket
 
 ## Tech Stack
 
-**Client:** React, Styled-Components and Chakra-UI for Styles, NodeJS, Express, Mongo-DB for database
-**Server:** NodeJS, Express, Mongo-DB for database
+- **Client:** React, Styled-Components and Chakra-UI for Styles
+
+- **Server:** NodeJS, Express, Mongo-DB for database
 
 
 ## Features
